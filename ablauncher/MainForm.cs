@@ -1,12 +1,15 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using System.Diagnostics;
+using System.Drawing;
+using System.Globalization;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace ablauncher {
     public partial class MainForm : Form {
@@ -276,6 +279,26 @@ namespace ablauncher {
         {
             game.RandomStart = ((CheckBox)sender).Checked;
             chRandomStart.Checked = game.RandomStart;
+        }
+
+        private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbLanguage.SelectedIndex)
+            {
+                case 0:
+                    Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
+                    break;
+                case 1:
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+                    break;
+                case 2:
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
+                    break;
+            }
+            this.Controls.Clear();
+            InitializeComponent();
+            loadSettings();
+            drawMapPreview();
         }
     }
 
