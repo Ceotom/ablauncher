@@ -63,16 +63,6 @@ namespace ablauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bomberman {
-            get {
-                object obj = ResourceManager.GetObject("bomberman", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap POWKICK {
             get {
                 object obj = ResourceManager.GetObject("POWKICK", resourceCulture);

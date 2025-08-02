@@ -89,9 +89,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="bomberman.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="tile-brick.gif" />
   </ItemGroup>
   <ItemGroup>

@@ -60,7 +60,6 @@ namespace ablauncher {
             this.btStart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cbPlayers = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,13 +69,12 @@ namespace ablauncher {
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(155, 15);
+            this.label1.Location = new System.Drawing.Point(11, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 1;
@@ -84,7 +82,7 @@ namespace ablauncher {
             // 
             // txNodeName
             // 
-            this.txNodeName.Location = new System.Drawing.Point(223, 12);
+            this.txNodeName.Location = new System.Drawing.Point(76, 12);
             this.txNodeName.Name = "txNodeName";
             this.txNodeName.Size = new System.Drawing.Size(128, 21);
             this.txNodeName.TabIndex = 2;
@@ -98,10 +96,10 @@ namespace ablauncher {
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(139, 42);
+            this.tabControl1.Location = new System.Drawing.Point(7, 42);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(512, 225);
+            this.tabControl1.Size = new System.Drawing.Size(650, 254);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
@@ -111,7 +109,7 @@ namespace ablauncher {
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(504, 199);
+            this.tabPage1.Size = new System.Drawing.Size(642, 228);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Host game";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -120,7 +118,7 @@ namespace ablauncher {
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.previewBox);
-            this.groupBox2.Location = new System.Drawing.Point(315, 14);
+            this.groupBox2.Location = new System.Drawing.Point(307, 14);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(172, 141);
             this.groupBox2.TabIndex = 1;
@@ -130,7 +128,7 @@ namespace ablauncher {
             // previewBox
             // 
             this.previewBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.previewBox.Location = new System.Drawing.Point(10, 18);
+            this.previewBox.Location = new System.Drawing.Point(6, 20);
             this.previewBox.Name = "previewBox";
             this.previewBox.Size = new System.Drawing.Size(150, 110);
             this.previewBox.TabIndex = 0;
@@ -448,7 +446,7 @@ namespace ablauncher {
             // btStart
             // 
             this.btStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btStart.Location = new System.Drawing.Point(549, 273);
+            this.btStart.Location = new System.Drawing.Point(553, 12);
             this.btStart.Name = "btStart";
             this.btStart.Size = new System.Drawing.Size(100, 23);
             this.btStart.TabIndex = 6;
@@ -477,30 +475,17 @@ namespace ablauncher {
             this.cbPlayers.Size = new System.Drawing.Size(39, 21);
             this.cbPlayers.TabIndex = 4;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::ablauncher.Properties.Resources.bomberman;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 295);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 303);
+            this.ClientSize = new System.Drawing.Size(664, 303);
             this.Controls.Add(this.cbPlayers);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btStart);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txNodeName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -526,15 +511,12 @@ namespace ablauncher {
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txNodeName;
         private System.Windows.Forms.TabControl tabControl1;
