@@ -118,7 +118,7 @@ namespace ablauncher {
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.previewBox);
-            this.groupBox2.Location = new System.Drawing.Point(307, 14);
+            this.groupBox2.Location = new System.Drawing.Point(464, 14);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(172, 141);
             this.groupBox2.TabIndex = 1;
@@ -148,7 +148,7 @@ namespace ablauncher {
             this.groupBox1.Controls.Add(this.rdMeleeGame);
             this.groupBox1.Location = new System.Drawing.Point(15, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(286, 170);
+            this.groupBox1.Size = new System.Drawing.Size(443, 208);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Game";
@@ -232,7 +232,7 @@ namespace ablauncher {
             this.cbMap.FormattingEnabled = true;
             this.cbMap.Location = new System.Drawing.Point(48, 44);
             this.cbMap.Name = "cbMap";
-            this.cbMap.Size = new System.Drawing.Size(219, 21);
+            this.cbMap.Size = new System.Drawing.Size(324, 21);
             this.cbMap.TabIndex = 4;
             this.cbMap.SelectedIndexChanged += new System.EventHandler(this.cbMap_SelectedIndexChanged);
             // 
@@ -275,7 +275,7 @@ namespace ablauncher {
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(504, 199);
+            this.tabPage2.Size = new System.Drawing.Size(642, 228);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "1-player keys";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -308,7 +308,7 @@ namespace ablauncher {
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(504, 199);
+            this.tabPage3.Size = new System.Drawing.Size(642, 228);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "2-player keys";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -355,7 +355,7 @@ namespace ablauncher {
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(504, 199);
+            this.tabPage4.Size = new System.Drawing.Size(642, 228);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "About";
             this.tabPage4.UseVisualStyleBackColor = true;
