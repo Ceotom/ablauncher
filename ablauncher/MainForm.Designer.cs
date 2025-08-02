@@ -42,13 +42,13 @@ namespace ablauncher {
             this.rdTeamGame = new System.Windows.Forms.RadioButton();
             this.rdMeleeGame = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.chAutoKeys1 = new System.Windows.Forms.CheckBox();
             this.spKeys0 = new System.Windows.Forms.GroupBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.chAutoKeys2 = new System.Windows.Forms.CheckBox();
             this.tpKeys1 = new System.Windows.Forms.GroupBox();
             this.tpKeys0 = new System.Windows.Forms.GroupBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label9 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -61,8 +61,6 @@ namespace ablauncher {
             this.label2 = new System.Windows.Forms.Label();
             this.cbPlayers = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.chAutoKeys1 = new System.Windows.Forms.CheckBox();
-            this.chAutoKeys2 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -71,7 +69,6 @@ namespace ablauncher {
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -94,14 +91,13 @@ namespace ablauncher {
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(139, 42);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -276,36 +272,26 @@ namespace ablauncher {
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.chAutoKeys1);
+            this.tabPage2.Controls.Add(this.spKeys0);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(504, 199);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Join game";
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "1-player keys";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // chAutoKeys1
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Location = new System.Drawing.Point(140, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(215, 30);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "To join a game, launch the game and select \"Join network game\" from the main menu" +
-                ".";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.chAutoKeys1);
-            this.tabPage3.Controls.Add(this.spKeys0);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(504, 199);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "1-player keys";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.chAutoKeys1.AutoSize = true;
+            this.chAutoKeys1.Location = new System.Drawing.Point(141, 170);
+            this.chAutoKeys1.Name = "chAutoKeys1";
+            this.chAutoKeys1.Size = new System.Drawing.Size(204, 17);
+            this.chAutoKeys1.TabIndex = 1;
+            this.chAutoKeys1.Text = "Automatically assign keyboard player";
+            this.chAutoKeys1.UseVisualStyleBackColor = true;
+            this.chAutoKeys1.CheckedChanged += new System.EventHandler(this.chAutoKeys1_CheckedChanged);
             // 
             // spKeys0
             // 
@@ -316,18 +302,29 @@ namespace ablauncher {
             this.spKeys0.TabStop = false;
             this.spKeys0.Text = "KEY 0";
             // 
-            // tabPage4
+            // tabPage3
             // 
-            this.tabPage4.Controls.Add(this.chAutoKeys2);
-            this.tabPage4.Controls.Add(this.tpKeys1);
-            this.tabPage4.Controls.Add(this.tpKeys0);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(504, 199);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "2-player keys";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage3.Controls.Add(this.chAutoKeys2);
+            this.tabPage3.Controls.Add(this.tpKeys1);
+            this.tabPage3.Controls.Add(this.tpKeys0);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(504, 199);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "2-player keys";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // chAutoKeys2
+            // 
+            this.chAutoKeys2.AutoSize = true;
+            this.chAutoKeys2.Location = new System.Drawing.Point(141, 170);
+            this.chAutoKeys2.Name = "chAutoKeys2";
+            this.chAutoKeys2.Size = new System.Drawing.Size(204, 17);
+            this.chAutoKeys2.TabIndex = 3;
+            this.chAutoKeys2.Text = "Automatically assign keyboard player";
+            this.chAutoKeys2.UseVisualStyleBackColor = true;
+            this.chAutoKeys2.CheckedChanged += new System.EventHandler(this.chAutoKeys1_CheckedChanged);
             // 
             // tpKeys1
             // 
@@ -347,23 +344,23 @@ namespace ablauncher {
             this.tpKeys0.TabStop = false;
             this.tpKeys0.Text = "KEY 0";
             // 
-            // tabPage5
+            // tabPage4
             // 
-            this.tabPage5.Controls.Add(this.linkLabel2);
-            this.tabPage5.Controls.Add(this.label9);
-            this.tabPage5.Controls.Add(this.linkLabel1);
-            this.tabPage5.Controls.Add(this.label10);
-            this.tabPage5.Controls.Add(this.label8);
-            this.tabPage5.Controls.Add(this.lbVersion);
-            this.tabPage5.Controls.Add(this.label7);
-            this.tabPage5.Controls.Add(this.pictureBox2);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(504, 199);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "About";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage4.Controls.Add(this.linkLabel2);
+            this.tabPage4.Controls.Add(this.label9);
+            this.tabPage4.Controls.Add(this.linkLabel1);
+            this.tabPage4.Controls.Add(this.label10);
+            this.tabPage4.Controls.Add(this.label8);
+            this.tabPage4.Controls.Add(this.lbVersion);
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.pictureBox2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(504, 199);
+            this.tabPage4.TabIndex = 4;
+            this.tabPage4.Text = "About";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // linkLabel2
             // 
@@ -385,7 +382,7 @@ namespace ablauncher {
             this.label9.Size = new System.Drawing.Size(412, 13);
             this.label9.TabIndex = 11;
             this.label9.Text = "Click here for a comprehensive list of settings Atomic Bomberman Launcher changes" +
-                ":";
+    ":";
             // 
             // linkLabel1
             // 
@@ -416,8 +413,8 @@ namespace ablauncher {
             this.label8.Size = new System.Drawing.Size(416, 26);
             this.label8.TabIndex = 3;
             this.label8.Text = "Atomic Bomberman Launcher quickly configures your bomberman game settings for a \r" +
-                "\nfun network game! Atomic Bomberman Launcher is free and released under the GPL." +
-                "";
+    "\nfun network game! Atomic Bomberman Launcher is free and released under the GPL." +
+    "";
             // 
             // lbVersion
             // 
@@ -492,28 +489,6 @@ namespace ablauncher {
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // chAutoKeys1
-            // 
-            this.chAutoKeys1.AutoSize = true;
-            this.chAutoKeys1.Location = new System.Drawing.Point(141, 170);
-            this.chAutoKeys1.Name = "chAutoKeys1";
-            this.chAutoKeys1.Size = new System.Drawing.Size(204, 17);
-            this.chAutoKeys1.TabIndex = 1;
-            this.chAutoKeys1.Text = "Automatically assign keyboard player";
-            this.chAutoKeys1.UseVisualStyleBackColor = true;
-            this.chAutoKeys1.CheckedChanged += new System.EventHandler(this.chAutoKeys1_CheckedChanged);
-            // 
-            // chAutoKeys2
-            // 
-            this.chAutoKeys2.AutoSize = true;
-            this.chAutoKeys2.Location = new System.Drawing.Point(141, 170);
-            this.chAutoKeys2.Name = "chAutoKeys2";
-            this.chAutoKeys2.Size = new System.Drawing.Size(204, 17);
-            this.chAutoKeys2.TabIndex = 3;
-            this.chAutoKeys2.Text = "Automatically assign keyboard player";
-            this.chAutoKeys2.UseVisualStyleBackColor = true;
-            this.chAutoKeys2.CheckedChanged += new System.EventHandler(this.chAutoKeys1_CheckedChanged);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -535,8 +510,8 @@ namespace ablauncher {
             this.Padding = new System.Windows.Forms.Padding(4);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atomic Bomberman Launcher";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainForm_KeyPress);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -545,12 +520,11 @@ namespace ablauncher {
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -565,13 +539,11 @@ namespace ablauncher {
         private System.Windows.Forms.TextBox txNodeName;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btStart;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbPlayers;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdTeamGame;
         private System.Windows.Forms.RadioButton rdMeleeGame;
@@ -582,7 +554,7 @@ namespace ablauncher {
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbEnclosure;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbVersion;
