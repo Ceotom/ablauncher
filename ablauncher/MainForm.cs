@@ -13,24 +13,20 @@ namespace ablauncher {
         private AtomicBomberman game;
         private bool escapeNoClose = false;
 
-        private KeyBindControls kOne0;
-        private KeyBindControls kTwo0;
-        private KeyBindControls kTwo1;
+        private KeyBindControls keysP0;
+        private KeyBindControls keysP1;
 
         public MainForm(AtomicBomberman game) {
             InitializeComponent();
 
             this.game = game;
 
-            kOne0 = createKeyPad(spKeys0);
-            kTwo0 = createKeyPad(tpKeys0);
-            kTwo1 = createKeyPad(tpKeys1);
+            keysP0 = createKeyPad(tpKeys0);
+            keysP1 = createKeyPad(tpKeys1);
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
             lbVersion.Text = "v" + Program.Version;
-
-            cbPlayers.SelectedIndex = 0;
 
             loadSettings();
             drawMapPreview();
@@ -162,8 +158,7 @@ namespace ablauncher {
             txNodeName.Text = game.NodeName;
             cbEnclosure.SelectedIndex = (int)game.EnclosureDepth;
             cbConveyorSpeed.SelectedIndex = (int)game.ConveyorBeltSpeed;
-            chAutoKeys1.Checked = game.AutoAssign;
-            chAutoKeys2.Checked = game.AutoAssign;
+            chAutoKeys.Checked = game.AutoAssign;
 
             // Find playtime
             int playTime = game.PlayTime;
@@ -188,15 +183,13 @@ namespace ablauncher {
             cbMap.SelectedIndex = index;
 
             // Load keys
-            kOne0.Keys = game.OnePlayerKey0;
-            kTwo0.Keys = game.TwoPlayerKey0;
-            kTwo1.Keys = game.TwoPlayerKey1;
+            keysP0.Keys = game.TwoPlayerKey0;
+            keysP1.Keys = game.TwoPlayerKey1;
         }
 
         private void saveKeySets() {
-            game.OnePlayerKey0 = kOne0.Keys;
-            game.TwoPlayerKey0 = kTwo0.Keys;
-            game.TwoPlayerKey1 = kTwo1.Keys;
+            game.TwoPlayerKey0 = keysP0.Keys;
+            game.TwoPlayerKey1 = keysP1.Keys;
         }
 
         private int findMap(string schemeFile, GameType gameType) {
@@ -225,15 +218,8 @@ namespace ablauncher {
             game.ConveyorBeltSpeed = (ConveyorSpeed)cbConveyorSpeed.SelectedIndex;
             game.PlayTime = textToSeconds(cbPlaytime.Text);
             game.TeamMode = rdTeamGame.Checked;
-            if (cbPlayers.SelectedIndex == 0) {
-                // 1 player
-                game.P1Keys = kOne0.Keys;
-            }
-            else {
-                // 2 players
-                game.P1Keys = kTwo0.Keys;
-                game.P2Keys = kTwo1.Keys;
-            }
+            game.P1Keys = keysP0.Keys;
+            game.P2Keys = keysP1.Keys;
 
             game.start();
         }
@@ -283,8 +269,7 @@ namespace ablauncher {
 
         private void chAutoKeys1_CheckedChanged(object sender, EventArgs e) {
             game.AutoAssign = ((CheckBox)sender).Checked;
-            chAutoKeys1.Checked = game.AutoAssign;
-            chAutoKeys2.Checked = game.AutoAssign;
+            chAutoKeys.Checked = game.AutoAssign;
         }
     }
 
