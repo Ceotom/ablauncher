@@ -159,6 +159,7 @@ namespace ablauncher {
             cbEnclosure.SelectedIndex = (int)game.EnclosureDepth;
             cbConveyorSpeed.SelectedIndex = (int)game.ConveyorBeltSpeed;
             chAutoKeys.Checked = game.AutoAssign;
+            chRandomStart.Checked = game.RandomStart;
 
             // Find playtime
             int playTime = game.PlayTime;
@@ -270,6 +271,11 @@ namespace ablauncher {
         private void chAutoKeys1_CheckedChanged(object sender, EventArgs e) {
             game.AutoAssign = ((CheckBox)sender).Checked;
             chAutoKeys.Checked = game.AutoAssign;
+        }
+        private void chRandomStart_CheckedChanged(object sender, EventArgs e)
+        {
+            game.RandomStart = ((CheckBox)sender).Checked;
+            chRandomStart.Checked = game.RandomStart;
         }
     }
 

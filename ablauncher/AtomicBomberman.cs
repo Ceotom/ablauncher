@@ -105,10 +105,12 @@ namespace ablauncher {
 
         public bool TeamMode {
             get { return getOption("team_play", 0) == 1; }
-            set {
-                setOption("team_play", value ? 1 : 0);
-                setOption("random_start", value ? 0 : 1);
-            }
+            set { setOption("team_play", value ? 1 : 0); }
+        }
+
+        public bool RandomStart {
+            get { return getOption("random_start", 0) == 1; }
+            set { setOption("random_start", value ? 1 : 0); }
         }
 
         public bool AutoAssign {

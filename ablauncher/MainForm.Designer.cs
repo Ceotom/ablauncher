@@ -31,6 +31,7 @@ namespace ablauncher {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.previewBox = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chRandomStart = new System.Windows.Forms.CheckBox();
             this.cbConveyorSpeed = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cbPlaytime = new System.Windows.Forms.ComboBox();
@@ -129,6 +130,7 @@ namespace ablauncher {
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chRandomStart);
             this.groupBox1.Controls.Add(this.cbConveyorSpeed);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.cbPlaytime);
@@ -145,6 +147,17 @@ namespace ablauncher {
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Game";
+            // 
+            // chRandomStart
+            // 
+            this.chRandomStart.AutoSize = true;
+            this.chRandomStart.Location = new System.Drawing.Point(280, 19);
+            this.chRandomStart.Name = "chRandomStart";
+            this.chRandomStart.Size = new System.Drawing.Size(92, 17);
+            this.chRandomStart.TabIndex = 11;
+            this.chRandomStart.Text = "Random Start";
+            this.chRandomStart.UseVisualStyleBackColor = true;
+            this.chRandomStart.CheckedChanged += new System.EventHandler(this.chRandomStart_CheckedChanged);
             // 
             // cbConveyorSpeed
             // 
@@ -484,6 +497,7 @@ namespace ablauncher {
         private System.Windows.Forms.GroupBox tpKeys1;
         private System.Windows.Forms.GroupBox tpKeys0;
         private System.Windows.Forms.CheckBox chAutoKeys;
+        private System.Windows.Forms.CheckBox chRandomStart;
     }
 }
 
