@@ -56,6 +56,7 @@ namespace ablauncher {
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btStart = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -68,68 +69,49 @@ namespace ablauncher {
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 15);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Node &name";
             // 
             // txNodeName
             // 
-            this.txNodeName.Location = new System.Drawing.Point(76, 12);
+            resources.ApplyResources(this.txNodeName, "txNodeName");
             this.txNodeName.Name = "txNodeName";
-            this.txNodeName.Size = new System.Drawing.Size(128, 21);
-            this.txNodeName.TabIndex = 2;
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(7, 42);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(650, 254);
-            this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
             // 
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(642, 228);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Host game";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.previewBox);
-            this.groupBox2.Location = new System.Drawing.Point(464, 14);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(172, 141);
-            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Map preview";
             // 
             // previewBox
             // 
+            resources.ApplyResources(this.previewBox, "previewBox");
             this.previewBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.previewBox.Location = new System.Drawing.Point(6, 20);
             this.previewBox.Name = "previewBox";
-            this.previewBox.Size = new System.Drawing.Size(150, 110);
-            this.previewBox.TabIndex = 0;
             this.previewBox.TabStop = false;
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.chRandomStart);
             this.groupBox1.Controls.Add(this.cbConveyorSpeed);
             this.groupBox1.Controls.Add(this.label11);
@@ -141,183 +123,130 @@ namespace ablauncher {
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.rdTeamGame);
             this.groupBox1.Controls.Add(this.rdMeleeGame);
-            this.groupBox1.Location = new System.Drawing.Point(15, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(443, 208);
-            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Game";
             // 
             // chRandomStart
             // 
-            this.chRandomStart.AutoSize = true;
-            this.chRandomStart.Location = new System.Drawing.Point(280, 19);
+            resources.ApplyResources(this.chRandomStart, "chRandomStart");
             this.chRandomStart.Name = "chRandomStart";
-            this.chRandomStart.Size = new System.Drawing.Size(92, 17);
-            this.chRandomStart.TabIndex = 11;
-            this.chRandomStart.Text = "Random Start";
             this.chRandomStart.UseVisualStyleBackColor = true;
             this.chRandomStart.CheckedChanged += new System.EventHandler(this.chRandomStart_CheckedChanged);
             // 
             // cbConveyorSpeed
             // 
+            resources.ApplyResources(this.cbConveyorSpeed, "cbConveyorSpeed");
             this.cbConveyorSpeed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbConveyorSpeed.FormattingEnabled = true;
             this.cbConveyorSpeed.Items.AddRange(new object[] {
-            "Low",
-            "Medium",
-            "High"});
-            this.cbConveyorSpeed.Location = new System.Drawing.Point(121, 135);
+            resources.GetString("cbConveyorSpeed.Items"),
+            resources.GetString("cbConveyorSpeed.Items1"),
+            resources.GetString("cbConveyorSpeed.Items2")});
             this.cbConveyorSpeed.Name = "cbConveyorSpeed";
-            this.cbConveyorSpeed.Size = new System.Drawing.Size(74, 21);
-            this.cbConveyorSpeed.TabIndex = 10;
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 138);
+            resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(107, 13);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Conveyor belt speed";
             // 
             // cbPlaytime
             // 
+            resources.ApplyResources(this.cbPlaytime, "cbPlaytime");
             this.cbPlaytime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPlaytime.FormattingEnabled = true;
             this.cbPlaytime.Items.AddRange(new object[] {
-            "1:00",
-            "1:30",
-            "2:00",
-            "2:30",
-            "3:00",
-            "4:00",
-            "5:00",
-            "10:00",
-            "Infinite"});
-            this.cbPlaytime.Location = new System.Drawing.Point(121, 81);
+            resources.GetString("cbPlaytime.Items"),
+            resources.GetString("cbPlaytime.Items1"),
+            resources.GetString("cbPlaytime.Items2"),
+            resources.GetString("cbPlaytime.Items3"),
+            resources.GetString("cbPlaytime.Items4"),
+            resources.GetString("cbPlaytime.Items5"),
+            resources.GetString("cbPlaytime.Items6"),
+            resources.GetString("cbPlaytime.Items7"),
+            resources.GetString("cbPlaytime.Items8")});
             this.cbPlaytime.Name = "cbPlaytime";
-            this.cbPlaytime.Size = new System.Drawing.Size(69, 21);
-            this.cbPlaytime.TabIndex = 8;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(65, 84);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Play time";
             // 
             // cbEnclosure
             // 
+            resources.ApplyResources(this.cbEnclosure, "cbEnclosure");
             this.cbEnclosure.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEnclosure.FormattingEnabled = true;
             this.cbEnclosure.Items.AddRange(new object[] {
-            "None",
-            "A little",
-            "A lot",
-            "All the way!"});
-            this.cbEnclosure.Location = new System.Drawing.Point(121, 108);
+            resources.GetString("cbEnclosure.Items"),
+            resources.GetString("cbEnclosure.Items1"),
+            resources.GetString("cbEnclosure.Items2"),
+            resources.GetString("cbEnclosure.Items3")});
             this.cbEnclosure.Name = "cbEnclosure";
-            this.cbEnclosure.Size = new System.Drawing.Size(121, 21);
-            this.cbEnclosure.TabIndex = 6;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 111);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Enclosure depth";
             // 
             // cbMap
             // 
+            resources.ApplyResources(this.cbMap, "cbMap");
             this.cbMap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMap.FormattingEnabled = true;
-            this.cbMap.Location = new System.Drawing.Point(48, 44);
             this.cbMap.Name = "cbMap";
-            this.cbMap.Size = new System.Drawing.Size(324, 21);
-            this.cbMap.TabIndex = 4;
             this.cbMap.SelectedIndexChanged += new System.EventHandler(this.cbMap_SelectedIndexChanged);
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 47);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Map";
             // 
             // rdTeamGame
             // 
-            this.rdTeamGame.AutoSize = true;
-            this.rdTeamGame.Location = new System.Drawing.Point(139, 19);
+            resources.ApplyResources(this.rdTeamGame, "rdTeamGame");
             this.rdTeamGame.Name = "rdTeamGame";
-            this.rdTeamGame.Size = new System.Drawing.Size(51, 17);
-            this.rdTeamGame.TabIndex = 1;
-            this.rdTeamGame.Text = "Team";
             this.rdTeamGame.UseVisualStyleBackColor = true;
             // 
             // rdMeleeGame
             // 
-            this.rdMeleeGame.AutoSize = true;
+            resources.ApplyResources(this.rdMeleeGame, "rdMeleeGame");
             this.rdMeleeGame.Checked = true;
-            this.rdMeleeGame.Location = new System.Drawing.Point(50, 19);
             this.rdMeleeGame.Name = "rdMeleeGame";
-            this.rdMeleeGame.Size = new System.Drawing.Size(77, 17);
-            this.rdMeleeGame.TabIndex = 0;
             this.rdMeleeGame.TabStop = true;
-            this.rdMeleeGame.Text = "Free for all";
             this.rdMeleeGame.UseVisualStyleBackColor = true;
             this.rdMeleeGame.CheckedChanged += new System.EventHandler(this.rdMeleeGame_CheckedChanged);
             // 
             // tabPage2
             // 
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.chAutoKeys);
             this.tabPage2.Controls.Add(this.tpKeys1);
             this.tabPage2.Controls.Add(this.tpKeys0);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(642, 228);
-            this.tabPage2.TabIndex = 3;
-            this.tabPage2.Text = "2-player keys";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // chAutoKeys
             // 
-            this.chAutoKeys.AutoSize = true;
-            this.chAutoKeys.Location = new System.Drawing.Point(141, 170);
+            resources.ApplyResources(this.chAutoKeys, "chAutoKeys");
             this.chAutoKeys.Name = "chAutoKeys";
-            this.chAutoKeys.Size = new System.Drawing.Size(204, 17);
-            this.chAutoKeys.TabIndex = 3;
-            this.chAutoKeys.Text = "Automatically assign keyboard player";
             this.chAutoKeys.UseVisualStyleBackColor = true;
             this.chAutoKeys.CheckedChanged += new System.EventHandler(this.chAutoKeys1_CheckedChanged);
             // 
             // tpKeys1
             // 
-            this.tpKeys1.Location = new System.Drawing.Point(268, 15);
+            resources.ApplyResources(this.tpKeys1, "tpKeys1");
             this.tpKeys1.Name = "tpKeys1";
-            this.tpKeys1.Size = new System.Drawing.Size(205, 149);
-            this.tpKeys1.TabIndex = 2;
             this.tpKeys1.TabStop = false;
-            this.tpKeys1.Text = "KEY 1";
             // 
             // tpKeys0
             // 
-            this.tpKeys0.Location = new System.Drawing.Point(27, 15);
+            resources.ApplyResources(this.tpKeys0, "tpKeys0");
             this.tpKeys0.Name = "tpKeys0";
-            this.tpKeys0.Size = new System.Drawing.Size(205, 149);
-            this.tpKeys0.TabIndex = 1;
             this.tpKeys0.TabStop = false;
-            this.tpKeys0.Text = "KEY 0";
             // 
             // tabPage3
             // 
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.linkLabel2);
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.linkLabel1);
@@ -326,126 +255,80 @@ namespace ablauncher {
             this.tabPage3.Controls.Add(this.lbVersion);
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.pictureBox2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(642, 228);
-            this.tabPage3.TabIndex = 4;
-            this.tabPage3.Text = "About";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // linkLabel2
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(12, 172);
-            this.linkLabel2.Margin = new System.Windows.Forms.Padding(3);
+            resources.ApplyResources(this.linkLabel2, "linkLabel2");
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(238, 13);
-            this.linkLabel2.TabIndex = 12;
             this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "http://ablauncher.sourceforge.net/settings.php";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 156);
+            resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(412, 13);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Click here for a comprehensive list of settings Atomic Bomberman Launcher changes" +
-    ":";
             // 
             // linkLabel1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(12, 121);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(3);
+            resources.ApplyResources(this.linkLabel1, "linkLabel1");
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(178, 13);
-            this.linkLabel1.TabIndex = 10;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "http://ablauncher.sourceforge.net/";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 105);
+            resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(313, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Be sure to visit the website for news, suggestions and updates:";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 63);
+            resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(416, 26);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Atomic Bomberman Launcher quickly configures your bomberman game settings for a \r" +
-    "\nfun network game! Atomic Bomberman Launcher is free and released under the GPL." +
-    "";
             // 
             // lbVersion
             // 
-            this.lbVersion.AutoSize = true;
-            this.lbVersion.Location = new System.Drawing.Point(77, 37);
+            resources.ApplyResources(this.lbVersion, "lbVersion");
             this.lbVersion.Name = "lbVersion";
-            this.lbVersion.Size = new System.Drawing.Size(29, 13);
-            this.lbVersion.TabIndex = 2;
-            this.lbVersion.Text = "v9.9";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(76, 14);
+            resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(291, 23);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Atomic Bomberman Launcher";
             // 
             // pictureBox2
             // 
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Image = global::ablauncher.Properties.Resources.POWKICK;
-            this.pictureBox2.Location = new System.Drawing.Point(15, 14);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
             // btStart
             // 
-            this.btStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btStart.Location = new System.Drawing.Point(553, 12);
+            resources.ApplyResources(this.btStart, "btStart");
             this.btStart.Name = "btStart";
-            this.btStart.Size = new System.Drawing.Size(100, 23);
-            this.btStart.TabIndex = 6;
-            this.btStart.Text = "&Launch game!";
             this.btStart.UseVisualStyleBackColor = true;
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
             // 
+            // tabPage4
+            // 
+            resources.ApplyResources(this.tabPage4, "tabPage4");
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 303);
             this.Controls.Add(this.btStart);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txNodeName);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Padding = new System.Windows.Forms.Padding(4);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Atomic Bomberman Launcher";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainForm_KeyPress);
@@ -498,6 +381,7 @@ namespace ablauncher {
         private System.Windows.Forms.GroupBox tpKeys0;
         private System.Windows.Forms.CheckBox chAutoKeys;
         private System.Windows.Forms.CheckBox chRandomStart;
+        private System.Windows.Forms.TabPage tabPage4;
     }
 }
 

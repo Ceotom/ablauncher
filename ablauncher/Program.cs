@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Reflection;
+using System.Globalization;
+using System.Threading;
 
 namespace ablauncher {
     static class Program {
@@ -28,6 +30,7 @@ namespace ablauncher {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+           // Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
 
             AtomicBomberman game = AtomicBomberman.construct();
             if (game == null) {
