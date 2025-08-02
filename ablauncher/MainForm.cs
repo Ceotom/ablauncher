@@ -263,10 +263,6 @@ namespace ablauncher {
             launchGame();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-            Process.Start(linkLabel1.Text);
-        }
-
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e) {
             saveKeySets();
         }
@@ -297,6 +293,8 @@ namespace ablauncher {
             }
             this.Controls.Clear();
             InitializeComponent();
+            keysP0 = createKeyPad(tpKeys0);
+            keysP1 = createKeyPad(tpKeys1);
             loadSettings();
             drawMapPreview();
         }

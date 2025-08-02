@@ -49,14 +49,7 @@ namespace ablauncher {
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.lbVersion = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btStart = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -66,7 +59,6 @@ namespace ablauncher {
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,9 +83,9 @@ namespace ablauncher {
             // 
             // tabPage1
             // 
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -106,13 +98,14 @@ namespace ablauncher {
             // 
             // previewBox
             // 
-            this.previewBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.previewBox, "previewBox");
+            this.previewBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.previewBox.Name = "previewBox";
             this.previewBox.TabStop = false;
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.chRandomStart);
             this.groupBox1.Controls.Add(this.cbConveyorSpeed);
             this.groupBox1.Controls.Add(this.label11);
@@ -124,7 +117,6 @@ namespace ablauncher {
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.rdTeamGame);
             this.groupBox1.Controls.Add(this.rdMeleeGame);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -137,13 +129,13 @@ namespace ablauncher {
             // 
             // cbConveyorSpeed
             // 
+            resources.ApplyResources(this.cbConveyorSpeed, "cbConveyorSpeed");
             this.cbConveyorSpeed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbConveyorSpeed.FormattingEnabled = true;
             this.cbConveyorSpeed.Items.AddRange(new object[] {
             resources.GetString("cbConveyorSpeed.Items"),
             resources.GetString("cbConveyorSpeed.Items1"),
             resources.GetString("cbConveyorSpeed.Items2")});
-            resources.ApplyResources(this.cbConveyorSpeed, "cbConveyorSpeed");
             this.cbConveyorSpeed.Name = "cbConveyorSpeed";
             // 
             // label11
@@ -153,6 +145,7 @@ namespace ablauncher {
             // 
             // cbPlaytime
             // 
+            resources.ApplyResources(this.cbPlaytime, "cbPlaytime");
             this.cbPlaytime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPlaytime.FormattingEnabled = true;
             this.cbPlaytime.Items.AddRange(new object[] {
@@ -165,7 +158,6 @@ namespace ablauncher {
             resources.GetString("cbPlaytime.Items6"),
             resources.GetString("cbPlaytime.Items7"),
             resources.GetString("cbPlaytime.Items8")});
-            resources.ApplyResources(this.cbPlaytime, "cbPlaytime");
             this.cbPlaytime.Name = "cbPlaytime";
             // 
             // label6
@@ -175,6 +167,7 @@ namespace ablauncher {
             // 
             // cbEnclosure
             // 
+            resources.ApplyResources(this.cbEnclosure, "cbEnclosure");
             this.cbEnclosure.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEnclosure.FormattingEnabled = true;
             this.cbEnclosure.Items.AddRange(new object[] {
@@ -182,7 +175,6 @@ namespace ablauncher {
             resources.GetString("cbEnclosure.Items1"),
             resources.GetString("cbEnclosure.Items2"),
             resources.GetString("cbEnclosure.Items3")});
-            resources.ApplyResources(this.cbEnclosure, "cbEnclosure");
             this.cbEnclosure.Name = "cbEnclosure";
             // 
             // label5
@@ -192,9 +184,9 @@ namespace ablauncher {
             // 
             // cbMap
             // 
+            resources.ApplyResources(this.cbMap, "cbMap");
             this.cbMap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMap.FormattingEnabled = true;
-            resources.ApplyResources(this.cbMap, "cbMap");
             this.cbMap.Name = "cbMap";
             this.cbMap.SelectedIndexChanged += new System.EventHandler(this.cbMap_SelectedIndexChanged);
             // 
@@ -220,10 +212,10 @@ namespace ablauncher {
             // 
             // tabPage2
             // 
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.chAutoKeys);
             this.tabPage2.Controls.Add(this.tpKeys1);
             this.tabPage2.Controls.Add(this.tpKeys0);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -248,81 +240,33 @@ namespace ablauncher {
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.cbLanguage);
             resources.ApplyResources(this.tabPage3, "tabPage3");
+            this.tabPage3.Controls.Add(this.cbLanguage);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // cbLanguage
             // 
+            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLanguage.Items.AddRange(new object[] {
             resources.GetString("cbLanguage.Items"),
             resources.GetString("cbLanguage.Items1"),
             resources.GetString("cbLanguage.Items2")});
-            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.Name = "cbLanguage";
             this.cbLanguage.SelectedIndexChanged += new System.EventHandler(this.cbLanguage_SelectedIndexChanged);
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.linkLabel2);
-            this.tabPage4.Controls.Add(this.label9);
-            this.tabPage4.Controls.Add(this.linkLabel1);
-            this.tabPage4.Controls.Add(this.label10);
-            this.tabPage4.Controls.Add(this.label8);
-            this.tabPage4.Controls.Add(this.lbVersion);
-            this.tabPage4.Controls.Add(this.label7);
-            this.tabPage4.Controls.Add(this.pictureBox2);
             resources.ApplyResources(this.tabPage4, "tabPage4");
+            this.tabPage4.Controls.Add(this.lbVersion);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // linkLabel2
-            // 
-            resources.ApplyResources(this.linkLabel2, "linkLabel2");
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // label9
-            // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
-            // 
-            // linkLabel1
-            // 
-            resources.ApplyResources(this.linkLabel1, "linkLabel1");
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
-            // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
             // 
             // lbVersion
             // 
             resources.ApplyResources(this.lbVersion, "lbVersion");
             this.lbVersion.Name = "lbVersion";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ablauncher.Properties.Resources.POWKICK;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
             // 
             // btStart
             // 
@@ -357,7 +301,6 @@ namespace ablauncher {
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,14 +324,7 @@ namespace ablauncher {
         private System.Windows.Forms.ComboBox cbEnclosure;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbVersion;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbPlaytime;
         private System.Windows.Forms.ComboBox cbConveyorSpeed;
         private System.Windows.Forms.Label label11;
