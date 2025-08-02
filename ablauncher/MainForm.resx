@@ -899,13 +899,13 @@ fun network game! Atomic Bomberman Launcher is free and released under the GPL.<
     <value>77, 37</value>
   </data>
   <data name="lbVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
+    <value>19, 13</value>
   </data>
   <data name="lbVersion.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="lbVersion.Text" xml:space="preserve">
-    <value>v9.9</value>
+    <value>v0</value>
   </data>
   <data name="&gt;&gt;lbVersion.Name" xml:space="preserve">
     <value>lbVersion</value>
