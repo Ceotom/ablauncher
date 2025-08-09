@@ -31,6 +31,7 @@ namespace ablauncher {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.previewBox = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btOpenSchemesFolder = new System.Windows.Forms.Button();
             this.chRandomStart = new System.Windows.Forms.CheckBox();
             this.cbConveyorSpeed = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -47,11 +48,12 @@ namespace ablauncher {
             this.tpKeys1 = new System.Windows.Forms.GroupBox();
             this.tpKeys0 = new System.Windows.Forms.GroupBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
             this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.lbVersion = new System.Windows.Forms.Label();
             this.btStart = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cbShowAllSchemes = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -106,6 +108,8 @@ namespace ablauncher {
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbShowAllSchemes);
+            this.groupBox1.Controls.Add(this.btOpenSchemesFolder);
             this.groupBox1.Controls.Add(this.chRandomStart);
             this.groupBox1.Controls.Add(this.cbConveyorSpeed);
             this.groupBox1.Controls.Add(this.label11);
@@ -120,6 +124,13 @@ namespace ablauncher {
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // btOpenSchemesFolder
+            // 
+            resources.ApplyResources(this.btOpenSchemesFolder, "btOpenSchemesFolder");
+            this.btOpenSchemesFolder.Name = "btOpenSchemesFolder";
+            this.btOpenSchemesFolder.UseVisualStyleBackColor = true;
+            this.btOpenSchemesFolder.Click += new System.EventHandler(this.btOpenSchemesFolder_Click);
             // 
             // chRandomStart
             // 
@@ -247,6 +258,11 @@ namespace ablauncher {
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
             // cbLanguage
             // 
             this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -277,10 +293,12 @@ namespace ablauncher {
             this.btStart.UseVisualStyleBackColor = true;
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
             // 
-            // label2
+            // cbShowAllSchemes
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.cbShowAllSchemes, "cbShowAllSchemes");
+            this.cbShowAllSchemes.Name = "cbShowAllSchemes";
+            this.cbShowAllSchemes.UseVisualStyleBackColor = true;
+            this.cbShowAllSchemes.CheckedChanged += new System.EventHandler(this.cbShowAllSchemes_CheckedChanged);
             // 
             // MainForm
             // 
@@ -343,6 +361,8 @@ namespace ablauncher {
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.ComboBox cbLanguage;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btOpenSchemesFolder;
+        private System.Windows.Forms.CheckBox cbShowAllSchemes;
     }
 }
 

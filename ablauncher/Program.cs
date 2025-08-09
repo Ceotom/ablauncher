@@ -31,14 +31,9 @@ namespace ablauncher {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (Settings.Default.FirstRun)
-            {
-                Settings.Default.Upgrade();
-                Settings.Default.FirstRun = false;
-                Settings.Default.Save();
-            }
 
-            switch (Settings.Default.Language)
+            AtomicBomberman game = AtomicBomberman.construct();
+            switch (game.Language)
             {
                 case 0:
                     Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
@@ -50,13 +45,10 @@ namespace ablauncher {
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
                     break;
                 default:
-                    Settings.Default.Language = 0;
-                    Settings.Default.Save();
+                    game.Language = 0;
                     Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
                     break;
             }
-
-            AtomicBomberman game = AtomicBomberman.construct();
             if (game == null) {
                 MessageBox.Show(Localization.getLocalizedString("GameNotFound_Message"), Localization.getLocalizedString("GameNotFound_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;

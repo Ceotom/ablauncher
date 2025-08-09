@@ -58,14 +58,17 @@ namespace ablauncher {
             return "";
         }
 
-        public AtomicBombermanMap[] getMaps(GameType gameType) {
+        public AtomicBombermanMap[] getMaps(GameType? gameType = null) {
             List<AtomicBombermanMap> maps = new List<AtomicBombermanMap>();
 
             foreach (string mapFile in Directory.GetFiles(Path.Combine(gameDirectory, MAP_DIRECTORY))) {
                 try {
                     AtomicBombermanMap map = new AtomicBombermanMap(mapFile);
 
-                    if ((gameType == GameType.team) == (map.isTeamMap())) maps.Add(map);
+                    if (gameType == null || (gameType == GameType.team) == map.isTeamMap())
+                    {
+                        maps.Add(map);
+                    }
                 }
                 catch (Exception) { /* Ignore */ }
             }
@@ -147,10 +150,27 @@ namespace ablauncher {
             get { return getOption("abl_preselect_melee", 0); }
             set { setOption("abl_preselect_melee", value); }
         }
+        
+        public int Language
+        {
+            get { return getOption("abl_language", 0); }
+            set { setOption("abl_language", value); }
+        }
+
+        public bool ShowAllSchemes
+        {
+            get { return getOption("abl_show_all_schemes", 0) == 1; }
+            set { setOption("abl_show_all_schemes", value ? 1 : 0); }
+        }
 
         public int TeamMapIndex {
             get { return getOption("abl_preselect_team", 0); }
             set { setOption("abl_preselect_team", value); }
+        }
+        public int AllMapsIndex
+        {
+            get { return getOption("abl_preselect_all", 0); }
+            set { setOption("abl_preselect_all", value); }
         }
 
         private AtomicBombermanKeys getKeySet(string set, int player) {

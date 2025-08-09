@@ -1,3 +1,4 @@
+using ablauncher.Properties;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,11 +7,12 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using ablauncher.Properties;
 
 namespace ablauncher {
     public partial class MainForm : Form {
@@ -27,7 +29,6 @@ namespace ablauncher {
 
             this.game = game;
 
-            cbLanguage.SelectedIndex = Settings.Default.Language;
 
             keysP0 = createKeyPad(tpKeys0);
             keysP1 = createKeyPad(tpKeys1);
@@ -35,10 +36,11 @@ namespace ablauncher {
 
         private void MainForm_Load(object sender, EventArgs e) {
             lbVersion.Text = "v" + Program.Version;
-
-            formInit = false;
             loadSettings();
             drawMapPreview();
+
+            formInit = false;
+
         }
 
         /**
@@ -170,6 +172,8 @@ namespace ablauncher {
             cbConveyorSpeed.SelectedIndex = (int)game.ConveyorBeltSpeed;
             chAutoKeys.Checked = game.AutoAssign;
             chRandomStart.Checked = game.RandomStart;
+            cbLanguage.SelectedIndex = game.Language;
+            cbShowAllSchemes.Checked = game.ShowAllSchemes;
 
             // Find playtime
             int playTime = game.PlayTime;
@@ -182,16 +186,25 @@ namespace ablauncher {
             }
 
             // Find map file
-            string currentScheme = game.SchemeFile;
+
+            if (game.TeamMode)
+            {
+                rdTeamGame.Checked = true;
+            }
+            else
+            {
+                rdMeleeGame.Checked = true;
+            }
+            /*string currentScheme = game.SchemeFile;
             int index = findMap(currentScheme, GameType.freeForAll);
             if (index != -1) rdMeleeGame.Checked = true;
             else {
                 index = findMap(currentScheme, GameType.team);
                 if (index != -1) rdTeamGame.Checked = true;
                 else index = 0;
-            }
+            }*/
             fillMapList();
-            cbMap.SelectedIndex = index;
+            //cbMap.SelectedIndex = index;
 
             // Load keys
             keysP0.Keys = game.TwoPlayerKey0;
@@ -240,9 +253,25 @@ namespace ablauncher {
 
         private void fillMapList() {
             cbMap.Items.Clear();
-            cbMap.Items.AddRange(game.getMaps(rdMeleeGame.Checked ? GameType.freeForAll : GameType.team));
-            cbMap.SelectedIndex = rdMeleeGame.Checked ? game.MeleeMapIndex : game.TeamMapIndex;
-        }
+            if (!cbShowAllSchemes.Checked)
+            {
+                cbMap.Items.AddRange(game.getMaps(rdMeleeGame.Checked ? GameType.freeForAll : GameType.team));
+                try
+                {
+                    cbMap.SelectedIndex = rdMeleeGame.Checked ? game.MeleeMapIndex : game.TeamMapIndex;
+                }
+                catch { cbMap.SelectedIndex = 0; }
+            }
+            else
+            {
+                cbMap.Items.AddRange(game.getMaps());
+                try
+                {
+                    cbMap.SelectedIndex = game.AllMapsIndex;
+                }
+                catch { cbMap.SelectedIndex = 0; }
+            }
+            }
 
         private void rdMeleeGame_CheckedChanged(object sender, EventArgs e) {
             fillMapList();
@@ -258,10 +287,17 @@ namespace ablauncher {
         }
 
         private void cbMap_SelectedIndexChanged(object sender, EventArgs e) {
-            if (rdMeleeGame.Checked)
-                game.MeleeMapIndex = cbMap.SelectedIndex;
+            if (!cbShowAllSchemes.Checked)
+            {
+                if (rdMeleeGame.Checked)
+                    game.MeleeMapIndex = cbMap.SelectedIndex;
+                else
+                    game.TeamMapIndex = cbMap.SelectedIndex;
+            }
             else
-                game.TeamMapIndex = cbMap.SelectedIndex;
+            {
+                game.AllMapsIndex = cbMap.SelectedIndex;
+            }
             drawMapPreview();
         }
 
@@ -288,8 +324,23 @@ namespace ablauncher {
             if (!formInit)
             {
                 MessageBox.Show(Localization.getLocalizedString("RestartRequired_Message"), Localization.getLocalizedString("RestartRequired_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Settings.Default.Language = cbLanguage.SelectedIndex;
-                Settings.Default.Save();
+                game.Language = cbLanguage.SelectedIndex;
+            }
+        }
+
+        private void btOpenSchemesFolder_Click(object sender, EventArgs e)
+        {
+            string spath = Path.Combine(Directory.GetCurrentDirectory(), "DATA\\SCHEMES");
+            Process.Start(spath);
+        }
+
+        private void cbShowAllSchemes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!formInit)
+            {
+                fillMapList();
+                drawMapPreview();
+                game.ShowAllSchemes = cbShowAllSchemes.Checked;
             }
         }
     }
