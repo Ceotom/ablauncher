@@ -47,14 +47,14 @@ namespace ablauncher {
             ctrl.left = addKeyBox(parent, groupX - w - 1, 64, w);
             ctrl.right = addKeyBox(parent, groupX + 1, 64, w);
             ctrl.down = addKeyBox(parent, groupX - w / 2, 91, w);
-            addLabel(parent, groupX - 15, 115, "Move");
+            addLabel(parent, groupX - 50, 115, 103, ContentAlignment.TopCenter, Localization.getLocalizedString("Controls_Move"));
 
             int actionOfs = 100;
 
-            addLabel(parent, actionOfs + 5, 40, "Bomb");
-            ctrl.action1 = addKeyBox(parent, actionOfs + 40, 37, w);
-            addLabel(parent, actionOfs, 94, "Special");
-            ctrl.action2 = addKeyBox(parent, actionOfs + 40, 91, w);
+            addLabel(parent, actionOfs + 5, 40, 50, ContentAlignment.TopRight, Localization.getLocalizedString("Controls_Bomb"));
+            ctrl.action1 = addKeyBox(parent, actionOfs + 70, 37, w);
+            addLabel(parent, actionOfs, 94, 60, ContentAlignment.TopRight, Localization.getLocalizedString("Controls_Special"));
+            ctrl.action2 = addKeyBox(parent, actionOfs + 70, 91, w);
 
             return ctrl;
         }
@@ -145,14 +145,15 @@ namespace ablauncher {
             }
         }
 
-        private Label addLabel(GroupBox parent, int x, int y, string text) {
+        private Label addLabel(GroupBox parent, int x, int y, int w, ContentAlignment align, string text) {
             Label l = new Label();
             parent.Controls.Add(l);
 
             l.Left = x;
             l.Top = y;
             l.Text = text;
-            l.AutoSize = true;
+            l.TextAlign = align;
+            l.Width = w;
 
             return l;
         }

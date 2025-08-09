@@ -83,9 +83,9 @@ namespace ablauncher {
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -98,14 +98,13 @@ namespace ablauncher {
             // 
             // previewBox
             // 
-            resources.ApplyResources(this.previewBox, "previewBox");
             this.previewBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.previewBox, "previewBox");
             this.previewBox.Name = "previewBox";
             this.previewBox.TabStop = false;
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.chRandomStart);
             this.groupBox1.Controls.Add(this.cbConveyorSpeed);
             this.groupBox1.Controls.Add(this.label11);
@@ -117,6 +116,7 @@ namespace ablauncher {
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.rdTeamGame);
             this.groupBox1.Controls.Add(this.rdMeleeGame);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -129,13 +129,13 @@ namespace ablauncher {
             // 
             // cbConveyorSpeed
             // 
-            resources.ApplyResources(this.cbConveyorSpeed, "cbConveyorSpeed");
             this.cbConveyorSpeed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbConveyorSpeed.FormattingEnabled = true;
             this.cbConveyorSpeed.Items.AddRange(new object[] {
             resources.GetString("cbConveyorSpeed.Items"),
             resources.GetString("cbConveyorSpeed.Items1"),
             resources.GetString("cbConveyorSpeed.Items2")});
+            resources.ApplyResources(this.cbConveyorSpeed, "cbConveyorSpeed");
             this.cbConveyorSpeed.Name = "cbConveyorSpeed";
             // 
             // label11
@@ -145,7 +145,6 @@ namespace ablauncher {
             // 
             // cbPlaytime
             // 
-            resources.ApplyResources(this.cbPlaytime, "cbPlaytime");
             this.cbPlaytime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPlaytime.FormattingEnabled = true;
             this.cbPlaytime.Items.AddRange(new object[] {
@@ -158,6 +157,7 @@ namespace ablauncher {
             resources.GetString("cbPlaytime.Items6"),
             resources.GetString("cbPlaytime.Items7"),
             resources.GetString("cbPlaytime.Items8")});
+            resources.ApplyResources(this.cbPlaytime, "cbPlaytime");
             this.cbPlaytime.Name = "cbPlaytime";
             // 
             // label6
@@ -167,7 +167,6 @@ namespace ablauncher {
             // 
             // cbEnclosure
             // 
-            resources.ApplyResources(this.cbEnclosure, "cbEnclosure");
             this.cbEnclosure.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEnclosure.FormattingEnabled = true;
             this.cbEnclosure.Items.AddRange(new object[] {
@@ -175,6 +174,7 @@ namespace ablauncher {
             resources.GetString("cbEnclosure.Items1"),
             resources.GetString("cbEnclosure.Items2"),
             resources.GetString("cbEnclosure.Items3")});
+            resources.ApplyResources(this.cbEnclosure, "cbEnclosure");
             this.cbEnclosure.Name = "cbEnclosure";
             // 
             // label5
@@ -184,9 +184,9 @@ namespace ablauncher {
             // 
             // cbMap
             // 
-            resources.ApplyResources(this.cbMap, "cbMap");
             this.cbMap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMap.FormattingEnabled = true;
+            resources.ApplyResources(this.cbMap, "cbMap");
             this.cbMap.Name = "cbMap";
             this.cbMap.SelectedIndexChanged += new System.EventHandler(this.cbMap_SelectedIndexChanged);
             // 
@@ -212,10 +212,10 @@ namespace ablauncher {
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.chAutoKeys);
             this.tabPage2.Controls.Add(this.tpKeys1);
             this.tabPage2.Controls.Add(this.tpKeys0);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -240,26 +240,26 @@ namespace ablauncher {
             // 
             // tabPage3
             // 
-            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.cbLanguage);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // cbLanguage
             // 
-            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLanguage.Items.AddRange(new object[] {
             resources.GetString("cbLanguage.Items"),
             resources.GetString("cbLanguage.Items1"),
             resources.GetString("cbLanguage.Items2")});
+            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.Name = "cbLanguage";
             this.cbLanguage.SelectedIndexChanged += new System.EventHandler(this.cbLanguage_SelectedIndexChanged);
             // 
             // tabPage4
             // 
-            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Controls.Add(this.lbVersion);
+            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 

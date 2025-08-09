@@ -34,7 +34,7 @@ namespace ablauncher {
 
             AtomicBomberman game = AtomicBomberman.construct();
             if (game == null) {
-                MessageBox.Show("Atomic Bomberman game not found!\n\nPlease place Atomic Bomberman Launcher in the same directory as the game.", "Atomic Bomberman not found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Localization.getLocalizedString("GameNotFound_Message"), Localization.getLocalizedString("GameNotFound_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
