@@ -223,7 +223,6 @@ namespace ablauncher {
             saveKeySets();
 
             game.NodeName = txNodeName.Text;
-            game.DefaultProtocol = 1;
             game.SchemeFile = ((AtomicBombermanMap)cbMap.SelectedItem).SchemeFile;
             game.EnclosureDepth = (EncloseDepth)cbEnclosure.SelectedIndex;
             game.ConveyorBeltSpeed = (ConveyorSpeed)cbConveyorSpeed.SelectedIndex;
