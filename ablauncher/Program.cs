@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.Globalization;
 using System.Threading;
+using ablauncher.Properties;
 
 namespace ablauncher {
     static class Program {
@@ -30,7 +31,30 @@ namespace ablauncher {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
+            if (Settings.Default.FirstRun)
+            {
+                Settings.Default.Upgrade();
+                Settings.Default.FirstRun = false;
+                Settings.Default.Save();
+            }
+
+            switch (Settings.Default.Language)
+            {
+                case 0:
+                    Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
+                    break;
+                case 1:
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+                    break;
+                case 2:
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
+                    break;
+                default:
+                    Settings.Default.Language = 0;
+                    Settings.Default.Save();
+                    Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
+                    break;
+            }
 
             AtomicBomberman game = AtomicBomberman.construct();
             if (game == null) {

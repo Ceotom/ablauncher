@@ -104,5 +104,23 @@ namespace ablauncher.Properties {
                 return ResourceManager.GetString("GameNotFound_Title", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart Atomic Bomberman Launcher 2 to apply changes..
+        /// </summary>
+        internal static string RestartRequired_Message {
+            get {
+                return ResourceManager.GetString("RestartRequired_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart required.
+        /// </summary>
+        internal static string RestartRequired_Title {
+            get {
+                return ResourceManager.GetString("RestartRequired_Title", resourceCulture);
+            }
+        }
     }
 }

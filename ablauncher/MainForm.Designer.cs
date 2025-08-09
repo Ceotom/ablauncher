@@ -51,6 +51,7 @@ namespace ablauncher {
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.lbVersion = new System.Windows.Forms.Label();
             this.btStart = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -240,6 +241,7 @@ namespace ablauncher {
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.cbLanguage);
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
@@ -275,6 +277,11 @@ namespace ablauncher {
             this.btStart.UseVisualStyleBackColor = true;
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
             // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -299,6 +306,7 @@ namespace ablauncher {
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
@@ -334,6 +342,7 @@ namespace ablauncher {
         private System.Windows.Forms.CheckBox chRandomStart;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.ComboBox cbLanguage;
+        private System.Windows.Forms.Label label2;
     }
 }
 

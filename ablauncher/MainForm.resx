@@ -640,7 +640,7 @@
     <value>586, 15</value>
   </data>
   <data name="tpKeys1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 20</value>
+    <value>6, 5</value>
   </data>
   <data name="tpKeys1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -670,7 +670,7 @@
     <value>49, 15</value>
   </data>
   <data name="tpKeys0.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 20</value>
+    <value>6, 5</value>
   </data>
   <data name="tpKeys0.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -717,6 +717,33 @@
   <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Launcher language</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbLanguage.Items" xml:space="preserve">
     <value>System</value>
   </data>
@@ -727,7 +754,7 @@
     <value>Russian</value>
   </data>
   <data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
+    <value>116, 9</value>
   </data>
   <data name="cbLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
@@ -745,7 +772,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

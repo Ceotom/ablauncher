@@ -10,11 +10,14 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using ablauncher.Properties;
 
 namespace ablauncher {
     public partial class MainForm : Form {
         private AtomicBomberman game;
         private bool escapeNoClose = false;
+
+        public bool formInit = true;
 
         private KeyBindControls keysP0;
         private KeyBindControls keysP1;
@@ -24,6 +27,8 @@ namespace ablauncher {
 
             this.game = game;
 
+            cbLanguage.SelectedIndex = Settings.Default.Language;
+
             keysP0 = createKeyPad(tpKeys0);
             keysP1 = createKeyPad(tpKeys1);
         }
@@ -31,6 +36,7 @@ namespace ablauncher {
         private void MainForm_Load(object sender, EventArgs e) {
             lbVersion.Text = "v" + Program.Version;
 
+            formInit = false;
             loadSettings();
             drawMapPreview();
         }
@@ -280,24 +286,12 @@ namespace ablauncher {
 
         private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (cbLanguage.SelectedIndex)
+            if (!formInit)
             {
-                case 0:
-                    Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
-                    break;
-                case 1:
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                    break;
-                case 2:
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
-                    break;
+                MessageBox.Show(Localization.getLocalizedString("RestartRequired_Message"), Localization.getLocalizedString("RestartRequired_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Settings.Default.Language = cbLanguage.SelectedIndex;
+                Settings.Default.Save();
             }
-            this.Controls.Clear();
-            InitializeComponent();
-            keysP0 = createKeyPad(tpKeys0);
-            keysP1 = createKeyPad(tpKeys1);
-            loadSettings();
-            drawMapPreview();
         }
     }
 
