@@ -33,6 +33,11 @@ namespace ablauncher {
             Application.SetCompatibleTextRenderingDefault(false);
 
             AtomicBomberman game = AtomicBomberman.construct();
+            if (game == null) {
+                MessageBox.Show(Localization.getLocalizedString("GameNotFound_Message"), Localization.getLocalizedString("GameNotFound_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             switch (game.Language)
             {
                 case 0:
@@ -48,10 +53,6 @@ namespace ablauncher {
                     game.Language = 0;
                     Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
                     break;
-            }
-            if (game == null) {
-                MessageBox.Show(Localization.getLocalizedString("GameNotFound_Message"), Localization.getLocalizedString("GameNotFound_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
             }
 
             Application.Run(new MainForm(game));
