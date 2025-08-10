@@ -335,7 +335,7 @@ namespace ablauncher {
         }
 
         public override string ToString() {
-            return string.Format("{0} ({1})", fileName, mapTitle);
+            return string.Format("{0}: {1}", fileName, mapTitle);
         }
 
         public bool isTeamMap() {
