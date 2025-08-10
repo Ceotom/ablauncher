@@ -173,7 +173,12 @@ namespace ablauncher {
             chAutoKeys.Checked = game.AutoAssign;
             chRandomStart.Checked = game.RandomStart;
             cbLanguage.SelectedIndex = game.Language;
-            cbShowAllSchemes.Checked = game.ShowAllSchemes;
+            chShowAllSchemes.Checked = game.ShowAllSchemes;
+            chStompedBombsDetonate.Checked = game.StompedBombsDetonate;
+            chWinByKills.Checked = game.WinByKills;
+            chGoldMan.Checked = game.GoldMan;
+            chLostNetRevertAi.Checked = game.LostNetRevertAi;
+            chDiseasesDestroyable.Checked = game.DiseasesDestroyable;
 
             // Find playtime
             int playTime = game.PlayTime;
@@ -186,7 +191,7 @@ namespace ablauncher {
             }
 
             // Find map file
-            if (!cbShowAllSchemes.Checked)
+            if (!chShowAllSchemes.Checked)
             {
                 string currentScheme = game.SchemeFile;
                 int index = findMap(currentScheme, GameType.freeForAll);
@@ -258,7 +263,7 @@ namespace ablauncher {
 
         private void fillMapList() {
             cbMap.Items.Clear();
-            if (!cbShowAllSchemes.Checked)
+            if (!chShowAllSchemes.Checked)
             {
                 cbMap.Items.AddRange(game.getMaps(rdMeleeGame.Checked ? GameType.freeForAll : GameType.team));
                 try
@@ -292,7 +297,7 @@ namespace ablauncher {
         }
 
         private void cbMap_SelectedIndexChanged(object sender, EventArgs e) {
-            if (!cbShowAllSchemes.Checked)
+            if (!chShowAllSchemes.Checked)
             {
                 if (rdMeleeGame.Checked)
                     game.MeleeMapIndex = cbMap.SelectedIndex;
@@ -324,6 +329,12 @@ namespace ablauncher {
             chRandomStart.Checked = game.RandomStart;
         }
 
+        private void chStompedBombsDetonate_CheckedChanged(object sender, EventArgs e)
+        {
+            game.StompedBombsDetonate = ((CheckBox)sender).Checked;
+            chStompedBombsDetonate.Checked = game.StompedBombsDetonate;
+        }
+
         private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!formInit)
@@ -339,13 +350,50 @@ namespace ablauncher {
             Process.Start(spath);
         }
 
-        private void cbShowAllSchemes_CheckedChanged(object sender, EventArgs e)
+        private void chShowAllSchemes_CheckedChanged(object sender, EventArgs e)
         {
             if (!formInit)
             {
                 fillMapList();
                 drawMapPreview();
-                game.ShowAllSchemes = cbShowAllSchemes.Checked;
+                game.ShowAllSchemes = chShowAllSchemes.Checked;
+            }
+        }
+
+        private void chWinByKills_CheckedChanged(object sender, EventArgs e)
+        {
+            game.WinByKills = ((CheckBox)sender).Checked;
+            chWinByKills.Checked = game.WinByKills;
+        }
+
+        private void chGoldMan_CheckedChanged(object sender, EventArgs e)
+        {
+            game.GoldMan = ((CheckBox)sender).Checked;
+            chGoldMan.Checked = game.GoldMan;
+        }
+
+        private void chLostNetRevertAi_CheckedChanged(object sender, EventArgs e)
+        {
+            game.LostNetRevertAi = ((CheckBox)sender).Checked;
+            chLostNetRevertAi.Checked = game.LostNetRevertAi;
+        }
+
+        private void chDiseasesDestroyable_CheckedChanged(object sender, EventArgs e)
+        {
+            game.DiseasesDestroyable = ((CheckBox)sender).Checked;
+            chDiseasesDestroyable.Checked = game.DiseasesDestroyable;
+        }
+
+        private void rdTeamGame_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdTeamGame.Checked)
+            {
+                chWinByKills.Checked = false;
+                chWinByKills.Enabled = false;
+            }
+            else
+            {
+                chWinByKills.Enabled = true;
             }
         }
     }

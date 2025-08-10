@@ -210,31 +210,31 @@
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cbShowAllSchemes.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chShowAllSchemes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbShowAllSchemes.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="chShowAllSchemes.Location" type="System.Drawing.Point, System.Drawing">
     <value>61, 72</value>
   </data>
-  <data name="cbShowAllSchemes.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="chShowAllSchemes.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 17</value>
   </data>
-  <data name="cbShowAllSchemes.TabIndex" type="System.Int32, mscorlib">
+  <data name="chShowAllSchemes.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="cbShowAllSchemes.Text" xml:space="preserve">
+  <data name="chShowAllSchemes.Text" xml:space="preserve">
     <value>Show all schemes</value>
   </data>
-  <data name="&gt;&gt;cbShowAllSchemes.Name" xml:space="preserve">
-    <value>cbShowAllSchemes</value>
+  <data name="&gt;&gt;chShowAllSchemes.Name" xml:space="preserve">
+    <value>chShowAllSchemes</value>
   </data>
-  <data name="&gt;&gt;cbShowAllSchemes.Type" xml:space="preserve">
+  <data name="&gt;&gt;chShowAllSchemes.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbShowAllSchemes.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chShowAllSchemes.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;cbShowAllSchemes.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chShowAllSchemes.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="btOpenSchemesFolder.Font" type="System.Drawing.Font, System.Drawing">
@@ -264,6 +264,171 @@
   <data name="&gt;&gt;btOpenSchemesFolder.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="chLostNetRevertAi.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="chLostNetRevertAi.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chLostNetRevertAi.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chLostNetRevertAi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 135</value>
+  </data>
+  <data name="chLostNetRevertAi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 17</value>
+  </data>
+  <data name="chLostNetRevertAi.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="chLostNetRevertAi.Text" xml:space="preserve">
+    <value>Lost net players revert to AI's</value>
+  </data>
+  <data name="&gt;&gt;chLostNetRevertAi.Name" xml:space="preserve">
+    <value>chLostNetRevertAi</value>
+  </data>
+  <data name="&gt;&gt;chLostNetRevertAi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chLostNetRevertAi.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;chLostNetRevertAi.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="chDiseasesDestroyable.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="chDiseasesDestroyable.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chDiseasesDestroyable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chDiseasesDestroyable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 156</value>
+  </data>
+  <data name="chDiseasesDestroyable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 17</value>
+  </data>
+  <data name="chDiseasesDestroyable.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="chDiseasesDestroyable.Text" xml:space="preserve">
+    <value>Diseases can be destroyed (local only)</value>
+  </data>
+  <data name="&gt;&gt;chDiseasesDestroyable.Name" xml:space="preserve">
+    <value>chDiseasesDestroyable</value>
+  </data>
+  <data name="&gt;&gt;chDiseasesDestroyable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chDiseasesDestroyable.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;chDiseasesDestroyable.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="chGoldMan.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="chGoldMan.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chGoldMan.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chGoldMan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 114</value>
+  </data>
+  <data name="chGoldMan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 17</value>
+  </data>
+  <data name="chGoldMan.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="chGoldMan.Text" xml:space="preserve">
+    <value>Golden bomberman (local only)</value>
+  </data>
+  <data name="&gt;&gt;chGoldMan.Name" xml:space="preserve">
+    <value>chGoldMan</value>
+  </data>
+  <data name="&gt;&gt;chGoldMan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chGoldMan.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;chGoldMan.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="chWinByKills.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="chWinByKills.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chWinByKills.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chWinByKills.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 93</value>
+  </data>
+  <data name="chWinByKills.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 17</value>
+  </data>
+  <data name="chWinByKills.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="chWinByKills.Text" xml:space="preserve">
+    <value>Win matches by kill total</value>
+  </data>
+  <data name="&gt;&gt;chWinByKills.Name" xml:space="preserve">
+    <value>chWinByKills</value>
+  </data>
+  <data name="&gt;&gt;chWinByKills.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWinByKills.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;chWinByKills.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="chStompedBombsDetonate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="chStompedBombsDetonate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chStompedBombsDetonate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chStompedBombsDetonate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 72</value>
+  </data>
+  <data name="chStompedBombsDetonate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 17</value>
+  </data>
+  <data name="chStompedBombsDetonate.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="chStompedBombsDetonate.Text" xml:space="preserve">
+    <value>Stomped bombs detonate</value>
+  </data>
+  <data name="&gt;&gt;chStompedBombsDetonate.Name" xml:space="preserve">
+    <value>chStompedBombsDetonate</value>
+  </data>
+  <data name="&gt;&gt;chStompedBombsDetonate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chStompedBombsDetonate.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;chStompedBombsDetonate.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="chRandomStart.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -292,7 +457,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;chRandomStart.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="cbConveyorSpeed.Items" xml:space="preserve">
     <value>Low</value>
@@ -304,7 +469,7 @@
     <value>High</value>
   </data>
   <data name="cbConveyorSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 144</value>
+    <value>114, 146</value>
   </data>
   <data name="cbConveyorSpeed.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 21</value>
@@ -322,13 +487,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;cbConveyorSpeed.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>8</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 147</value>
+    <value>1, 149</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 13</value>
@@ -349,7 +514,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="cbPlaytime.Items" xml:space="preserve">
     <value>1:00</value>
@@ -379,7 +544,7 @@
     <value>Infinite</value>
   </data>
   <data name="cbPlaytime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 90</value>
+    <value>114, 92</value>
   </data>
   <data name="cbPlaytime.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 21</value>
@@ -397,13 +562,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;cbPlaytime.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 93</value>
+    <value>58, 95</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
@@ -424,7 +589,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="cbEnclosure.Items" xml:space="preserve">
     <value>None</value>
@@ -439,10 +604,10 @@
     <value>All the way!</value>
   </data>
   <data name="cbEnclosure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 117</value>
+    <value>114, 119</value>
   </data>
   <data name="cbEnclosure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
+    <value>95, 21</value>
   </data>
   <data name="cbEnclosure.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -457,13 +622,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;cbEnclosure.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>12</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 120</value>
+    <value>24, 122</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 13</value>
@@ -484,7 +649,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>13</value>
   </data>
   <data name="cbMap.Location" type="System.Drawing.Point, System.Drawing">
     <value>61, 44</value>
@@ -505,7 +670,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;cbMap.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>14</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -532,7 +697,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>15</value>
   </data>
   <data name="rdTeamGame.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -559,7 +724,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;rdTeamGame.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>16</value>
   </data>
   <data name="rdMeleeGame.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -586,7 +751,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;rdMeleeGame.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>17</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 14</value>

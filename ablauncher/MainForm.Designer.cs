@@ -31,7 +31,13 @@ namespace ablauncher {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.previewBox = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chShowAllSchemes = new System.Windows.Forms.CheckBox();
             this.btOpenSchemesFolder = new System.Windows.Forms.Button();
+            this.chLostNetRevertAi = new System.Windows.Forms.CheckBox();
+            this.chDiseasesDestroyable = new System.Windows.Forms.CheckBox();
+            this.chGoldMan = new System.Windows.Forms.CheckBox();
+            this.chWinByKills = new System.Windows.Forms.CheckBox();
+            this.chStompedBombsDetonate = new System.Windows.Forms.CheckBox();
             this.chRandomStart = new System.Windows.Forms.CheckBox();
             this.cbConveyorSpeed = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -53,7 +59,6 @@ namespace ablauncher {
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.lbVersion = new System.Windows.Forms.Label();
             this.btStart = new System.Windows.Forms.Button();
-            this.cbShowAllSchemes = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -108,8 +113,13 @@ namespace ablauncher {
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbShowAllSchemes);
+            this.groupBox1.Controls.Add(this.chShowAllSchemes);
             this.groupBox1.Controls.Add(this.btOpenSchemesFolder);
+            this.groupBox1.Controls.Add(this.chLostNetRevertAi);
+            this.groupBox1.Controls.Add(this.chDiseasesDestroyable);
+            this.groupBox1.Controls.Add(this.chGoldMan);
+            this.groupBox1.Controls.Add(this.chWinByKills);
+            this.groupBox1.Controls.Add(this.chStompedBombsDetonate);
             this.groupBox1.Controls.Add(this.chRandomStart);
             this.groupBox1.Controls.Add(this.cbConveyorSpeed);
             this.groupBox1.Controls.Add(this.label11);
@@ -125,12 +135,54 @@ namespace ablauncher {
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
+            // chShowAllSchemes
+            // 
+            resources.ApplyResources(this.chShowAllSchemes, "chShowAllSchemes");
+            this.chShowAllSchemes.Name = "chShowAllSchemes";
+            this.chShowAllSchemes.UseVisualStyleBackColor = true;
+            this.chShowAllSchemes.CheckedChanged += new System.EventHandler(this.chShowAllSchemes_CheckedChanged);
+            // 
             // btOpenSchemesFolder
             // 
             resources.ApplyResources(this.btOpenSchemesFolder, "btOpenSchemesFolder");
             this.btOpenSchemesFolder.Name = "btOpenSchemesFolder";
             this.btOpenSchemesFolder.UseVisualStyleBackColor = true;
             this.btOpenSchemesFolder.Click += new System.EventHandler(this.btOpenSchemesFolder_Click);
+            // 
+            // chLostNetRevertAi
+            // 
+            resources.ApplyResources(this.chLostNetRevertAi, "chLostNetRevertAi");
+            this.chLostNetRevertAi.Name = "chLostNetRevertAi";
+            this.chLostNetRevertAi.UseVisualStyleBackColor = true;
+            this.chLostNetRevertAi.CheckedChanged += new System.EventHandler(this.chLostNetRevertAi_CheckedChanged);
+            // 
+            // chDiseasesDestroyable
+            // 
+            resources.ApplyResources(this.chDiseasesDestroyable, "chDiseasesDestroyable");
+            this.chDiseasesDestroyable.Name = "chDiseasesDestroyable";
+            this.chDiseasesDestroyable.UseVisualStyleBackColor = true;
+            this.chDiseasesDestroyable.CheckedChanged += new System.EventHandler(this.chDiseasesDestroyable_CheckedChanged);
+            // 
+            // chGoldMan
+            // 
+            resources.ApplyResources(this.chGoldMan, "chGoldMan");
+            this.chGoldMan.Name = "chGoldMan";
+            this.chGoldMan.UseVisualStyleBackColor = true;
+            this.chGoldMan.CheckedChanged += new System.EventHandler(this.chGoldMan_CheckedChanged);
+            // 
+            // chWinByKills
+            // 
+            resources.ApplyResources(this.chWinByKills, "chWinByKills");
+            this.chWinByKills.Name = "chWinByKills";
+            this.chWinByKills.UseVisualStyleBackColor = true;
+            this.chWinByKills.CheckedChanged += new System.EventHandler(this.chWinByKills_CheckedChanged);
+            // 
+            // chStompedBombsDetonate
+            // 
+            resources.ApplyResources(this.chStompedBombsDetonate, "chStompedBombsDetonate");
+            this.chStompedBombsDetonate.Name = "chStompedBombsDetonate";
+            this.chStompedBombsDetonate.UseVisualStyleBackColor = true;
+            this.chStompedBombsDetonate.CheckedChanged += new System.EventHandler(this.chStompedBombsDetonate_CheckedChanged);
             // 
             // chRandomStart
             // 
@@ -212,6 +264,7 @@ namespace ablauncher {
             resources.ApplyResources(this.rdTeamGame, "rdTeamGame");
             this.rdTeamGame.Name = "rdTeamGame";
             this.rdTeamGame.UseVisualStyleBackColor = true;
+            this.rdTeamGame.CheckedChanged += new System.EventHandler(this.rdTeamGame_CheckedChanged);
             // 
             // rdMeleeGame
             // 
@@ -293,13 +346,6 @@ namespace ablauncher {
             this.btStart.UseVisualStyleBackColor = true;
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
             // 
-            // cbShowAllSchemes
-            // 
-            resources.ApplyResources(this.cbShowAllSchemes, "cbShowAllSchemes");
-            this.cbShowAllSchemes.Name = "cbShowAllSchemes";
-            this.cbShowAllSchemes.UseVisualStyleBackColor = true;
-            this.cbShowAllSchemes.CheckedChanged += new System.EventHandler(this.cbShowAllSchemes_CheckedChanged);
-            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -362,7 +408,12 @@ namespace ablauncher {
         private System.Windows.Forms.ComboBox cbLanguage;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btOpenSchemesFolder;
-        private System.Windows.Forms.CheckBox cbShowAllSchemes;
+        private System.Windows.Forms.CheckBox chShowAllSchemes;
+        private System.Windows.Forms.CheckBox chLostNetRevertAi;
+        private System.Windows.Forms.CheckBox chDiseasesDestroyable;
+        private System.Windows.Forms.CheckBox chGoldMan;
+        private System.Windows.Forms.CheckBox chWinByKills;
+        private System.Windows.Forms.CheckBox chStompedBombsDetonate;
     }
 }
 

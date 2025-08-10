@@ -115,6 +115,36 @@ namespace ablauncher {
             set { setOption("random_start", value ? 1 : 0); }
         }
 
+        public bool StompedBombsDetonate
+        {
+            get { return getOption("stomped_bombs_detonate", 0) == 1; }
+            set { setOption("stomped_bombs_detonate", value ? 1 : 0); }
+        }
+
+        public bool WinByKills
+        {
+            get { return getOption("win_by_kills", 0) == 1; }
+            set { setOption("win_by_kills", value ? 1 : 0); }
+        }
+
+        public bool GoldMan
+        {
+            get { return getOption("goldman", 0) == 1; }
+            set { setOption("goldman", value ? 1 : 0); }
+        }
+
+        public bool LostNetRevertAi
+        {
+            get { return getOption("lost_net_revert_ai", 0) == 1; }
+            set { setOption("lost_net_revert_ai", value ? 1 : 0); }
+        }
+
+        public bool DiseasesDestroyable
+        {
+            get { return getOption("diseases_destroyable", 0) == 1; }
+            set { setOption("diseases_destroyable", value ? 1 : 0); }
+        }
+
         public bool AutoAssign {
             get { return getOption("assign_keyboards", 0) == 1; }
             set { setOption("assign_keyboards", value ? 1 : 0); }
