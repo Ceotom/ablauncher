@@ -25,8 +25,7 @@ namespace ablauncher {
 
     public class AtomicBomberman {
         const string SENTINEL_FILE    = "BM95.EXE";
-        const string EXECUTABLE_FILE1 = "BM.EXE";
-        const string EXECUTABLE_FILE2 = "BM95.EXE";
+        const string EXECUTABLE_FILE = "BM95.EXE";
         const string MAP_DIRECTORY    = "DATA\\SCHEMES";
         const string NODENAME_FILE    = "NODENAME.INI";
         const string OPTIONS_FILE     = "OPTIONS.INI";
@@ -215,8 +214,7 @@ namespace ablauncher {
         }
 
         public void start() {
-            string path = Path.Combine(gameDirectory, EXECUTABLE_FILE1);
-            if (!File.Exists(path)) path = Path.Combine(gameDirectory, EXECUTABLE_FILE2);
+            string path = Path.Combine(gameDirectory, EXECUTABLE_FILE);
             if (!File.Exists(path)) throw new Exception("No executable found");
 
             // Write proper directory to CFG.INI (a bit of zeroconf work)
