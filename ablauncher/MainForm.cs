@@ -186,25 +186,30 @@ namespace ablauncher {
             }
 
             // Find map file
-
-            if (game.TeamMode)
+            if (!cbShowAllSchemes.Checked)
             {
-                rdTeamGame.Checked = true;
+                string currentScheme = game.SchemeFile;
+                int index = findMap(currentScheme, GameType.freeForAll);
+                if (index != -1) rdMeleeGame.Checked = true;
+                else
+                {
+                    index = findMap(currentScheme, GameType.team);
+                    if (index != -1) rdTeamGame.Checked = true;
+                    else index = 0;
+                }
+                fillMapList();
+                cbMap.SelectedIndex = index;
             }
             else
             {
-                rdMeleeGame.Checked = true;
+                if (game.TeamMode) rdTeamGame.Checked = true;
+                else rdMeleeGame.Checked = true;
+                string currentScheme = game.SchemeFile;
+                int index = findMap(currentScheme);
+                if (index == -1) index = 0;
+                fillMapList();
+                cbMap.SelectedIndex = index;
             }
-            /*string currentScheme = game.SchemeFile;
-            int index = findMap(currentScheme, GameType.freeForAll);
-            if (index != -1) rdMeleeGame.Checked = true;
-            else {
-                index = findMap(currentScheme, GameType.team);
-                if (index != -1) rdTeamGame.Checked = true;
-                else index = 0;
-            }*/
-            fillMapList();
-            //cbMap.SelectedIndex = index;
 
             // Load keys
             keysP0.Keys = game.TwoPlayerKey0;
@@ -216,7 +221,7 @@ namespace ablauncher {
             game.TwoPlayerKey1 = keysP1.Keys;
         }
 
-        private int findMap(string schemeFile, GameType gameType) {
+        private int findMap(string schemeFile, GameType? gameType = null) {
             return Array.FindIndex<AtomicBombermanMap>(game.getMaps(gameType), new Predicate<AtomicBombermanMap>(delegate (AtomicBombermanMap map) {
                 return map.SchemeFile.ToLower() == schemeFile.ToLower();
             }));
