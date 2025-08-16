@@ -106,7 +106,7 @@ namespace ablauncher.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restart Atomic Bomberman Launcher 2 to apply changes..
+        ///   Looks up a localized string similar to Restart Atomic Bomberman Launcher2 to apply changes..
         /// </summary>
         internal static string RestartRequired_Message {
             get {

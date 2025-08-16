@@ -133,7 +133,7 @@
     <value>Atomic Bomberman не найден</value>
   </data>
   <data name="RestartRequired_Message" xml:space="preserve">
-    <value>Перезапустите Atomic Bomberman Launcher 2, чтобы применить изменения.</value>
+    <value>Перезапустите Atomic Bomberman Launcher2, чтобы применить изменения.</value>
   </data>
   <data name="RestartRequired_Title" xml:space="preserve">
     <value>Требуется перезапуск</value>

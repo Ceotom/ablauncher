@@ -133,7 +133,7 @@
     <value>Atomic Bomberman not found</value>
   </data>
   <data name="RestartRequired_Message" xml:space="preserve">
-    <value>Restart Atomic Bomberman Launcher 2 to apply changes.</value>
+    <value>Restart Atomic Bomberman Launcher2 to apply changes.</value>
   </data>
   <data name="RestartRequired_Title" xml:space="preserve">
     <value>Restart required</value>
