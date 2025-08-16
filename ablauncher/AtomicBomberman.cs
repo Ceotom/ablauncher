@@ -264,6 +264,21 @@ namespace ablauncher {
             Process.Start(info);
         }
 
+        public void startTool(string tool)
+        {
+            string path = Path.Combine(gameDirectory, tool);
+            if (!File.Exists(path)) throw new Exception("No executable found");
+
+            ProcessStartInfo info = new ProcessStartInfo(path);
+            info.WorkingDirectory = Path.GetDirectoryName(path);
+            Process.Start(info);
+        }
+
+        public bool checkTool(string tool)
+        {
+            string path = Path.Combine(gameDirectory, tool);
+            if (File.Exists(path)) return true; else return false;
+        }
         /**
          * Write the directory of the game to the proper ini file
          */

@@ -54,13 +54,16 @@ namespace ablauncher {
             this.tpKeys1 = new System.Windows.Forms.GroupBox();
             this.tpKeys0 = new System.Windows.Forms.GroupBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btRunIntro = new System.Windows.Forms.Button();
+            this.btRunCncDrawConfig = new System.Windows.Forms.Button();
+            this.btRunIpxconfig = new System.Windows.Forms.Button();
             this.chCheckForUpdates = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btCheckForUpdates = new System.Windows.Forms.Button();
             this.lbVersion = new System.Windows.Forms.Label();
             this.btStart = new System.Windows.Forms.Button();
-            this.btCheckForUpdates = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -307,12 +310,36 @@ namespace ablauncher {
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btRunIntro);
+            this.tabPage3.Controls.Add(this.btRunCncDrawConfig);
+            this.tabPage3.Controls.Add(this.btRunIpxconfig);
             this.tabPage3.Controls.Add(this.chCheckForUpdates);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.cbLanguage);
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btRunIntro
+            // 
+            resources.ApplyResources(this.btRunIntro, "btRunIntro");
+            this.btRunIntro.Name = "btRunIntro";
+            this.btRunIntro.UseVisualStyleBackColor = true;
+            this.btRunIntro.Click += new System.EventHandler(this.btRunIntro_Click);
+            // 
+            // btRunCncDrawConfig
+            // 
+            resources.ApplyResources(this.btRunCncDrawConfig, "btRunCncDrawConfig");
+            this.btRunCncDrawConfig.Name = "btRunCncDrawConfig";
+            this.btRunCncDrawConfig.UseVisualStyleBackColor = true;
+            this.btRunCncDrawConfig.Click += new System.EventHandler(this.btRunCncDrawConfig_Click);
+            // 
+            // btRunIpxconfig
+            // 
+            resources.ApplyResources(this.btRunIpxconfig, "btRunIpxconfig");
+            this.btRunIpxconfig.Name = "btRunIpxconfig";
+            this.btRunIpxconfig.UseVisualStyleBackColor = true;
+            this.btRunIpxconfig.Click += new System.EventHandler(this.btRunIpxconfig_Click);
             // 
             // chCheckForUpdates
             // 
@@ -345,6 +372,13 @@ namespace ablauncher {
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // btCheckForUpdates
+            // 
+            resources.ApplyResources(this.btCheckForUpdates, "btCheckForUpdates");
+            this.btCheckForUpdates.Name = "btCheckForUpdates";
+            this.btCheckForUpdates.UseVisualStyleBackColor = true;
+            this.btCheckForUpdates.Click += new System.EventHandler(this.btCheckForUpdates_Click);
+            // 
             // lbVersion
             // 
             resources.ApplyResources(this.lbVersion, "lbVersion");
@@ -356,13 +390,6 @@ namespace ablauncher {
             this.btStart.Name = "btStart";
             this.btStart.UseVisualStyleBackColor = true;
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
-            // 
-            // btCheckForUpdates
-            // 
-            resources.ApplyResources(this.btCheckForUpdates, "btCheckForUpdates");
-            this.btCheckForUpdates.Name = "btCheckForUpdates";
-            this.btCheckForUpdates.UseVisualStyleBackColor = true;
-            this.btCheckForUpdates.Click += new System.EventHandler(this.btCheckForUpdates_Click);
             // 
             // MainForm
             // 
@@ -434,6 +461,9 @@ namespace ablauncher {
         private System.Windows.Forms.CheckBox chStompedBombsDetonate;
         private System.Windows.Forms.CheckBox chCheckForUpdates;
         private System.Windows.Forms.Button btCheckForUpdates;
+        private System.Windows.Forms.Button btRunIpxconfig;
+        private System.Windows.Forms.Button btRunIntro;
+        private System.Windows.Forms.Button btRunCncDrawConfig;
     }
 }
 

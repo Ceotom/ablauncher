@@ -32,6 +32,11 @@ namespace ablauncher {
 
             keysP0 = createKeyPad(tpKeys0);
             keysP1 = createKeyPad(tpKeys1);
+
+            btRunIpxconfig.Enabled = game.checkTool("ipxconfig.exe");
+            btRunCncDrawConfig.Enabled = game.checkTool("cnc-ddraw config.exe");
+            btRunIntro.Enabled = game.checkTool("INTRO\\BMINTRO.EXE");
+            btRunIntro.Visible = game.checkTool("INTRO\\BMINTRO.EXE");
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
@@ -407,6 +412,21 @@ namespace ablauncher {
         private void btCheckForUpdates_Click(object sender, EventArgs e)
         {
             Network.checkForUpdates(false);
+        }
+
+        private void btRunIpxconfig_Click(object sender, EventArgs e)
+        {
+            game.startTool("ipxconfig.exe");
+        }
+
+        private void btRunCncDrawConfig_Click(object sender, EventArgs e)
+        {
+            game.startTool("cnc-ddraw config.exe");
+        }
+
+        private void btRunIntro_Click(object sender, EventArgs e)
+        {
+            game.startTool("INTRO\\BMINTRO.EXE");
         }
     }
 
