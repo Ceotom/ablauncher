@@ -396,6 +396,12 @@ namespace ablauncher {
                 chWinByKills.Enabled = true;
             }
         }
+
+        private void chCheckForUpdates_CheckedChanged(object sender, EventArgs e)
+        {
+            game.CheckForUpdates = ((CheckBox)sender).Checked;
+            chCheckForUpdates.Checked = game.CheckForUpdates;
+        }
     }
 
     class KeyBindControls {

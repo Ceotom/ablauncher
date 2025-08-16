@@ -59,6 +59,8 @@ namespace ablauncher {
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.lbVersion = new System.Windows.Forms.Label();
             this.btStart = new System.Windows.Forms.Button();
+            this.lbUpdatesStatus = new System.Windows.Forms.Label();
+            this.chCheckForUpdates = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -305,6 +307,7 @@ namespace ablauncher {
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.chCheckForUpdates);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.cbLanguage);
             resources.ApplyResources(this.tabPage3, "tabPage3");
@@ -329,6 +332,7 @@ namespace ablauncher {
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.lbUpdatesStatus);
             this.tabPage4.Controls.Add(this.lbVersion);
             resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
@@ -345,6 +349,18 @@ namespace ablauncher {
             this.btStart.Name = "btStart";
             this.btStart.UseVisualStyleBackColor = true;
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
+            // 
+            // lbUpdatesStatus
+            // 
+            resources.ApplyResources(this.lbUpdatesStatus, "lbUpdatesStatus");
+            this.lbUpdatesStatus.Name = "lbUpdatesStatus";
+            // 
+            // chCheckForUpdates
+            // 
+            resources.ApplyResources(this.chCheckForUpdates, "chCheckForUpdates");
+            this.chCheckForUpdates.Name = "chCheckForUpdates";
+            this.chCheckForUpdates.UseVisualStyleBackColor = true;
+            this.chCheckForUpdates.CheckedChanged += new System.EventHandler(this.chCheckForUpdates_CheckedChanged);
             // 
             // MainForm
             // 
@@ -414,6 +430,8 @@ namespace ablauncher {
         private System.Windows.Forms.CheckBox chGoldMan;
         private System.Windows.Forms.CheckBox chWinByKills;
         private System.Windows.Forms.CheckBox chStompedBombsDetonate;
+        private System.Windows.Forms.Label lbUpdatesStatus;
+        private System.Windows.Forms.CheckBox chCheckForUpdates;
     }
 }
 

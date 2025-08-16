@@ -196,10 +196,17 @@ namespace ablauncher {
             get { return getOption("abl_preselect_team", 0); }
             set { setOption("abl_preselect_team", value); }
         }
+
         public int AllMapsIndex
         {
             get { return getOption("abl_preselect_all", 0); }
             set { setOption("abl_preselect_all", value); }
+        }
+
+        public bool CheckForUpdates
+        {
+            get { return getOption("abl_check_for_updates", 0) == 1; }
+            set { setOption("abl_check_for_updates", value ? 1 : 0); }
         }
 
         private AtomicBombermanKeys getKeySet(string set, int player) {
