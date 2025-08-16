@@ -106,6 +106,33 @@ namespace ablauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Communication error occurred.
+        /// </summary>
+        internal static string NetworkError_Title {
+            get {
+                return ResourceManager.GetString("NetworkError_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are using latest version..
+        /// </summary>
+        internal static string NoUpdatesAvailable_Message {
+            get {
+                return ResourceManager.GetString("NoUpdatesAvailable_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No updates available.
+        /// </summary>
+        internal static string NoUpdatesAvailable_Title {
+            get {
+                return ResourceManager.GetString("NoUpdatesAvailable_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restart Atomic Bomberman Launcher2 to apply changes..
         /// </summary>
         internal static string RestartRequired_Message {
@@ -120,6 +147,51 @@ namespace ablauncher.Properties {
         internal static string RestartRequired_Title {
             get {
                 return ResourceManager.GetString("RestartRequired_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New version is available. Do you want to open release page?.
+        /// </summary>
+        internal static string UpdatesAvailable_Message {
+            get {
+                return ResourceManager.GetString("UpdatesAvailable_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New version is available.
+        /// </summary>
+        internal static string UpdatesAvailable_Title {
+            get {
+                return ResourceManager.GetString("UpdatesAvailable_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server returned the following error:.
+        /// </summary>
+        internal static string UpdatesError_Message {
+            get {
+                return ResourceManager.GetString("UpdatesError_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Try again later..
+        /// </summary>
+        internal static string UpdatesError_Message2 {
+            get {
+                return ResourceManager.GetString("UpdatesError_Message2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to check for updates due to network error..
+        /// </summary>
+        internal static string UpdatesNetworkError_Message {
+            get {
+                return ResourceManager.GetString("UpdatesNetworkError_Message", resourceCulture);
             }
         }
     }

@@ -179,6 +179,7 @@ namespace ablauncher {
             chGoldMan.Checked = game.GoldMan;
             chLostNetRevertAi.Checked = game.LostNetRevertAi;
             chDiseasesDestroyable.Checked = game.DiseasesDestroyable;
+            chCheckForUpdates.Checked = game.CheckForUpdates;
 
             // Find playtime
             int playTime = game.PlayTime;
@@ -401,6 +402,11 @@ namespace ablauncher {
         {
             game.CheckForUpdates = ((CheckBox)sender).Checked;
             chCheckForUpdates.Checked = game.CheckForUpdates;
+        }
+
+        private void btCheckForUpdates_Click(object sender, EventArgs e)
+        {
+            Network.checkForUpdates(false);
         }
     }
 

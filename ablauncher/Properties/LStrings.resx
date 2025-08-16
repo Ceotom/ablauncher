@@ -132,10 +132,34 @@
   <data name="GameNotFound_Title" xml:space="preserve">
     <value>Atomic Bomberman not found</value>
   </data>
+  <data name="NetworkError_Title" xml:space="preserve">
+    <value>Communication error occurred</value>
+  </data>
+  <data name="NoUpdatesAvailable_Message" xml:space="preserve">
+    <value>You are using latest version.</value>
+  </data>
+  <data name="NoUpdatesAvailable_Title" xml:space="preserve">
+    <value>No updates available</value>
+  </data>
   <data name="RestartRequired_Message" xml:space="preserve">
     <value>Restart Atomic Bomberman Launcher2 to apply changes.</value>
   </data>
   <data name="RestartRequired_Title" xml:space="preserve">
     <value>Restart required</value>
+  </data>
+  <data name="UpdatesAvailable_Message" xml:space="preserve">
+    <value>New version is available. Do you want to open release page?</value>
+  </data>
+  <data name="UpdatesAvailable_Title" xml:space="preserve">
+    <value>New version is available</value>
+  </data>
+  <data name="UpdatesError_Message" xml:space="preserve">
+    <value>Server returned the following error:</value>
+  </data>
+  <data name="UpdatesError_Message2" xml:space="preserve">
+    <value>Try again later.</value>
+  </data>
+  <data name="UpdatesNetworkError_Message" xml:space="preserve">
+    <value>Unable to check for updates due to network error.</value>
   </data>
 </root>

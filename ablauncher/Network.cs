@@ -1,18 +1,16 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Web;
 using System.Windows.Forms;
 
 namespace ablauncher
 {
     public class Network
     {
-        const string UPDATES_URL = "http://127.0.0.1:8080/updates.json";
+        const string UPDATES_URL = "https://api.github.com/repos/Ceotom/ablauncher/releases/latest";
         public static bool updatesAvailable = false;
         public static bool lastGetRemoteJsonDataSucceed = false;
         public static HttpStatusCode lastGetRemoteJsonDataResponseCode = 0;
@@ -51,14 +49,21 @@ namespace ablauncher
                 }
 
             }
-            catch 
-            { 
+            catch (WebException webEx)
+            {
                 lastGetRemoteJsonDataSucceed = false;
                 lastGetRemoteJsonDataResponseCode = 0;
-                return null; 
+                if (webEx.Response != null)
+                {
+                    using (var responseError = (HttpWebResponse)webEx.Response)
+                    {
+                        lastGetRemoteJsonDataResponseCode = responseError.StatusCode;
+                    }
+                }
+                return null;
             }
         }
-        public static void checkForUpdates()
+        public static void checkForUpdates(bool onStartup)
         {
             Version currentVersion = Assembly.GetExecutingAssembly().GetName().Version;
             string response = getRemoteJsonData(UPDATES_URL);
@@ -68,12 +73,18 @@ namespace ablauncher
                 string newVersionStr = Convert.ToString(obj["name"]);
                 Version newVersion = new Version(newVersionStr);
                 if (newVersion >= currentVersion) updatesAvailable = true;
-                MessageBox.Show($"Url= {obj["html_url"]}, Ver= {obj["name"]}, UpdatesAvailable = { updatesAvailable } ");
+                else updatesAvailable = false;
+                if (updatesAvailable)
+                {
+                    var answer = MessageBox.Show(Localization.getLocalizedString("UpdatesAvailable_Message"), Localization.getLocalizedString("UpdatesAvailable_Title"), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (answer == DialogResult.Yes) Process.Start(Convert.ToString(obj["html_url"]));
+                }
+                else if (!onStartup) MessageBox.Show(Localization.getLocalizedString("NoUpdatesAvailable_Message"), Localization.getLocalizedString("NoUpdatesAvailable_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (!lastGetRemoteJsonDataSucceed)
+            else
             {
-                if (lastGetRemoteJsonDataResponseCode != 0) MessageBox.Show(Convert.ToString(lastGetRemoteJsonDataResponseCode));
-                else MessageBox.Show("Network error");
+                if (!onStartup && lastGetRemoteJsonDataResponseCode != 0) MessageBox.Show($"{Localization.getLocalizedString("UpdatesError_Message")} {lastGetRemoteJsonDataResponseCode}\n{Localization.getLocalizedString("UpdatesError_Message2")}", Localization.getLocalizedString("NetworkError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (!onStartup && lastGetRemoteJsonDataResponseCode == 0) MessageBox.Show(Localization.getLocalizedString("UpdatesNetworkError_Message"), Localization.getLocalizedString("NetworkError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

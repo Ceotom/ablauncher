@@ -132,10 +132,34 @@
   <data name="GameNotFound_Title" xml:space="preserve">
     <value>Atomic Bomberman не найден</value>
   </data>
+  <data name="NetworkError_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NoUpdatesAvailable_Message" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NoUpdatesAvailable_Title" xml:space="preserve">
+    <value />
+  </data>
   <data name="RestartRequired_Message" xml:space="preserve">
     <value>Перезапустите Atomic Bomberman Launcher2, чтобы применить изменения.</value>
   </data>
   <data name="RestartRequired_Title" xml:space="preserve">
     <value>Требуется перезапуск</value>
+  </data>
+  <data name="UpdatesAvailable_Message" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UpdatesAvailable_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UpdatesError_Message" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UpdatesError_Message2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UpdatesNetworkError_Message" xml:space="preserve">
+    <value />
   </data>
 </root>

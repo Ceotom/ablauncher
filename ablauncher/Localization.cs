@@ -10,7 +10,7 @@ namespace ablauncher
     {
         private static readonly ResourceManager resource = new ResourceManager("ablauncher.Properties.LStrings", typeof(Program).Assembly);
         public static string getLocalizedString(string arg) {
-            return resource.GetString(arg) ??  $"NO SUCH STRING ({arg})"; 
+            return resource.GetString(arg) ??  arg; 
         }
     }
 }

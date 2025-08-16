@@ -54,7 +54,7 @@ namespace ablauncher {
                     Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
                     break;
             }
-            if (game.CheckForUpdates) Network.checkForUpdates();
+            if (game.CheckForUpdates) Network.checkForUpdates(true);
             Application.Run(new MainForm(game));
         }
     }
