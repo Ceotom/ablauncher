@@ -256,7 +256,6 @@ namespace ablauncher {
 
             // Write proper directory to CFG.INI (a bit of zeroconf work)
             writeDirHome(Path.GetDirectoryName(path));
-            writeTweaks();
 
             // Start in the proper directory
             ProcessStartInfo info = new ProcessStartInfo(path);
@@ -285,15 +284,6 @@ namespace ablauncher {
         private void writeDirHome(string directory) {
             iniSet(Path.Combine(gameDirectory, DIRHOME_FILE), "hdhome", directory, "=");
             iniSet(Path.Combine(gameDirectory, DIRHOME_FILE), "cdhome", directory, "=");
-        }
-
-        /**
-         * Write a number of other tweaks
-         */
-        private void writeTweaks() {
-            // Decrease the wait-between-screens delay from 3 (default) to 2 seconds.
-            // I don't dare set it to 1, I've seen a recent computer fail to catch up to that :|.
-            tweak(13, 2);
         }
 
         private void tweak(int number, int value) {
