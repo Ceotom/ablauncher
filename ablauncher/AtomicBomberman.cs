@@ -277,8 +277,9 @@ namespace ablauncher {
             {
                 MainForm.Invoke((MethodInvoker)delegate 
                 { 
-                    MainForm.Visible = true;
                     loadSettings();
+                    MainForm.Visible = true;
+                    MainForm.Activate();
                 });
 
             };
