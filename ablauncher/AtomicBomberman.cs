@@ -260,7 +260,7 @@ namespace ablauncher {
             return false;
         }
 
-        public void start() {
+        public void start(Form MainForm, Action loadSettings) {
             checkIfGameRunning(true);
             string path = Path.Combine(gameDirectory, EXECUTABLE_FILE);
             if (!File.Exists(path)) throw new Exception("No executable found");
@@ -272,8 +272,17 @@ namespace ablauncher {
             Process process = new Process();
             process.StartInfo.FileName = path;
             process.StartInfo.WorkingDirectory = Path.GetDirectoryName(path);   
+            process.EnableRaisingEvents = true;
+            process.Exited += (sender, e) => 
+            {
+                MainForm.Invoke((MethodInvoker)delegate 
+                { 
+                    MainForm.Visible = true;
+                    loadSettings();
+                });
+
+            };
             process.Start();
-            process.WaitForExit();
         }
 
         public void startTool(string tool)

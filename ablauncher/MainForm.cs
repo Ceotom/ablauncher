@@ -248,12 +248,8 @@ namespace ablauncher {
             game.TeamMode = rdTeamGame.Checked;
             game.P1Keys = keysP0.Keys;
             game.P2Keys = keysP1.Keys;
-            Icon currentIcon = Icon;
             Visible = false;
-            game.start();
-            loadSettings();
-            Visible = true;
-            Icon = currentIcon;
+            game.start(this, loadSettings);
         }
 
         private void MainForm_KeyPress(object sender, KeyPressEventArgs e) {

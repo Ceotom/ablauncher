@@ -52,7 +52,9 @@ namespace ablauncher {
                 MessageBox.Show(Localization.getLocalizedString("GameNotFound_Message"), Localization.getLocalizedString("GameNotFound_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
             if (!File.Exists(Path.Combine(game.gameDirectory, LAUNCHER_OPTIONS_FILE))) File.Create(LAUNCHER_OPTIONS_FILE).Dispose();
+
             switch (game.Language)
             {
                 case 0:
@@ -83,6 +85,7 @@ namespace ablauncher {
             game.checkIfGameRunning(true);
 
             if (game.CheckForUpdates) Network.checkForUpdates(true);
+
             Application.Run(new MainForm(game));
             ReleaseLauncherMutex();
         }
