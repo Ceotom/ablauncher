@@ -37,6 +37,10 @@ namespace ablauncher {
                 SetForegroundWindow(hWnd);
             }
         }
+        public static void ReleaseLauncherMutex()
+        {
+            mutex.ReleaseMutex();
+        }
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -71,10 +75,11 @@ namespace ablauncher {
                 BringOldInstanceWindow();
                 return;
             }
+            game.checkIfGameRunning();
 
             if (game.CheckForUpdates) Network.checkForUpdates(true);
             Application.Run(new MainForm(game));
-            mutex.ReleaseMutex();
+            ReleaseLauncherMutex();
         }
     }
 }

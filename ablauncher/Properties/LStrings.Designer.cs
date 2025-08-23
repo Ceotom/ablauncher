@@ -88,6 +88,15 @@ namespace ablauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Atomic Bomberman is already running. Please close the game. Atomic Bomberman Launcher2 will be terminated..
+        /// </summary>
+        internal static string GameIsRunningError_Message {
+            get {
+                return ResourceManager.GetString("GameIsRunningError_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Atomic Bomberman not found! Please place Atomic Bomberman Launcher2 in the same directory as the game..
         /// </summary>
         internal static string GameNotFound_Message {

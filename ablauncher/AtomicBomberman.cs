@@ -26,6 +26,7 @@ namespace ablauncher {
     public class AtomicBomberman {
         const string SENTINEL_FILE    = "BM95.EXE";
         const string EXECUTABLE_FILE = "BM95.EXE";
+        const string PROCESS_NAME = "BM95";
         const string MAP_DIRECTORY    = "DATA\\SCHEMES";
         const string NODENAME_FILE    = "NODENAME.INI";
         const string OPTIONS_FILE     = "OPTIONS.INI";
@@ -250,7 +251,19 @@ namespace ablauncher {
             iniSet(Path.Combine(gameDirectory, OPTIONS_FILE), string.Format("{0}={1},{2}", set, player, action), keyCode.ToString(), ",");
         }
 
+        public void checkIfGameRunning()
+        {
+            Process [] process = Process.GetProcessesByName(PROCESS_NAME);
+            if (process.Length != 0)
+            {
+                MessageBox.Show(Localization.getLocalizedString("GameIsRunningError_Message"), Localization.getLocalizedString("GenericError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Program.ReleaseLauncherMutex();
+                Environment.Exit(0);
+            }
+        }
+
         public void start() {
+            checkIfGameRunning();
             string path = Path.Combine(gameDirectory, EXECUTABLE_FILE);
             if (!File.Exists(path)) throw new Exception("No executable found");
 
@@ -319,6 +332,7 @@ namespace ablauncher {
         }
 
         private void iniSet(string fileName, string key, string value, string delim) {
+            checkIfGameRunning();
             string file = File.ReadAllText(fileName), newFile;
             Regex r = new Regex("^(" + Regex.Escape(key) + ")" + Regex.Escape(delim) + ".*$", RegexOptions.Multiline);
 

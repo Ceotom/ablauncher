@@ -126,6 +126,9 @@
   <data name="Controls_Special" xml:space="preserve">
     <value>Special</value>
   </data>
+  <data name="GameIsRunningError_Message" xml:space="preserve">
+    <value>Atomic Bomberman is already running. Please close the game. Atomic Bomberman Launcher2 will be terminated.</value>
+  </data>
   <data name="GameNotFound_Message" xml:space="preserve">
     <value>Atomic Bomberman not found! Please place Atomic Bomberman Launcher2 in the same directory as the game.</value>
   </data>
