@@ -30,7 +30,7 @@ namespace ablauncher {
         const string MAP_DIRECTORY    = "DATA\\SCHEMES";
         const string NODENAME_FILE    = "NODENAME.INI";
         const string OPTIONS_FILE     = "OPTIONS.INI";
-        const string LAUNCHER_OPTIONS_FILE     = "ABLAUNCHER.INI";
+        const string LAUNCHER_OPTIONS_FILE     = "ablauncher.ini";
         const string DIRHOME_FILE     = "CFG.INI";
         const string TWEAKS_FILE      = "DATA\\RES\\VALUELST.RES";
 

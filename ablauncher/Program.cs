@@ -24,7 +24,7 @@ namespace ablauncher {
         [DllImport("user32.dll")]
         private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
         private static Mutex mutex = null;
-        const string LAUNCHER_OPTIONS_FILE = "ABLAUNCHER.INI";
+        const string LAUNCHER_OPTIONS_FILE = "ablauncher.ini";
 
         /// <summary>
         /// The main entry point for the application.
