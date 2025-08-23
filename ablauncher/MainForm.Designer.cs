@@ -83,6 +83,7 @@ namespace ablauncher {
             // 
             resources.ApplyResources(this.txNodeName, "txNodeName");
             this.txNodeName.Name = "txNodeName";
+            this.txNodeName.TextChanged += new System.EventHandler(this.txNodeName_TextChanged);
             // 
             // tabControl1
             // 
@@ -206,6 +207,7 @@ namespace ablauncher {
             resources.GetString("cbConveyorSpeed.Items2")});
             resources.ApplyResources(this.cbConveyorSpeed, "cbConveyorSpeed");
             this.cbConveyorSpeed.Name = "cbConveyorSpeed";
+            this.cbConveyorSpeed.SelectedIndexChanged += new System.EventHandler(this.cbConveyorSpeed_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -228,6 +230,7 @@ namespace ablauncher {
             resources.GetString("cbPlaytime.Items8")});
             resources.ApplyResources(this.cbPlaytime, "cbPlaytime");
             this.cbPlaytime.Name = "cbPlaytime";
+            this.cbPlaytime.SelectedIndexChanged += new System.EventHandler(this.cbPlaytime_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -245,6 +248,7 @@ namespace ablauncher {
             resources.GetString("cbEnclosure.Items3")});
             resources.ApplyResources(this.cbEnclosure, "cbEnclosure");
             this.cbEnclosure.Name = "cbEnclosure";
+            this.cbEnclosure.SelectedIndexChanged += new System.EventHandler(this.cbEnclosure_SelectedIndexChanged);
             // 
             // label5
             // 

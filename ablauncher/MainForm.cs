@@ -19,7 +19,7 @@ namespace ablauncher {
         private AtomicBomberman game;
         private bool escapeNoClose = false;
 
-        public bool formInit = true;
+        public static bool formInit = true;
 
         private KeyBindControls keysP0;
         private KeyBindControls keysP1;
@@ -249,17 +249,10 @@ namespace ablauncher {
         }
 
         private void launchGame() {
-            saveKeySets();
-
-            game.NodeName = txNodeName.Text;
-            game.SchemeFile = ((AtomicBombermanMap)cbMap.SelectedItem).SchemeFile;
-            game.EnclosureDepth = (EncloseDepth)cbEnclosure.SelectedIndex;
-            game.ConveyorBeltSpeed = (ConveyorSpeed)cbConveyorSpeed.SelectedIndex;
-            game.PlayTime = textToSeconds(cbPlaytime.Text);
             game.TeamMode = rdTeamGame.Checked;
             game.P1Keys = keysP0.Keys;
             game.P2Keys = keysP1.Keys;
-
+            saveKeySets();
             game.start();
         }
 
@@ -314,15 +307,21 @@ namespace ablauncher {
             {
                 game.AllMapsIndex = cbMap.SelectedIndex;
             }
+            game.SchemeFile = ((AtomicBombermanMap)cbMap.SelectedItem).SchemeFile;
             drawMapPreview();
         }
 
-        private void btStart_Click(object sender, EventArgs e) {
+        private void btStart_Click(object sender, EventArgs e) 
+        {
             launchGame();
         }
 
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e) {
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e) 
+        {
+            game.P1Keys = keysP0.Keys;
+            game.P2Keys = keysP1.Keys;
             saveKeySets();
+            game.TeamMode = rdTeamGame.Checked;
         }
 
         private void chAutoKeys1_CheckedChanged(object sender, EventArgs e) {
@@ -401,6 +400,7 @@ namespace ablauncher {
             {
                 chWinByKills.Enabled = true;
             }
+            game.TeamMode = rdTeamGame.Checked;
         }
 
         private void chCheckForUpdates_CheckedChanged(object sender, EventArgs e)
@@ -427,6 +427,26 @@ namespace ablauncher {
         private void btRunIntro_Click(object sender, EventArgs e)
         {
             game.startTool("INTRO\\BMINTRO.EXE");
+        }
+
+        private void txNodeName_TextChanged(object sender, EventArgs e)
+        {
+            game.NodeName = txNodeName.Text;
+        }
+
+        private void cbEnclosure_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            game.EnclosureDepth = (EncloseDepth)cbEnclosure.SelectedIndex;
+        }
+
+        private void cbConveyorSpeed_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            game.ConveyorBeltSpeed = (ConveyorSpeed)cbConveyorSpeed.SelectedIndex;
+        }
+
+        private void cbPlaytime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            game.PlayTime = textToSeconds(cbPlaytime.Text);
         }
     }
 

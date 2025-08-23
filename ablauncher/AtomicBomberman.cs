@@ -78,12 +78,11 @@ namespace ablauncher {
 
         public string NodeName {
             get { return File.ReadAllText(Path.Combine(gameDirectory, NODENAME_FILE)).Trim(); }
-            set { File.WriteAllText(Path.Combine(gameDirectory, NODENAME_FILE), value); }
-        }
-
-        public int DefaultProtocol {
-            get { return getOption("netprotocol", 0); }
-            set { setOption("netprotocol", value); }
+            set 
+            {
+                checkIfGameRunning();
+                File.WriteAllText(Path.Combine(gameDirectory, NODENAME_FILE), value); 
+            }
         }
 
         public EncloseDepth EnclosureDepth {
@@ -332,17 +331,20 @@ namespace ablauncher {
         }
 
         private void iniSet(string fileName, string key, string value, string delim) {
-            checkIfGameRunning();
-            string file = File.ReadAllText(fileName), newFile;
-            Regex r = new Regex("^(" + Regex.Escape(key) + ")" + Regex.Escape(delim) + ".*$", RegexOptions.Multiline);
+            if (!MainForm.formInit)
+            {
+                checkIfGameRunning();
+                string file = File.ReadAllText(fileName), newFile;
+                Regex r = new Regex("^(" + Regex.Escape(key) + ")" + Regex.Escape(delim) + ".*$", RegexOptions.Multiline);
 
-            if (r.IsMatch(file))
-                newFile = r.Replace(file, "$1" + delim + value + "\r" /* Need to add the \r back, because the regex has stripped it */);
-            else
-                newFile = file + key + delim + value + Environment.NewLine;
+                if (r.IsMatch(file))
+                    newFile = r.Replace(file, "$1" + delim + value + "\r" /* Need to add the \r back, because the regex has stripped it */);
+                else
+                    newFile = file + key + delim + value + Environment.NewLine;
 
-            try { File.WriteAllText(fileName, newFile); }
-            catch (IOException) { /* Swallow it, better to just go on than to throw an error */ }
+                try { File.WriteAllText(fileName, newFile); }
+                catch (IOException) { /* Swallow it, better to just go on than to throw an error */ }
+            }
         }
     }
 
