@@ -106,6 +106,15 @@ namespace ablauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string GenericError_Title {
+            get {
+                return ResourceManager.GetString("GenericError_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Communication error occurred.
         /// </summary>
         internal static string NetworkError_Title {

@@ -5,13 +5,10 @@ using System.Reflection;
 using System.Globalization;
 using System.Threading;
 using ablauncher.Properties;
+using System.Runtime.InteropServices;
 
 namespace ablauncher {
     static class Program {
-        public static string VERSION = "0.1";
-        public static string REVISION = "$Revision: 12 $";
-        public static string DATE = "$Date: 2008-05-13 22:41:25 +0200 (di, 13 mei 2008) $";
-
         public static string Version {
             get {
                 Version v = Assembly.GetExecutingAssembly().GetName().Version;
@@ -19,15 +16,27 @@ namespace ablauncher {
                 return string.Format("{0}.{1}.{2}", v.Major, v.Minor, v.Build);
             }
         }
-
-        public static string VersionDate {
-            get { return DATE.Replace("$", "").Trim(); }
-        }
+        [DllImport("user32.dll")]
+        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        [DllImport("user32.dll")]
+        private static extern bool SetForegroundWindow(IntPtr hWnd);
+        [DllImport("user32.dll")]
+        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+        private static Mutex mutex = null;
 
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+        private static void BringOldInstanceWindow()
+        {
+            IntPtr hWnd = FindWindow(null, "Atomic Bomberman Launcher2");
+            if (hWnd != IntPtr.Zero)
+            {
+                ShowWindow(hWnd, 9);
+                SetForegroundWindow(hWnd);
+            }
+        }
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -54,8 +63,18 @@ namespace ablauncher {
                     Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
                     break;
             }
+
+            bool isNewLauncherInstance = false;
+            mutex = new Mutex(true, "ablauncher", out isNewLauncherInstance);
+            if (!isNewLauncherInstance)
+            {
+                BringOldInstanceWindow();
+                return;
+            }
+
             if (game.CheckForUpdates) Network.checkForUpdates(true);
             Application.Run(new MainForm(game));
+            mutex.ReleaseMutex();
         }
     }
 }

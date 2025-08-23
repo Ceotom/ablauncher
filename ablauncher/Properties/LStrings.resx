@@ -132,6 +132,9 @@
   <data name="GameNotFound_Title" xml:space="preserve">
     <value>Atomic Bomberman not found</value>
   </data>
+  <data name="GenericError_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="NetworkError_Title" xml:space="preserve">
     <value>Communication error occurred</value>
   </data>
