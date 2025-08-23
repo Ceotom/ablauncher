@@ -30,12 +30,13 @@ namespace ablauncher {
         const string MAP_DIRECTORY    = "DATA\\SCHEMES";
         const string NODENAME_FILE    = "NODENAME.INI";
         const string OPTIONS_FILE     = "OPTIONS.INI";
+        const string LAUNCHER_OPTIONS_FILE     = "ABLAUNCHER.INI";
         const string DIRHOME_FILE     = "CFG.INI";
         const string TWEAKS_FILE      = "DATA\\RES\\VALUELST.RES";
 
         public const int INFINITE_TIME = 1001;
 
-        private string gameDirectory;
+        public string gameDirectory;
         private BombermanKeys keyMap = new BombermanKeys();
 
         private AtomicBomberman(string gameDirectory) {
@@ -160,53 +161,46 @@ namespace ablauncher {
             set { setKeySet("keydef", 1, value); }
         }
 
-        public AtomicBombermanKeys OnePlayerKey0 {
-            get { if (getOption("abl_1p_keys") != "") return getKeySet("abl_1p_keys", 0); else return getKeySet("keydef", 0); }
-            set { setKeySet("abl_1p_keys", 0, value); }
-        }
-
         public AtomicBombermanKeys TwoPlayerKey0 {
-            get { if (getOption("abl_2p_keys") != "") return getKeySet("abl_2p_keys", 0); else return getKeySet("keydef", 0); }
-            set { setKeySet("abl_2p_keys", 0, value); }
+            get { return getKeySet("keydef", 0); }
         }
 
         public AtomicBombermanKeys TwoPlayerKey1 {
-            get { if (getOption("abl_2p_keys") != "") return getKeySet("abl_2p_keys", 1); else return getKeySet("keydef", 1); }
-            set { setKeySet("abl_2p_keys", 1, value); }
+            get { return getKeySet("keydef", 1); }
         }
 
         public int MeleeMapIndex {
-            get { return getOption("abl_preselect_melee", 0); }
-            set { setOption("abl_preselect_melee", value); }
+            get { return getLauncherOption("abl_preselect_melee", 0); }
+            set { setLauncherOption("abl_preselect_melee", value); }
         }
         
         public int Language
         {
-            get { return getOption("abl_language", 0); }
-            set { setOption("abl_language", value); }
+            get { return getLauncherOption("abl_language", 0); }
+            set { setLauncherOption("abl_language", value); }
         }
 
         public bool ShowAllSchemes
         {
-            get { return getOption("abl_show_all_schemes", 0) == 1; }
-            set { setOption("abl_show_all_schemes", value ? 1 : 0); }
+            get { return getLauncherOption("abl_show_all_schemes", 0) == 1; }
+            set { setLauncherOption("abl_show_all_schemes", value ? 1 : 0); }
         }
 
         public int TeamMapIndex {
-            get { return getOption("abl_preselect_team", 0); }
-            set { setOption("abl_preselect_team", value); }
+            get { return getLauncherOption("abl_preselect_team", 0); }
+            set { setLauncherOption("abl_preselect_team", value); }
         }
 
         public int AllMapsIndex
         {
-            get { return getOption("abl_preselect_all", 0); }
-            set { setOption("abl_preselect_all", value); }
+            get { return getLauncherOption("abl_preselect_all", 0); }
+            set { setLauncherOption("abl_preselect_all", value); }
         }
 
         public bool CheckForUpdates
         {
-            get { return getOption("abl_check_for_updates", 0) == 1; }
-            set { setOption("abl_check_for_updates", value ? 1 : 0); }
+            get { return getLauncherOption("abl_check_for_updates", 0) == 1; }
+            set { setLauncherOption("abl_check_for_updates", value ? 1 : 0); }
         }
 
         private AtomicBombermanKeys getKeySet(string set, int player) {
@@ -315,12 +309,33 @@ namespace ablauncher {
             }
         }
 
+        private string getLauncherOption(string key) {
+            return iniGet(Path.Combine(gameDirectory, LAUNCHER_OPTIONS_FILE), key, "=");
+        }
+
+        private int getLauncherOption(string key, int def) {
+            try {
+                return Int32.Parse(getLauncherOption(key));
+            }
+            catch (Exception) {
+                return def;
+            }
+        }
+
         private void setOption(string key, string value) {
             iniSet(Path.Combine(gameDirectory, OPTIONS_FILE), key, value, "=");
         }
 
         private void setOption(string key, int value) {
             setOption(key, value.ToString());
+        }
+
+        private void setLauncherOption(string key, string value) {
+            iniSet(Path.Combine(gameDirectory, LAUNCHER_OPTIONS_FILE), key, value, "=");
+        }
+
+        private void setLauncherOption(string key, int value) {
+            setLauncherOption(key, value.ToString());
         }
 
         private string iniGet(string fileName, string key, string delim) {

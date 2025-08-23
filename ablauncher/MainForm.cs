@@ -227,11 +227,6 @@ namespace ablauncher {
             keysP1.Keys = game.TwoPlayerKey1;
         }
 
-        private void saveKeySets() {
-            game.TwoPlayerKey0 = keysP0.Keys;
-            game.TwoPlayerKey1 = keysP1.Keys;
-        }
-
         private int findMap(string schemeFile, GameType? gameType = null) {
             return Array.FindIndex<AtomicBombermanMap>(game.getMaps(gameType), new Predicate<AtomicBombermanMap>(delegate (AtomicBombermanMap map) {
                 return map.SchemeFile.ToLower() == schemeFile.ToLower();
@@ -252,7 +247,6 @@ namespace ablauncher {
             game.TeamMode = rdTeamGame.Checked;
             game.P1Keys = keysP0.Keys;
             game.P2Keys = keysP1.Keys;
-            saveKeySets();
             game.start();
         }
 
@@ -320,7 +314,6 @@ namespace ablauncher {
         {
             game.P1Keys = keysP0.Keys;
             game.P2Keys = keysP1.Keys;
-            saveKeySets();
             game.TeamMode = rdTeamGame.Checked;
         }
 

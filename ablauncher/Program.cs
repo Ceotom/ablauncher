@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Threading;
 using ablauncher.Properties;
 using System.Runtime.InteropServices;
+using System.IO;
 
 namespace ablauncher {
     static class Program {
@@ -23,6 +24,7 @@ namespace ablauncher {
         [DllImport("user32.dll")]
         private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
         private static Mutex mutex = null;
+        const string LAUNCHER_OPTIONS_FILE = "ABLAUNCHER.INI";
 
         /// <summary>
         /// The main entry point for the application.
@@ -50,7 +52,7 @@ namespace ablauncher {
                 MessageBox.Show(Localization.getLocalizedString("GameNotFound_Message"), Localization.getLocalizedString("GameNotFound_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
+            if (!File.Exists(Path.Combine(game.gameDirectory, LAUNCHER_OPTIONS_FILE))) File.Create(LAUNCHER_OPTIONS_FILE).Dispose();
             switch (game.Language)
             {
                 case 0:
