@@ -19,7 +19,7 @@ namespace ablauncher {
         private AtomicBomberman game;
         private bool escapeNoClose = false;
 
-        public static bool formInit = true;
+        public static bool settingsIsLoading = true;
 
         private KeyBindControls keysP0;
         private KeyBindControls keysP1;
@@ -43,8 +43,6 @@ namespace ablauncher {
             lbVersion.Text = "v" + Program.Version;
             loadSettings();
             drawMapPreview();
-
-            formInit = false;
 
         }
 
@@ -172,6 +170,7 @@ namespace ablauncher {
         }
 
         private void loadSettings() {
+            settingsIsLoading = true;
             txNodeName.Text = game.NodeName;
             cbEnclosure.SelectedIndex = (int)game.EnclosureDepth;
             cbConveyorSpeed.SelectedIndex = (int)game.ConveyorBeltSpeed;
@@ -225,6 +224,8 @@ namespace ablauncher {
             // Load keys
             keysP0.Keys = game.TwoPlayerKey0;
             keysP1.Keys = game.TwoPlayerKey1;
+
+            settingsIsLoading = false;
         }
 
         private int findMap(string schemeFile, GameType? gameType = null) {
@@ -247,9 +248,12 @@ namespace ablauncher {
             game.TeamMode = rdTeamGame.Checked;
             game.P1Keys = keysP0.Keys;
             game.P2Keys = keysP1.Keys;
+            Icon currentIcon = Icon;
             Visible = false;
             game.start();
+            loadSettings();
             Visible = true;
+            Icon = currentIcon;
         }
 
         private void MainForm_KeyPress(object sender, KeyPressEventArgs e) {
@@ -337,7 +341,7 @@ namespace ablauncher {
 
         private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!formInit)
+            if (!settingsIsLoading)
             {
                 MessageBox.Show(Localization.getLocalizedString("RestartRequired_Message"), Localization.getLocalizedString("RestartRequired_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 game.Language = cbLanguage.SelectedIndex;
@@ -352,7 +356,7 @@ namespace ablauncher {
 
         private void chShowAllSchemes_CheckedChanged(object sender, EventArgs e)
         {
-            if (!formInit)
+            if (!settingsIsLoading)
             {
                 fillMapList();
                 drawMapPreview();

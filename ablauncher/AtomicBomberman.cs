@@ -353,7 +353,7 @@ namespace ablauncher {
         }
 
         private void iniSet(string fileName, string key, string value, string delim) {
-            if (!MainForm.formInit)
+            if (!MainForm.settingsIsLoading)
             {
                 checkIfGameRunning(true);
                 string file = File.ReadAllText(fileName), newFile;
