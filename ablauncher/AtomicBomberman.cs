@@ -81,7 +81,7 @@ namespace ablauncher {
             get { return File.ReadAllText(Path.Combine(gameDirectory, NODENAME_FILE)).Trim(); }
             set 
             {
-                checkIfGameRunning();
+                checkIfGameRunning(true);
                 File.WriteAllText(Path.Combine(gameDirectory, NODENAME_FILE), value); 
             }
         }
@@ -244,19 +244,24 @@ namespace ablauncher {
             iniSet(Path.Combine(gameDirectory, OPTIONS_FILE), string.Format("{0}={1},{2}", set, player, action), keyCode.ToString(), ",");
         }
 
-        public void checkIfGameRunning()
+        public bool checkIfGameRunning(bool terminateProgram)
         {
             Process [] process = Process.GetProcessesByName(PROCESS_NAME);
             if (process.Length != 0)
             {
-                MessageBox.Show(Localization.getLocalizedString("GameIsRunningError_Message"), Localization.getLocalizedString("GenericError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Program.ReleaseLauncherMutex();
-                Environment.Exit(0);
+                if (terminateProgram)
+                {
+                    MessageBox.Show(Localization.getLocalizedString("GameIsRunningError_Message"), Localization.getLocalizedString("GenericError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Program.ReleaseLauncherMutex();
+                    Environment.Exit(0);
+                }
+                return true;
             }
+            return false;
         }
 
         public void start() {
-            checkIfGameRunning();
+            checkIfGameRunning(true);
             string path = Path.Combine(gameDirectory, EXECUTABLE_FILE);
             if (!File.Exists(path)) throw new Exception("No executable found");
 
@@ -264,9 +269,11 @@ namespace ablauncher {
             writeDirHome(Path.GetDirectoryName(path));
 
             // Start in the proper directory
-            ProcessStartInfo info = new ProcessStartInfo(path);
-            info.WorkingDirectory = Path.GetDirectoryName(path);            
-            Process.Start(info);
+            Process process = new Process();
+            process.StartInfo.FileName = path;
+            process.StartInfo.WorkingDirectory = Path.GetDirectoryName(path);   
+            process.Start();
+            process.WaitForExit();
         }
 
         public void startTool(string tool)
@@ -348,7 +355,7 @@ namespace ablauncher {
         private void iniSet(string fileName, string key, string value, string delim) {
             if (!MainForm.formInit)
             {
-                checkIfGameRunning();
+                checkIfGameRunning(true);
                 string file = File.ReadAllText(fileName), newFile;
                 Regex r = new Regex("^(" + Regex.Escape(key) + ")" + Regex.Escape(delim) + ".*$", RegexOptions.Multiline);
 

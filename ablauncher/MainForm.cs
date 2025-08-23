@@ -247,7 +247,9 @@ namespace ablauncher {
             game.TeamMode = rdTeamGame.Checked;
             game.P1Keys = keysP0.Keys;
             game.P2Keys = keysP1.Keys;
+            Visible = false;
             game.start();
+            Visible = true;
         }
 
         private void MainForm_KeyPress(object sender, KeyPressEventArgs e) {

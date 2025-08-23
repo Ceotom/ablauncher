@@ -74,10 +74,13 @@ namespace ablauncher {
             mutex = new Mutex(true, "ablauncher", out isNewLauncherInstance);
             if (!isNewLauncherInstance)
             {
-                BringOldInstanceWindow();
+                if (!game.checkIfGameRunning(false))
+                {
+                    BringOldInstanceWindow();
+                }
                 return;
             }
-            game.checkIfGameRunning();
+            game.checkIfGameRunning(true);
 
             if (game.CheckForUpdates) Network.checkForUpdates(true);
             Application.Run(new MainForm(game));
