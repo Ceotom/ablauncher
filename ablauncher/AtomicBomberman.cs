@@ -180,6 +180,12 @@ namespace ablauncher {
             set { setLauncherOption("abl_language", value); }
         }
 
+        public bool FinishedOnboarding
+        {
+            get { return getLauncherOption("abl_onboard", 0) == 1; }
+            set { setLauncherOption("abl_onboard", value ? 1 : 0); }
+        }
+
         public bool ShowAllSchemes
         {
             get { return getLauncherOption("abl_show_all_schemes", 0) == 1; }
@@ -363,7 +369,7 @@ namespace ablauncher {
         }
 
         private void iniSet(string fileName, string key, string value, string delim) {
-            if (!MainForm.settingsIsLoading)
+            if (!MainForm.settingsIsLoading || OnboardingForm.onOnboardingScreen)
             {
                 checkIfGameRunning(true);
                 string file = File.ReadAllText(fileName), newFile;

@@ -84,6 +84,8 @@ namespace ablauncher {
             }
             game.checkIfGameRunning(true);
 
+            if (!game.FinishedOnboarding) Application.Run(new OnboardingForm(game));
+
             if (game.CheckForUpdates) Network.checkForUpdates(true);
 
             Application.Run(new MainForm(game));
