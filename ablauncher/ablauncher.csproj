@@ -174,7 +174,6 @@
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>ilrepack /out:out\ablauncher.exe /verbose ablauncher.exe Newtonsoft.Json.dll ru\ablauncher.resources.dll
-cmd /c "copy /B LICENSE out\LICENSE"</PostBuildEvent>
+    <PostBuildEvent>pwsh $(SolutionDir)\build.ps1 $(ConfigurationName)</PostBuildEvent>
   </PropertyGroup>
 </Project>
