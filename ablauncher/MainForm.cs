@@ -464,6 +464,7 @@ namespace ablauncher {
                         cbServersList.Enabled = true;
                         foreach (var server in Network.serverList.servers) cbServersList.Items.Add(server.displayName);
                         cbServersList.SelectedIndexChanged += cbServersList_SelectedIndexChanged;
+                        cbServersList.SelectedIndex = game.SelectedIpxServer;
                     }
                     else
                     {
@@ -484,6 +485,8 @@ namespace ablauncher {
         private void cbServersList_SelectedIndexChanged(object sender, EventArgs e)
         {
             game.writeIpxWrapperIni(cbServersList.SelectedIndex);
+            game.getIpxWrapperIniHash(true);
+            game.SelectedIpxServer = cbServersList.SelectedIndex;
         }
     }
 

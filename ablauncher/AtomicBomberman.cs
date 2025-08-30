@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Drawing;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace ablauncher {
 
@@ -174,6 +175,11 @@ namespace ablauncher {
             get { return getLauncherOption("abl_preselect_melee", 0); }
             set { setLauncherOption("abl_preselect_melee", value); }
         }
+
+        public string IpxWrapperIniHash {
+            get { return getLauncherOption("abl_ipxwrapperini_hash"); }
+            set { setLauncherOption("abl_ipxwrapperini_hash", value); }
+        }
         
         public int Language
         {
@@ -202,6 +208,11 @@ namespace ablauncher {
         public int TeamMapIndex {
             get { return getLauncherOption("abl_preselect_team", 0); }
             set { setLauncherOption("abl_preselect_team", value); }
+        }
+
+        public int SelectedIpxServer {
+            get { return getLauncherOption("abl_selected_ipx_server", 0); }
+            set { setLauncherOption("abl_selected_ipx_server", value); }
         }
 
         public int AllMapsIndex
@@ -281,6 +292,20 @@ namespace ablauncher {
             iniSet(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE), "coalesce packets", "yes", " = ");
             iniSet(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE), "send packet limit", "100", " = ");
             iniSet(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE), "send byte limit", "10240", " = ");
+        }
+
+        public string getIpxWrapperIniHash(bool writeToOptions)
+        {
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE)))
+                {
+                    byte[] hash = md5.ComputeHash(stream);
+                    string hashStr = BitConverter.ToString(hash);
+                    if (writeToOptions) IpxWrapperIniHash = hashStr;
+                    return hashStr;
+                }
+            }
         }
 
         public void start(Form MainForm, Action loadSettings) {
