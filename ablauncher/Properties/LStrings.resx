@@ -168,4 +168,10 @@
   <data name="UpdatesNetworkError_Message" xml:space="preserve">
     <value>Unable to check for updates due to network error.</value>
   </data>
+  <data name="UsePublicIPXServer_NoData" xml:space="preserve">
+    <value>No Data</value>
+  </data>
+  <data name="UsePublicIPXServer_RemotelyDisabled" xml:space="preserve">
+    <value>Feature Disabled</value>
+  </data>
 </root>

@@ -5,14 +5,18 @@ using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace ablauncher
 {
     public class Network
     {
         const string UPDATES_URL = "https://api.github.com/repos/Ceotom/ablauncher/releases/latest";
+        const string SERVERS_LIST_URL = "http://127.0.0.1:8080/v1.json";
         public static bool updatesAvailable = false;
         public static bool lastGetRemoteJsonDataSucceed = false;
+        public static JsonRoot serverList;
         public static HttpStatusCode lastGetRemoteJsonDataResponseCode = 0;
 
         private static string getRemoteJsonData(string url)
@@ -86,6 +90,27 @@ namespace ablauncher
                 if (!onStartup && lastGetRemoteJsonDataResponseCode != 0) MessageBox.Show($"{Localization.getLocalizedString("UpdatesError_Message")} {lastGetRemoteJsonDataResponseCode}\n{Localization.getLocalizedString("UpdatesError_Message2")}", Localization.getLocalizedString("NetworkError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if (!onStartup && lastGetRemoteJsonDataResponseCode == 0) MessageBox.Show(Localization.getLocalizedString("UpdatesNetworkError_Message"), Localization.getLocalizedString("NetworkError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        public static void retriveServerList()
+        {
+            string response = getRemoteJsonData(SERVERS_LIST_URL);
+            if (response != null)
+            {
+                serverList = JsonConvert.DeserializeObject<JsonRoot>(response);
+            }
+        }
+
+        public class Server
+        {
+            public string displayName { get; set; }
+            public string ip { get; set; }
+            public string port { get; set; }
+        }
+
+        public class JsonRoot
+        {
+            public bool enabled { get; set; }
+            public List<Server> servers { get; set; }
         }
     }
 }

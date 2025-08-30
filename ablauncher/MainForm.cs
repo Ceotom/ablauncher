@@ -452,6 +452,32 @@ namespace ablauncher {
             game.UsePublicIPXServer = chUsePublicIPXServer.Checked;
             label3.Visible = chUsePublicIPXServer.Checked;
             cbServersList.Visible = chUsePublicIPXServer.Checked;
+            cbServersList.Items.Clear();
+            if (game.UsePublicIPXServer)
+            {
+                Network.retriveServerList();
+                if (Network.serverList != null)
+                {
+                    if (Network.serverList.enabled)
+                    {
+                        cbServersList.Enabled = true;
+                        foreach (var server in Network.serverList.servers) cbServersList.Items.Add(server.displayName);
+                        cbServersList.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        cbServersList.Enabled = false;
+                        cbServersList.Items.Add(Localization.getLocalizedString("UsePublicIPXServer_RemotelyDisabled"));
+                        cbServersList.SelectedIndex = 0;
+                    }
+                }
+                else
+                {
+                    cbServersList.Enabled = false;
+                    cbServersList.Items.Add(Localization.getLocalizedString("UsePublicIPXServer_NoData"));
+                    cbServersList.SelectedIndex = 0;
+                }
+            }
         }
     }
 

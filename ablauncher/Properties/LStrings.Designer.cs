@@ -212,5 +212,23 @@ namespace ablauncher.Properties {
                 return ResourceManager.GetString("UpdatesNetworkError_Message", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Data.
+        /// </summary>
+        internal static string UsePublicIPXServer_NoData {
+            get {
+                return ResourceManager.GetString("UsePublicIPXServer_NoData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Feature Disabled.
+        /// </summary>
+        internal static string UsePublicIPXServer_RemotelyDisabled {
+            get {
+                return ResourceManager.GetString("UsePublicIPXServer_RemotelyDisabled", resourceCulture);
+            }
+        }
     }
 }
