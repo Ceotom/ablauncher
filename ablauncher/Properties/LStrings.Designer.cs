@@ -124,6 +124,15 @@ namespace ablauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        internal static string GenericWarning_Title {
+            get {
+                return ResourceManager.GetString("GenericWarning_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Communication error occurred.
         /// </summary>
         internal static string NetworkError_Title {
@@ -214,6 +223,15 @@ namespace ablauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ipxwrapper.ini already exists or was modified. To preserve your settings &quot;Use public IPX server&quot; was disabled. Delete ipxwrapper.ini and try again..
+        /// </summary>
+        internal static string UsePublicIpxServer_FileAlreadyExsistsOrModified_Message {
+            get {
+                return ResourceManager.GetString("UsePublicIpxServer_FileAlreadyExsistsOrModified_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No Data.
         /// </summary>
         internal static string UsePublicIPXServer_NoData {
@@ -228,6 +246,15 @@ namespace ablauncher.Properties {
         internal static string UsePublicIPXServer_RemotelyDisabled {
             get {
                 return ResourceManager.GetString("UsePublicIPXServer_RemotelyDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server you are used previously was removed from the list..
+        /// </summary>
+        internal static string UsePublicIpxServer_ServerRemovedFromList_Message {
+            get {
+                return ResourceManager.GetString("UsePublicIpxServer_ServerRemovedFromList_Message", resourceCulture);
             }
         }
     }

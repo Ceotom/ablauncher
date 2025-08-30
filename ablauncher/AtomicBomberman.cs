@@ -296,16 +296,32 @@ namespace ablauncher {
 
         public string getIpxWrapperIniHash(bool writeToOptions)
         {
-            using (var md5 = MD5.Create())
+            try
             {
-                using (var stream = File.OpenRead(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE)))
+                using (var md5 = MD5.Create())
                 {
-                    byte[] hash = md5.ComputeHash(stream);
-                    string hashStr = BitConverter.ToString(hash);
-                    if (writeToOptions) IpxWrapperIniHash = hashStr;
-                    return hashStr;
+                    using (var stream = File.OpenRead(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE)))
+                    {
+                        byte[] hash = md5.ComputeHash(stream);
+                        string hashStr = BitConverter.ToString(hash);
+                        if (writeToOptions) IpxWrapperIniHash = hashStr;
+                        return hashStr;
+                    }
                 }
             }
+            catch
+            {
+                return null;
+            }
+        }
+
+        
+
+        public void deleteIpxWrapperIni()
+        {
+            if (File.Exists(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE))) File.Delete(IPXWRAPPER_OPTIONS_FILE);
+            IpxWrapperIniHash = null;
+            SelectedIpxServer = 0;
         }
 
         public void start(Form MainForm, Action loadSettings) {

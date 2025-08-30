@@ -456,29 +456,72 @@ namespace ablauncher {
             cbServersList.Items.Clear();
             if (game.UsePublicIPXServer)
             {
-                Network.retriveServerList();
-                if (Network.serverList != null)
+                if (game.getIpxWrapperIniHash(false) == null || game.getIpxWrapperIniHash(false) == game.IpxWrapperIniHash)
                 {
-                    if (Network.serverList.enabled)
+                    Network.retriveServerList();
+                    if (Network.serverList != null)
                     {
-                        cbServersList.Enabled = true;
-                        foreach (var server in Network.serverList.servers) cbServersList.Items.Add(server.displayName);
-                        cbServersList.SelectedIndexChanged += cbServersList_SelectedIndexChanged;
-                        cbServersList.SelectedIndex = game.SelectedIpxServer;
+                        if (Network.serverList.enabled)
+                        {
+                            cbServersList.Enabled = true;
+                            foreach (var server in Network.serverList.servers) cbServersList.Items.Add(server.displayName);
+                            cbServersList.SelectedIndexChanged += cbServersList_SelectedIndexChanged;
+                            try 
+                            {
+                                cbServersList.SelectedIndex = game.SelectedIpxServer; 
+                            }
+                            catch
+                            {
+                                MessageBox.Show(Localization.getLocalizedString("UsePublicIpxServer_ServerRemovedFromList_Message"), Localization.getLocalizedString("GenericWarning_Title"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                cbServersList.SelectedIndex = 0;
+                            }
+                        }
+                        else
+                        {
+                            cbServersList.Enabled = false;
+                            cbServersList.Items.Add(Localization.getLocalizedString("UsePublicIPXServer_RemotelyDisabled"));
+                            cbServersList.SelectedIndex = 0;
+                        }
                     }
                     else
                     {
                         cbServersList.Enabled = false;
-                        cbServersList.Items.Add(Localization.getLocalizedString("UsePublicIPXServer_RemotelyDisabled"));
+                        cbServersList.Items.Add(Localization.getLocalizedString("UsePublicIPXServer_NoData"));
                         cbServersList.SelectedIndex = 0;
                     }
                 }
                 else
                 {
-                    cbServersList.Enabled = false;
-                    cbServersList.Items.Add(Localization.getLocalizedString("UsePublicIPXServer_NoData"));
-                    cbServersList.SelectedIndex = 0;
+                    MessageBox.Show(Localization.getLocalizedString("UsePublicIpxServer_FileAlreadyExsistsOrModified_Message"), Localization.getLocalizedString("GenericError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    chUsePublicIPXServer.CheckedChanged -= chUsePublicIPXServer_CheckedChanged;
+                    chUsePublicIPXServer.Checked = false;
+                    game.UsePublicIPXServer = false;
+                    game.SelectedIpxServer = 0;
+                    game.IpxWrapperIniHash = null;
+                    label3.Visible = chUsePublicIPXServer.Checked;
+                    cbServersList.Visible = chUsePublicIPXServer.Checked;
+                    chUsePublicIPXServer.CheckedChanged += chUsePublicIPXServer_CheckedChanged;
                 }
+            }
+            else
+            {
+                if (game.getIpxWrapperIniHash(false) == game.IpxWrapperIniHash)
+                {
+                    game.deleteIpxWrapperIni();
+                }
+                else
+                {
+                    MessageBox.Show(Localization.getLocalizedString("UsePublicIpxServer_FileAlreadyExsistsOrModified_Message"), Localization.getLocalizedString("GenericError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    chUsePublicIPXServer.CheckedChanged -= chUsePublicIPXServer_CheckedChanged;
+                    chUsePublicIPXServer.Checked = false;
+                    game.UsePublicIPXServer = false;
+                    game.SelectedIpxServer = 0;
+                    game.IpxWrapperIniHash = null;
+                    label3.Visible = chUsePublicIPXServer.Checked;
+                    cbServersList.Visible = chUsePublicIPXServer.Checked;
+                    chUsePublicIPXServer.CheckedChanged += chUsePublicIPXServer_CheckedChanged;
+                }
+
             }
         }
 
