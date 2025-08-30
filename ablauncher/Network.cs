@@ -93,6 +93,7 @@ namespace ablauncher
         }
         public static void retriveServerList()
         {
+            serverList = null;
             string response = getRemoteJsonData(SERVERS_LIST_URL);
             if (response != null)
             {

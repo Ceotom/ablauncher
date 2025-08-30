@@ -452,6 +452,7 @@ namespace ablauncher {
             game.UsePublicIPXServer = chUsePublicIPXServer.Checked;
             label3.Visible = chUsePublicIPXServer.Checked;
             cbServersList.Visible = chUsePublicIPXServer.Checked;
+            cbServersList.SelectedIndexChanged -= cbServersList_SelectedIndexChanged;
             cbServersList.Items.Clear();
             if (game.UsePublicIPXServer)
             {
@@ -462,7 +463,7 @@ namespace ablauncher {
                     {
                         cbServersList.Enabled = true;
                         foreach (var server in Network.serverList.servers) cbServersList.Items.Add(server.displayName);
-                        cbServersList.SelectedIndex = 0;
+                        cbServersList.SelectedIndexChanged += cbServersList_SelectedIndexChanged;
                     }
                     else
                     {
@@ -478,6 +479,11 @@ namespace ablauncher {
                     cbServersList.SelectedIndex = 0;
                 }
             }
+        }
+
+        private void cbServersList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            game.writeIpxWrapperIni(cbServersList.SelectedIndex);
         }
     }
 
