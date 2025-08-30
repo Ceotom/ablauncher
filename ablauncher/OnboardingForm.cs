@@ -18,6 +18,7 @@ namespace ablauncher
         private bool formInit = true;
         private int tempLanguage;
         private bool tempCheckForUpdates;
+        private bool tempUsePublicIPXServer;
         private bool restoringTempSettings = false;
 
         public OnboardingForm(AtomicBomberman game)
@@ -25,6 +26,7 @@ namespace ablauncher
             InitializeComponent();
             this.game = game;
             cbLanguage.SelectedIndex = 0;
+            chUsePublicIPXServer.Enabled = game.checkTool("ipxwrapper.dll");
             formInit = false;
         }
 
@@ -42,6 +44,7 @@ namespace ablauncher
             game.FinishedOnboarding = true;
             game.Language = cbLanguage.SelectedIndex;
             game.CheckForUpdates = chCheckForUpdates.Checked;
+            game.UsePublicIPXServer = chUsePublicIPXServer.Checked;
             onOnboardingScreen = false;
             Close();
         }
@@ -50,6 +53,7 @@ namespace ablauncher
         {
             tempLanguage = cbLanguage.SelectedIndex;
             tempCheckForUpdates = chCheckForUpdates.Checked;
+            tempUsePublicIPXServer = chUsePublicIPXServer.Checked;
         }
 
         private void restoreTempSettings()
@@ -57,6 +61,7 @@ namespace ablauncher
              restoringTempSettings = true;
              cbLanguage.SelectedIndex = tempLanguage;
              chCheckForUpdates.Checked = tempCheckForUpdates;
+             chUsePublicIPXServer.Checked = tempUsePublicIPXServer;
              restoringTempSettings = false;
         }
 
@@ -82,6 +87,7 @@ namespace ablauncher
                 cbLanguage.SelectedIndexChanged -= cbLanguage_SelectedIndexChanged;
                 restoreTempSettings();
                 cbLanguage.SelectedIndexChanged += cbLanguage_SelectedIndexChanged;
+                chUsePublicIPXServer.Enabled = game.checkTool("ipxwrapper.dll");
             }
         }
     }

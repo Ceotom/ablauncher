@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.bContinue = new System.Windows.Forms.Button();
+            this.chUsePublicIPXServer = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -78,10 +79,17 @@
             this.bContinue.UseVisualStyleBackColor = true;
             this.bContinue.Click += new System.EventHandler(this.bContinue_Click);
             // 
+            // chUsePublicIPXServer
+            // 
+            resources.ApplyResources(this.chUsePublicIPXServer, "chUsePublicIPXServer");
+            this.chUsePublicIPXServer.Name = "chUsePublicIPXServer";
+            this.chUsePublicIPXServer.UseVisualStyleBackColor = true;
+            // 
             // OnboardingForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chUsePublicIPXServer);
             this.Controls.Add(this.bContinue);
             this.Controls.Add(this.chCheckForUpdates);
             this.Controls.Add(this.label2);
@@ -107,5 +115,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbLanguage;
         private System.Windows.Forms.Button bContinue;
+        private System.Windows.Forms.CheckBox chUsePublicIPXServer;
     }
 }
