@@ -74,7 +74,7 @@ namespace ablauncher
             if (response != null)
             {
                 JObject obj = JObject.Parse(response);
-                string newVersionStr = Convert.ToString(obj["name"]);
+                string newVersionStr = Convert.ToString(obj["tag_name"]);
                 Version newVersion = new Version(newVersionStr);
                 if (newVersion >= currentVersion) updatesAvailable = true;
                 else updatesAvailable = false;
