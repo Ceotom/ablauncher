@@ -54,6 +54,7 @@ namespace ablauncher {
             this.tpKeys1 = new System.Windows.Forms.GroupBox();
             this.tpKeys0 = new System.Windows.Forms.GroupBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.chUsePublicIPXServer = new System.Windows.Forms.CheckBox();
             this.btRunIntro = new System.Windows.Forms.Button();
             this.btRunCncDrawConfig = new System.Windows.Forms.Button();
             this.btRunIpxconfig = new System.Windows.Forms.Button();
@@ -64,6 +65,8 @@ namespace ablauncher {
             this.btCheckForUpdates = new System.Windows.Forms.Button();
             this.lbVersion = new System.Windows.Forms.Label();
             this.btStart = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbServersList = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -314,6 +317,7 @@ namespace ablauncher {
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.chUsePublicIPXServer);
             this.tabPage3.Controls.Add(this.btRunIntro);
             this.tabPage3.Controls.Add(this.btRunCncDrawConfig);
             this.tabPage3.Controls.Add(this.btRunIpxconfig);
@@ -323,6 +327,13 @@ namespace ablauncher {
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // chUsePublicIPXServer
+            // 
+            resources.ApplyResources(this.chUsePublicIPXServer, "chUsePublicIPXServer");
+            this.chUsePublicIPXServer.Name = "chUsePublicIPXServer";
+            this.chUsePublicIPXServer.UseVisualStyleBackColor = true;
+            this.chUsePublicIPXServer.CheckedChanged += new System.EventHandler(this.chUsePublicIPXServer_CheckedChanged);
             // 
             // btRunIntro
             // 
@@ -395,10 +406,24 @@ namespace ablauncher {
             this.btStart.UseVisualStyleBackColor = true;
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
             // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // cbServersList
+            // 
+            this.cbServersList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbServersList, "cbServersList");
+            this.cbServersList.FormattingEnabled = true;
+            this.cbServersList.Name = "cbServersList";
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbServersList);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btStart);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txNodeName);
@@ -468,6 +493,9 @@ namespace ablauncher {
         private System.Windows.Forms.Button btRunIpxconfig;
         private System.Windows.Forms.Button btRunIntro;
         private System.Windows.Forms.Button btRunCncDrawConfig;
+        private System.Windows.Forms.CheckBox chUsePublicIPXServer;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbServersList;
     }
 }
 

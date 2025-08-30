@@ -186,6 +186,12 @@ namespace ablauncher {
             set { setLauncherOption("abl_onboard", value ? 1 : 0); }
         }
 
+        public bool UsePublicIPXServer
+        {
+            get { return getLauncherOption("abl_use_public_ipx_server", 0) == 1; }
+            set { setLauncherOption("abl_use_public_ipx_server", value ? 1 : 0); }
+        }
+
         public bool ShowAllSchemes
         {
             get { return getLauncherOption("abl_show_all_schemes", 0) == 1; }

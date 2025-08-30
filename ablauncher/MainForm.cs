@@ -37,6 +37,8 @@ namespace ablauncher {
             btRunCncDrawConfig.Enabled = game.checkTool("cnc-ddraw config.exe");
             btRunIntro.Enabled = game.checkTool("INTRO\\BMINTRO.EXE");
             btRunIntro.Visible = game.checkTool("INTRO\\BMINTRO.EXE");
+            if (game.checkTool("ipxwrapper.dll")) chUsePublicIPXServer.Enabled = true;
+            else game.UsePublicIPXServer = false;
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
@@ -184,6 +186,7 @@ namespace ablauncher {
             chLostNetRevertAi.Checked = game.LostNetRevertAi;
             chDiseasesDestroyable.Checked = game.DiseasesDestroyable;
             chCheckForUpdates.Checked = game.CheckForUpdates;
+            chUsePublicIPXServer.Checked = game.UsePublicIPXServer;
 
             // Find playtime
             int playTime = game.PlayTime;
@@ -442,6 +445,13 @@ namespace ablauncher {
         private void cbPlaytime_SelectedIndexChanged(object sender, EventArgs e)
         {
             game.PlayTime = textToSeconds(cbPlaytime.Text);
+        }
+
+        private void chUsePublicIPXServer_CheckedChanged(object sender, EventArgs e)
+        {
+            game.UsePublicIPXServer = chUsePublicIPXServer.Checked;
+            label3.Visible = chUsePublicIPXServer.Checked;
+            cbServersList.Visible = chUsePublicIPXServer.Checked;
         }
     }
 
