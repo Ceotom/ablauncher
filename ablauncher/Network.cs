@@ -13,7 +13,7 @@ namespace ablauncher
     public class Network
     {
         const string UPDATES_URL = "https://api.github.com/repos/Ceotom/ablauncher/releases/latest";
-        const string SERVERS_LIST_URL = "http://127.0.0.1:8080/v1.json";
+        const string SERVERS_LIST_URL = "https://raw.githubusercontent.com/Ceotom/ablauncher_config/refs/heads/main/serverlist/v1.json";
         public static bool updatesAvailable = false;
         public static bool lastGetRemoteJsonDataSucceed = false;
         public static JsonRoot serverList;
