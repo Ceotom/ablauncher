@@ -62,11 +62,15 @@ namespace ablauncher {
             this.label2 = new System.Windows.Forms.Label();
             this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btLicense = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.btCheckForUpdates = new System.Windows.Forms.Button();
             this.lbVersion = new System.Windows.Forms.Label();
             this.btStart = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbServersList = new System.Windows.Forms.ComboBox();
+            this.btGitHub = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -381,11 +385,32 @@ namespace ablauncher {
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btGitHub);
+            this.tabPage4.Controls.Add(this.btLicense);
+            this.tabPage4.Controls.Add(this.label8);
+            this.tabPage4.Controls.Add(this.label7);
             this.tabPage4.Controls.Add(this.btCheckForUpdates);
             this.tabPage4.Controls.Add(this.lbVersion);
             resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btLicense
+            // 
+            resources.ApplyResources(this.btLicense, "btLicense");
+            this.btLicense.Name = "btLicense";
+            this.btLicense.UseVisualStyleBackColor = true;
+            this.btLicense.Click += new System.EventHandler(this.btLicense_Click);
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
             // 
             // btCheckForUpdates
             // 
@@ -417,6 +442,13 @@ namespace ablauncher {
             resources.ApplyResources(this.cbServersList, "cbServersList");
             this.cbServersList.FormattingEnabled = true;
             this.cbServersList.Name = "cbServersList";
+            // 
+            // btGitHub
+            // 
+            resources.ApplyResources(this.btGitHub, "btGitHub");
+            this.btGitHub.Name = "btGitHub";
+            this.btGitHub.UseVisualStyleBackColor = true;
+            this.btGitHub.Click += new System.EventHandler(this.btGitHub_Click);
             // 
             // MainForm
             // 
@@ -496,6 +528,10 @@ namespace ablauncher {
         private System.Windows.Forms.CheckBox chUsePublicIPXServer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbServersList;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btLicense;
+        private System.Windows.Forms.Button btGitHub;
     }
 }
 

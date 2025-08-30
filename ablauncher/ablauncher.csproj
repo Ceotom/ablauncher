@@ -78,6 +78,12 @@
   <ItemGroup>
     <Compile Include="AtomicBomberman.cs" />
     <Compile Include="BombermanKeys.cs" />
+    <Compile Include="LicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LicenseForm.Designer.cs">
+      <DependentUpon>LicenseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Localization.cs" />
     <Compile Include="Network.cs" />
     <Compile Include="OnboardingForm.cs">
@@ -99,6 +105,9 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <EmbeddedResource Include="LicenseForm.resx">
+      <DependentUpon>LicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OnboardingForm.resx">
       <DependentUpon>OnboardingForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -531,6 +531,19 @@ namespace ablauncher {
             game.getIpxWrapperIniHash(true);
             game.SelectedIpxServer = cbServersList.SelectedIndex;
         }
+
+        private void btLicense_Click(object sender, EventArgs e)
+        {
+            using (License licenseForm = new License())
+            {
+                licenseForm.ShowDialog();
+            }
+        }
+
+        private void btGitHub_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/Ceotom/ablauncher");
+        }
     }
 
     class KeyBindControls {
