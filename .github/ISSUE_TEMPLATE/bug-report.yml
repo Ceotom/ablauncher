@@ -40,10 +40,10 @@ body:
   - type: markdown
     attributes:
       value: Thank you!
-    description: >
-    Describe what expected to happen.
-    placeholder: >
-    Scheme should be selected and my hill should be fine.
+    description: |
+     Describe what expected to happen.
+    placeholder: |
+     Scheme should be selected and my hill should be fine.
     validations:
      required: true
   - type: markdown
