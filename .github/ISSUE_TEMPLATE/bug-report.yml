@@ -11,8 +11,8 @@ body:
     attributes:
       label: What version of launcher you are using?
       placeholder: 1.0.0
-    validations: null
-    required: true
+    validations:
+     required: true
   - type: input
     attributes:
       label: What version of Windows you are using?
