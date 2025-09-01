@@ -1,0 +1,15 @@
+name: Feature request
+description: Request a feature
+labels:
+  - enhancement
+body:
+  - type: textarea
+    attributes:
+     label: "What you would like to see?"
+     description: |
+      Describe what feature you would like to see in the Launcher.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: Thank you!
