@@ -22,9 +22,9 @@ body:
   - type: textarea
     attributes:
       label: "What's wrong?"
-    description: |
+     description: |
       Describe what is wrong in as much detail as possible.
-    placeholder: |
+     placeholder: |
       Bomberman army blows up my favorite hill when I'm trying to select scheme.
     validations:
       required: true
