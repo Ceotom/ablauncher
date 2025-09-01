@@ -21,7 +21,7 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: "What's wrong?"
+     label: "What's wrong?"
      description: |
       Describe what is wrong in as much detail as possible.
      placeholder: |
