@@ -46,7 +46,6 @@ body:
     Scheme should be selected and my hill should be fine.
     validations:
      required: true
-
-- type: markdown
-   attributes:
-    value: Thank you!
+  - type: markdown
+    attributes:
+     value: Thank you!
