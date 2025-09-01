@@ -1,0 +1,46 @@
+name: Bug Report
+description: Report a bug
+labels: ["bug"]
+body:
+- type: markdown
+   attributes:
+     value: >
+     Please answer these questions in as much detail as possible.
+     
+- type: input
+   attributes:
+    label: What version of launcher you are using?
+    placeholder: 1.0.0
+  validations:
+   required: true
+
+- type: input
+   attributes:
+    label: What version of Windows you are using?
+    placeholder: Windows NT 3.51
+  validations:
+   required: true
+
+- type: textarea
+   attributes:
+    label: What's wrong?
+    description: >
+    Describe what is wrong in as much detail as possible.
+    placeholder: >
+    Bomberman army blows up my favorite hill when I'm trying to select scheme.
+  validations:
+   required: true
+
+- type: textarea
+   attributes:
+    label: What expected to happen?
+    description: >
+    Describe what expected to happen.
+    placeholder: >
+    Scheme should be selected and my hill should be fine.
+    validations:
+     required: true
+
+- type: markdown
+   attributes:
+    value: Thank you!
