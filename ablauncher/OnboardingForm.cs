@@ -45,12 +45,15 @@ namespace ablauncher
             game.Language = cbLanguage.SelectedIndex;
             game.CheckForUpdates = chCheckForUpdates.Checked;
             game.UsePublicIPXServer = chUsePublicIPXServer.Checked;
-            Network.retriveServerList();
-            if (Network.serverList != null && Network.serverList.enabled && game.getIpxWrapperIniHash(false) == null)
+            if (game.UsePublicIPXServer)
             {
-                game.writeIpxWrapperIni(0);
-                game.getIpxWrapperIniHash(true);
-                game.SelectedIpxServer = 0;
+                Network.retriveServerList();
+                if (Network.serverList != null && Network.serverList.enabled && game.getIpxWrapperIniHash(false) == null)
+                {
+                    game.writeIpxWrapperIni(0);
+                    game.getIpxWrapperIniHash(true);
+                    game.SelectedIpxServer = 0;
+                }
             }
             onOnboardingScreen = false;
             Close();
