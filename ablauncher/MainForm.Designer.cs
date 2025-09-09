@@ -62,6 +62,7 @@ namespace ablauncher {
             this.label2 = new System.Windows.Forms.Label();
             this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btGitHub = new System.Windows.Forms.Button();
             this.btLicense = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@ namespace ablauncher {
             this.btStart = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbServersList = new System.Windows.Forms.ComboBox();
-            this.btGitHub = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -395,6 +395,13 @@ namespace ablauncher {
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // btGitHub
+            // 
+            resources.ApplyResources(this.btGitHub, "btGitHub");
+            this.btGitHub.Name = "btGitHub";
+            this.btGitHub.UseVisualStyleBackColor = true;
+            this.btGitHub.Click += new System.EventHandler(this.btGitHub_Click);
+            // 
             // btLicense
             // 
             resources.ApplyResources(this.btLicense, "btLicense");
@@ -442,13 +449,6 @@ namespace ablauncher {
             resources.ApplyResources(this.cbServersList, "cbServersList");
             this.cbServersList.FormattingEnabled = true;
             this.cbServersList.Name = "cbServersList";
-            // 
-            // btGitHub
-            // 
-            resources.ApplyResources(this.btGitHub, "btGitHub");
-            this.btGitHub.Name = "btGitHub";
-            this.btGitHub.UseVisualStyleBackColor = true;
-            this.btGitHub.Click += new System.EventHandler(this.btGitHub_Click);
             // 
             // MainForm
             // 
