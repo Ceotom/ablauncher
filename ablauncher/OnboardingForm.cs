@@ -27,6 +27,9 @@ namespace ablauncher
             this.game = game;
             cbLanguage.SelectedIndex = 0;
             chUsePublicIPXServer.Enabled = game.checkTool("ipxwrapper.dll");
+            chUsePublicIPXServer.Enabled = Program.allowNetworking;
+            chCheckForUpdates.Enabled = Program.allowNetworking;
+            chCheckForUpdates.Checked = Program.allowNetworking;
             formInit = false;
         }
 
@@ -98,6 +101,8 @@ namespace ablauncher
                 restoreTempSettings();
                 cbLanguage.SelectedIndexChanged += cbLanguage_SelectedIndexChanged;
                 chUsePublicIPXServer.Enabled = game.checkTool("ipxwrapper.dll");
+                chUsePublicIPXServer.Enabled = Program.allowNetworking;
+                chCheckForUpdates.Enabled = Program.allowNetworking;
             }
         }
     }

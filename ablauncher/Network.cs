@@ -21,7 +21,7 @@ namespace ablauncher
 
         private static string getRemoteJsonData(string url)
         {
-           
+            if (!Program.allowNetworking) return null;
             try 
             {
                 ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;

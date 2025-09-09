@@ -39,6 +39,10 @@ namespace ablauncher {
             btRunIntro.Visible = game.checkTool("INTRO\\BMINTRO.EXE");
             if (game.checkTool("ipxwrapper.dll")) chUsePublicIPXServer.Enabled = true;
             else game.UsePublicIPXServer = false;
+
+            chUsePublicIPXServer.Enabled = Program.allowNetworking;
+            chCheckForUpdates.Enabled = Program.allowNetworking;
+            btCheckForUpdates.Enabled = Program.allowNetworking;
         }
 
         private void MainForm_Load(object sender, EventArgs e) {

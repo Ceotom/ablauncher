@@ -25,6 +25,7 @@ namespace ablauncher {
         private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
         private static Mutex mutex = null;
         const string LAUNCHER_OPTIONS_FILE = "ablauncher.ini";
+        public static bool allowNetworking = true;
 
         /// <summary>
         /// The main entry point for the application.
@@ -83,6 +84,16 @@ namespace ablauncher {
                 return;
             }
             game.checkIfGameRunning(true);
+
+            OperatingSystem os = Environment.OSVersion;
+            Version osVer = os.Version;
+            if (osVer.Major < 6 || osVer.Major == 6 && osVer.Minor < 1)
+            {
+                allowNetworking = false;
+                game.UsePublicIPXServer = false;
+                game.CheckForUpdates = false;
+            }
+
 
             if (!game.FinishedOnboarding) Application.Run(new OnboardingForm(game));
 
