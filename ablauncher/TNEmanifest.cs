@@ -32,8 +32,8 @@ namespace ablauncher
             public int manifestVersion { get; set; }
             public string useNewBombsTrue { get; set; }
             public string useNewBombsFalse { get; set; }
-            public string useAnimatedBonusesTrue { get; set; }
-            public string useAnimatedBonusesFalse { get; set; }
+            public string useAnimatedPowerTrue { get; set; }
+            public string useAnimatedPowerFalse { get; set; }
         }
     }
 }

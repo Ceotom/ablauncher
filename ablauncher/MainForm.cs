@@ -43,6 +43,11 @@ namespace ablauncher {
             chUsePublicIPXServer.Enabled = Program.allowNetworking;
             chCheckForUpdates.Enabled = Program.allowNetworking;
             btCheckForUpdates.Enabled = Program.allowNetworking;
+
+            chUseNewBombs.Visible = Program.isTne;
+            chUseNewBombs.Enabled = Program.isTne;
+            chUseAnimatedPower.Visible = Program.isTne;
+            chUseAnimatedPower.Enabled = Program.isTne;
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
@@ -192,6 +197,12 @@ namespace ablauncher {
             chDiseasesDestroyable.Checked = game.DiseasesDestroyable;
             chCheckForUpdates.Checked = game.CheckForUpdates;
             chUsePublicIPXServer.Checked = game.UsePublicIPXServer;
+
+            if (Program.isTne)
+            {
+                chUseNewBombs.Checked = game.masterAliGet(TNEmanifest.TNEmanifestRoot.useNewBombsTrue, TNEmanifest.TNEmanifestRoot.useNewBombsFalse, "useNewBombs");
+                chUseAnimatedPower.Checked = game.masterAliGet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, "useAnimatedPower");
+            }
 
             // Find playtime
             int playTime = game.PlayTime;
@@ -554,6 +565,18 @@ namespace ablauncher {
         private void btRepairPath_Click(object sender, EventArgs e)
         {
             game.repairPath();
+        }
+
+        private void chUseNewBombs_CheckedChanged(object sender, EventArgs e)
+        {
+           if (((CheckBox)sender).Checked) game.masterAliSet(TNEmanifest.TNEmanifestRoot.useNewBombsTrue, TNEmanifest.TNEmanifestRoot.useNewBombsFalse, "useNewBombs");
+           else game.masterAliSet(TNEmanifest.TNEmanifestRoot.useNewBombsFalse, TNEmanifest.TNEmanifestRoot.useNewBombsTrue, "useNewBombs");
+        }
+
+        private void chUseAnimatedPower_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((CheckBox)sender).Checked) game.masterAliSet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, "useAnimatedPower");
+            else game.masterAliSet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, "useAnimatedPower");
         }
     }
 

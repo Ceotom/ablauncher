@@ -35,6 +35,7 @@ namespace ablauncher {
         const string IPXWRAPPER_OPTIONS_FILE = "ipxwrapper.ini";
         const string DIRHOME_FILE     = "CFG.INI";
         const string TWEAKS_FILE      = "DATA\\RES\\VALUELST.RES";
+        const string MASTER_ALI_FILE  = "DATA\\ANI\\MASTER.ALI";
 
         public const int INFINITE_TIME = 1001;
 
@@ -420,6 +421,48 @@ namespace ablauncher {
 
         private void setLauncherOption(string key, int value) {
             setLauncherOption(key, value.ToString());
+        }
+
+        public bool masterAliGet(string trueStr, string falseStr, string parameter)
+        {
+            string file = File.ReadAllText(Path.Combine(gameDirectory, MASTER_ALI_FILE));
+            int matchCount = 0;
+            Match matchTrue = Regex.Match(file, "^" + Regex.Escape("-") + Regex.Escape(trueStr), RegexOptions.Multiline);
+            if (matchTrue.Success) { matchCount += 1; }
+            Match matchFalse = Regex.Match(file, "^" + Regex.Escape("-") + Regex.Escape(falseStr), RegexOptions.Multiline);
+            if (matchFalse.Success) { matchCount += 2; }
+            switch (matchCount)
+            {
+                case 1: return true;
+                case 2: return false;
+                case 3:
+                    {
+                        MessageBox.Show($"Found both values for parameter {parameter}. Manifest missconfigured?");
+                        return false;
+                    }
+                default:
+                    {
+                        MessageBox.Show($"Not found values for parameter {parameter}. Manifest missconfigured?");
+                        return false;
+                    }
+            }
+        }
+
+        public void masterAliSet(string newStr, string oldStr, string parameter)
+        {
+            if (!MainForm.settingsIsLoading || OnboardingForm.onOnboardingScreen)
+            {
+                checkIfGameRunning(true);
+                string file = File.ReadAllText(Path.Combine(gameDirectory, MASTER_ALI_FILE)), newFile;
+                Regex regex = new Regex("^" + Regex.Escape("-") + Regex.Escape(oldStr), RegexOptions.Multiline);
+
+                if (regex.IsMatch(file))
+                {
+                    newFile = regex.Replace(file, "-" + newStr);
+                    File.WriteAllText(Path.Combine(gameDirectory, MASTER_ALI_FILE), newFile);
+                }
+                else MessageBox.Show($"Failed to set value {newStr} for {parameter}, {oldStr} not found. Manifest missconfigured?");
+            }
         }
 
         private string iniGet(string fileName, string key, string delim) {

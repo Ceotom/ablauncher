@@ -285,6 +285,66 @@
   <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="chUseAnimatedPower.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chUseAnimatedPower.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 106</value>
+  </data>
+  <data name="chUseAnimatedPower.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 17</value>
+  </data>
+  <data name="chUseAnimatedPower.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="chUseAnimatedPower.Text" xml:space="preserve">
+    <value>Use animated power-ups</value>
+  </data>
+  <data name="&gt;&gt;chUseAnimatedPower.Name" xml:space="preserve">
+    <value>chUseAnimatedPower</value>
+  </data>
+  <data name="&gt;&gt;chUseAnimatedPower.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chUseAnimatedPower.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;chUseAnimatedPower.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chUseNewBombs.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chUseNewBombs.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="chUseNewBombs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 83</value>
+  </data>
+  <data name="chUseNewBombs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 17</value>
+  </data>
+  <data name="chUseNewBombs.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="chUseNewBombs.Text" xml:space="preserve">
+    <value>Use new bomb sprites</value>
+  </data>
+  <data name="chUseNewBombs.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;chUseNewBombs.Name" xml:space="preserve">
+    <value>chUseNewBombs</value>
+  </data>
+  <data name="&gt;&gt;chUseNewBombs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chUseNewBombs.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;chUseNewBombs.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btRepairPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 199</value>
   </data>
@@ -307,7 +367,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;btRepairPath.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="chUsePublicIPXServer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -337,7 +397,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;chUsePublicIPXServer.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btRunIntro.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -370,7 +430,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;btRunIntro.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="btRunCncDrawConfig.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -400,7 +460,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;btRunCncDrawConfig.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btRunIpxconfig.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -427,7 +487,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;btRunIpxconfig.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="chCheckForUpdates.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -454,7 +514,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;chCheckForUpdates.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -481,7 +541,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="cbLanguage.Items" xml:space="preserve">
     <value>System</value>
@@ -511,7 +571,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
