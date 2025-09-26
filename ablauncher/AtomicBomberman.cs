@@ -329,9 +329,6 @@ namespace ablauncher {
             string path = Path.Combine(gameDirectory, EXECUTABLE_FILE);
             if (!File.Exists(path)) throw new Exception("No executable found");
 
-            // Write proper directory to CFG.INI (a bit of zeroconf work)
-            writeDirHome(Path.GetDirectoryName(path));
-
             // Start in the proper directory
             Process process = new Process();
             process.StartInfo.FileName = path;
@@ -348,6 +345,12 @@ namespace ablauncher {
 
             };
             process.Start();
+        }
+
+        public void repairPath()
+        {
+            string path = Path.Combine(gameDirectory, EXECUTABLE_FILE);
+            writeDirHome(Path.GetDirectoryName(path));
         }
 
         public void startTool(string tool)

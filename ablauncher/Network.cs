@@ -81,7 +81,7 @@ namespace ablauncher
                 if (updatesAvailable)
                 {
                     var answer = MessageBox.Show(Localization.getLocalizedString("UpdatesAvailable_Message"), Localization.getLocalizedString("UpdatesAvailable_Title"), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (answer == DialogResult.Yes) Process.Start(Convert.ToString(obj["html_url"]));
+                    if (answer == DialogResult.Yes) openUrl(Convert.ToString(obj["html_url"]));
                 }
                 else if (!onStartup) MessageBox.Show(Localization.getLocalizedString("NoUpdatesAvailable_Message"), Localization.getLocalizedString("NoUpdatesAvailable_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -99,6 +99,12 @@ namespace ablauncher
             {
                 serverList = JsonConvert.DeserializeObject<JsonRoot>(response);
             }
+        }
+
+        public static void openUrl(string url)
+        {
+            if (Uri.TryCreate(url, UriKind.Absolute, out Uri validatedUri) && (validatedUri.Scheme == Uri.UriSchemeHttps)) Process.Start(validatedUri.AbsoluteUri);
+            else MessageBox.Show(Localization.getLocalizedString("InvalidUrlError_Message"), Localization.getLocalizedString("GenericError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public class Server

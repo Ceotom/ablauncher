@@ -138,8 +138,11 @@
   <data name="GenericError_Title" xml:space="preserve">
     <value />
   </data>
+  <data name="GenericWarning_Title" xml:space="preserve">
+    <value />
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="GenericWarning_Title" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="InvalidUrlError_Message" xml:space="preserve">
     <value />
   </data>
   <data name="NetworkError_Title" xml:space="preserve">
@@ -172,16 +175,19 @@
   <data name="UpdatesNetworkError_Message" xml:space="preserve">
     <value />
   </data>
-  <data name="UsePublicIpxServer_FileAlreadyExsistsOrModified_Message" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="UsePublicIpxServerIpxConfigWarning_Message" xml:space="preserve">
     <value />
   </data>
-  <data name="UsePublicIPXServer_NoData" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="UsePublicIpxServer_FileAlreadyExsistsOrModified_Message" xml:space="preserve">
     <value />
   </data>
-  <data name="UsePublicIPXServer_RemotelyDisabled" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="UsePublicIPXServer_NoData" xml:space="preserve">
     <value />
   </data>
-  <data name="UsePublicIpxServer_ServerRemovedFromList_Message" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="UsePublicIPXServer_RemotelyDisabled" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UsePublicIpxServer_ServerRemovedFromList_Message" xml:space="preserve">
     <value />
   </data>
 </root>

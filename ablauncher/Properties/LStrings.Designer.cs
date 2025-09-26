@@ -133,6 +133,15 @@ namespace ablauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid URL..
+        /// </summary>
+        internal static string InvalidUrlError_Message {
+            get {
+                return ResourceManager.GetString("InvalidUrlError_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Communication error occurred.
         /// </summary>
         internal static string NetworkError_Title {
@@ -255,6 +264,15 @@ namespace ablauncher.Properties {
         internal static string UsePublicIpxServer_ServerRemovedFromList_Message {
             get {
                 return ResourceManager.GetString("UsePublicIpxServer_ServerRemovedFromList_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IPXConfig doesn&apos;t display changes made by &quot;Use public IPX server&quot; option. Most settings will display incorrectly..
+        /// </summary>
+        internal static string UsePublicIpxServerIpxConfigWarning_Message {
+            get {
+                return ResourceManager.GetString("UsePublicIpxServerIpxConfigWarning_Message", resourceCulture);
             }
         }
     }

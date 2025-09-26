@@ -418,6 +418,7 @@ namespace ablauncher {
 
         private void btRunIpxconfig_Click(object sender, EventArgs e)
         {
+            if (game.UsePublicIPXServer) MessageBox.Show(Localization.getLocalizedString("UsePublicIpxServerIpxConfigWarning_Message"), Localization.getLocalizedString("GenericWarning_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             game.startTool("ipxconfig.exe");
         }
 
@@ -546,7 +547,12 @@ namespace ablauncher {
 
         private void btGitHub_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/Ceotom/ablauncher");
+            Network.openUrl("https://github.com/Ceotom/ablauncher");
+        }
+
+        private void btRepairPath_Click(object sender, EventArgs e)
+        {
+            game.repairPath();
         }
     }
 

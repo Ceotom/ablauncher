@@ -71,6 +71,7 @@ namespace ablauncher {
             this.btStart = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbServersList = new System.Windows.Forms.ComboBox();
+            this.btRepairPath = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -321,6 +322,7 @@ namespace ablauncher {
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btRepairPath);
             this.tabPage3.Controls.Add(this.chUsePublicIPXServer);
             this.tabPage3.Controls.Add(this.btRunIntro);
             this.tabPage3.Controls.Add(this.btRunCncDrawConfig);
@@ -450,6 +452,13 @@ namespace ablauncher {
             this.cbServersList.FormattingEnabled = true;
             this.cbServersList.Name = "cbServersList";
             // 
+            // btRepairPath
+            // 
+            resources.ApplyResources(this.btRepairPath, "btRepairPath");
+            this.btRepairPath.Name = "btRepairPath";
+            this.btRepairPath.UseVisualStyleBackColor = true;
+            this.btRepairPath.Click += new System.EventHandler(this.btRepairPath_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -532,6 +541,7 @@ namespace ablauncher {
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btLicense;
         private System.Windows.Forms.Button btGitHub;
+        private System.Windows.Forms.Button btRepairPath;
     }
 }
 

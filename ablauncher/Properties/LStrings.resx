@@ -141,6 +141,9 @@
   <data name="GenericWarning_Title" xml:space="preserve">
     <value>Warning</value>
   </data>
+  <data name="InvalidUrlError_Message" xml:space="preserve">
+    <value>Invalid URL.</value>
+  </data>
   <data name="NetworkError_Title" xml:space="preserve">
     <value>Communication error occurred</value>
   </data>
@@ -170,6 +173,9 @@
   </data>
   <data name="UpdatesNetworkError_Message" xml:space="preserve">
     <value>Unable to check for updates due to network error.</value>
+  </data>
+  <data name="UsePublicIpxServerIpxConfigWarning_Message" xml:space="preserve">
+    <value>IPXConfig doesn't display changes made by "Use public IPX server" option. Most settings will display incorrectly.</value>
   </data>
   <data name="UsePublicIpxServer_FileAlreadyExsistsOrModified_Message" xml:space="preserve">
     <value>ipxwrapper.ini already exists or was modified. To preserve your settings "Use public IPX server" was disabled. Delete ipxwrapper.ini and try again.</value>
