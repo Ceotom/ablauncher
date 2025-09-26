@@ -25,7 +25,9 @@ namespace ablauncher {
         private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
         private static Mutex mutex = null;
         const string LAUNCHER_OPTIONS_FILE = "ablauncher.ini";
+        const string TNE_MANIFEST_PATH = "TNE\\manifest.json";
         public static bool allowNetworking = true;
+        public static bool isTne = false;
 
         /// <summary>
         /// The main entry point for the application.
@@ -94,6 +96,12 @@ namespace ablauncher {
                 game.CheckForUpdates = false;
             }
 
+            string TNEmanifestPath = Path.Combine(game.gameDirectory, TNE_MANIFEST_PATH);
+            if (File.Exists(TNEmanifestPath))
+            {
+                TNEmanifest.parseManifest(TNEmanifestPath);
+                TNEmanifest.checkManifestVersion();
+            }
 
             if (!game.FinishedOnboarding) Application.Run(new OnboardingForm(game));
 

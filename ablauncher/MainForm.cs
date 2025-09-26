@@ -47,6 +47,7 @@ namespace ablauncher {
 
         private void MainForm_Load(object sender, EventArgs e) {
             lbVersion.Text = "v" + Program.Version;
+            if (Program.isTne) lbVersion.Text = lbVersion.Text + " TNE";
             loadSettings();
             drawMapPreview();
 
