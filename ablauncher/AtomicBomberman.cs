@@ -382,6 +382,7 @@ namespace ablauncher {
             {
                 MainForm.Invoke((MethodInvoker)delegate 
                 { 
+                    Tray.setTrayVisibility(false);
                     loadSettings();
                     MainForm.Visible = true;
                     MainForm.Activate();
@@ -389,6 +390,9 @@ namespace ablauncher {
 
             };
             process.Start();
+
+            Tray.gameProcPid = process.Id;
+            Tray.setTrayVisibility(true);
         }
 
         public void repairPath()

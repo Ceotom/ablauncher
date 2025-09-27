@@ -141,7 +141,6 @@
   <data name="GenericWarning_Title" xml:space="preserve">
     <value />
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="InvalidUrlError_Message" xml:space="preserve">
     <value />
   </data>
@@ -159,6 +158,10 @@
   </data>
   <data name="RestartRequired_Title" xml:space="preserve">
     <value>Требуется перезапуск</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TerminateGame_Message" xml:space="preserve">
+    <value />
   </data>
   <data name="UpdatesAvailable_Message" xml:space="preserve">
     <value />

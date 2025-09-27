@@ -187,6 +187,15 @@ namespace ablauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Terminate Game.
+        /// </summary>
+        internal static string TerminateGame_Message {
+            get {
+                return ResourceManager.GetString("TerminateGame_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New version is available. Do you want to open release page?.
         /// </summary>
         internal static string UpdatesAvailable_Message {
