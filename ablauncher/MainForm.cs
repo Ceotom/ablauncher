@@ -48,6 +48,9 @@ namespace ablauncher {
             chUseNewBombs.Enabled = Program.isTne;
             chUseAnimatedPower.Visible = Program.isTne;
             chUseAnimatedPower.Enabled = Program.isTne;
+            clbRandomStages.Visible = Program.isTne;
+            clbRandomStages.Enabled = Program.isTne;
+            label9.Visible = Program.isTne;
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
@@ -200,8 +203,17 @@ namespace ablauncher {
 
             if (Program.isTne)
             {
+                clbRandomStages.Items.Clear();
                 chUseNewBombs.Checked = game.masterAliGet(TNEmanifest.TNEmanifestRoot.useNewBombsTrue, TNEmanifest.TNEmanifestRoot.useNewBombsFalse, "useNewBombs");
                 chUseAnimatedPower.Checked = game.masterAliGet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, "useAnimatedPower");
+                foreach (var stage in TNEmanifest.TNEmanifestRoot.stages)
+                {
+                    CultureInfo culture = Thread.CurrentThread.CurrentUICulture;
+                    if (culture.TwoLetterISOLanguageName == "ru") clbRandomStages.Items.Add(stage.nameRU);
+                    else clbRandomStages.Items.Add(stage.name);
+                    int listItem = stage.value - 1150;
+                    clbRandomStages.SetItemChecked(listItem, game.getValue(stage.value));
+                }
             }
 
             // Find playtime

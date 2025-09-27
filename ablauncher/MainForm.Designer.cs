@@ -54,6 +54,7 @@ namespace ablauncher {
             this.tpKeys1 = new System.Windows.Forms.GroupBox();
             this.tpKeys0 = new System.Windows.Forms.GroupBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.chUseAnimatedPower = new System.Windows.Forms.CheckBox();
             this.chUseNewBombs = new System.Windows.Forms.CheckBox();
             this.btRepairPath = new System.Windows.Forms.Button();
             this.chUsePublicIPXServer = new System.Windows.Forms.CheckBox();
@@ -73,7 +74,8 @@ namespace ablauncher {
             this.btStart = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbServersList = new System.Windows.Forms.ComboBox();
-            this.chUseAnimatedPower = new System.Windows.Forms.CheckBox();
+            this.clbRandomStages = new System.Windows.Forms.CheckedListBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -324,6 +326,8 @@ namespace ablauncher {
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.clbRandomStages);
             this.tabPage3.Controls.Add(this.chUseAnimatedPower);
             this.tabPage3.Controls.Add(this.chUseNewBombs);
             this.tabPage3.Controls.Add(this.btRepairPath);
@@ -337,6 +341,13 @@ namespace ablauncher {
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // chUseAnimatedPower
+            // 
+            resources.ApplyResources(this.chUseAnimatedPower, "chUseAnimatedPower");
+            this.chUseAnimatedPower.Name = "chUseAnimatedPower";
+            this.chUseAnimatedPower.UseVisualStyleBackColor = true;
+            this.chUseAnimatedPower.CheckedChanged += new System.EventHandler(this.chUseAnimatedPower_CheckedChanged);
             // 
             // chUseNewBombs
             // 
@@ -470,12 +481,17 @@ namespace ablauncher {
             this.cbServersList.FormattingEnabled = true;
             this.cbServersList.Name = "cbServersList";
             // 
-            // chUseAnimatedPower
+            // clbRandomStages
             // 
-            resources.ApplyResources(this.chUseAnimatedPower, "chUseAnimatedPower");
-            this.chUseAnimatedPower.Name = "chUseAnimatedPower";
-            this.chUseAnimatedPower.UseVisualStyleBackColor = true;
-            this.chUseAnimatedPower.CheckedChanged += new System.EventHandler(this.chUseAnimatedPower_CheckedChanged);
+            this.clbRandomStages.CheckOnClick = true;
+            resources.ApplyResources(this.clbRandomStages, "clbRandomStages");
+            this.clbRandomStages.FormattingEnabled = true;
+            this.clbRandomStages.Name = "clbRandomStages";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
             // 
             // MainForm
             // 
@@ -562,6 +578,8 @@ namespace ablauncher {
         private System.Windows.Forms.Button btRepairPath;
         private System.Windows.Forms.CheckBox chUseNewBombs;
         private System.Windows.Forms.CheckBox chUseAnimatedPower;
+        private System.Windows.Forms.CheckedListBox clbRandomStages;
+        private System.Windows.Forms.Label label9;
     }
 }
 

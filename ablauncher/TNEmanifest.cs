@@ -27,6 +27,15 @@ namespace ablauncher
             else MessageBox.Show($"Not supported manifest version: {TNEmanifestRoot.manifestVersion}, supported {SUPPORTED_MANIFEST_VERSION}");
         }
 
+        public class Stages
+        {
+            public string name { get; set; }
+            public string nameRU { get; set; }
+            public int id { get; set; }
+            public bool isBuiltIn { get; set; }
+            public int value { get; set; }
+        }
+
         public class ManifestRoot
         {
             public int manifestVersion { get; set; }
@@ -34,6 +43,7 @@ namespace ablauncher
             public string useNewBombsFalse { get; set; }
             public string useAnimatedPowerTrue { get; set; }
             public string useAnimatedPowerFalse { get; set; }
+            public List<Stages> stages { get; set; }
         }
     }
 }

@@ -34,7 +34,7 @@ namespace ablauncher {
         const string LAUNCHER_OPTIONS_FILE     = "ablauncher.ini";
         const string IPXWRAPPER_OPTIONS_FILE = "ipxwrapper.ini";
         const string DIRHOME_FILE     = "CFG.INI";
-        const string TWEAKS_FILE      = "DATA\\RES\\VALUELST.RES";
+        const string VALUES_FILE      = "DATA\\RES\\VALUELST.RES";
         const string MASTER_ALI_FILE  = "DATA\\ANI\\MASTER.ALI";
 
         public const int INFINITE_TIME = 1001;
@@ -377,8 +377,16 @@ namespace ablauncher {
             iniSet(Path.Combine(gameDirectory, DIRHOME_FILE), "cdhome", directory, "=");
         }
 
-        private void tweak(int number, int value) {
-            iniSet(Path.Combine(gameDirectory, TWEAKS_FILE), number.ToString(), value.ToString(), ",");
+        public void setValue(int number, int value) {
+            iniSet(Path.Combine(gameDirectory, VALUES_FILE), number.ToString(), value.ToString(), ",");
+        }
+
+        public bool getValue(int value)
+        {
+            string file = File.ReadAllText(Path.Combine(gameDirectory, VALUES_FILE));
+            Match m = Regex.Match(file, "^" + Regex.Escape(Convert.ToString(value)) + ",(\\d+).*$", RegexOptions.Multiline);
+            if (m.Success && Convert.ToInt32(m.Groups[1].Value) == 1) return true;
+            return false;
         }
 
         private string getOption(string key) {

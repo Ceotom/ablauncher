@@ -285,8 +285,71 @@
   <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>298, 11</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 13</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Random stages list</value>
+  </data>
+  <data name="label9.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="clbRandomStages.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="clbRandomStages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 25</value>
+  </data>
+  <data name="clbRandomStages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 196</value>
+  </data>
+  <data name="clbRandomStages.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="clbRandomStages.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;clbRandomStages.Name" xml:space="preserve">
+    <value>clbRandomStages</value>
+  </data>
+  <data name="&gt;&gt;clbRandomStages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clbRandomStages.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;clbRandomStages.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="chUseAnimatedPower.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="chUseAnimatedPower.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="chUseAnimatedPower.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 106</value>
@@ -300,6 +363,9 @@
   <data name="chUseAnimatedPower.Text" xml:space="preserve">
     <value>Use animated power-ups</value>
   </data>
+  <data name="chUseAnimatedPower.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;chUseAnimatedPower.Name" xml:space="preserve">
     <value>chUseAnimatedPower</value>
   </data>
@@ -310,7 +376,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;chUseAnimatedPower.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="chUseNewBombs.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -343,7 +409,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;chUseNewBombs.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btRepairPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 199</value>
@@ -367,7 +433,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;btRepairPath.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="chUsePublicIPXServer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -397,7 +463,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;chUsePublicIPXServer.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btRunIntro.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -430,7 +496,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;btRunIntro.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="btRunCncDrawConfig.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -460,7 +526,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;btRunCncDrawConfig.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="btRunIpxconfig.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -487,7 +553,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;btRunIpxconfig.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="chCheckForUpdates.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -514,7 +580,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;chCheckForUpdates.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -541,7 +607,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="cbLanguage.Items" xml:space="preserve">
     <value>System</value>
@@ -571,7 +637,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
