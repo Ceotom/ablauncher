@@ -36,6 +36,9 @@ namespace ablauncher {
         const string DIRHOME_FILE     = "CFG.INI";
         const string VALUES_FILE      = "DATA\\RES\\VALUELST.RES";
         const string MASTER_ALI_FILE  = "DATA\\ANI\\MASTER.ALI";
+        const string SOUNDLIST_DIR = "TNE\\SOUNDLISTS";
+        const string SOUNDLIST_FILE = "DATA\\RES\\SOUNDLST.RES";
+        const string SOUNDLIST_FILENAME = "SOUNDLST.RES";
 
         public const int INFINITE_TIME = 1001;
 
@@ -194,6 +197,18 @@ namespace ablauncher {
             set { setLauncherOption("abl_tne_selected_random_preset", value); }
         }
 
+        public int TNESelectedSoundPack
+        {
+            get { return getLauncherOption("abl_tne_selected_sound_pack", 0); }
+            set { setLauncherOption("abl_tne_selected_sound_pack", value); }
+        }
+
+        public bool TNEUseNewExplosions
+        {
+            get { return getLauncherOption("abl_tne_use_new_explosions", 0) == 1; }
+            set { setLauncherOption("abl_tne_use_new_explosions", value ? 1 : 0); }
+        }
+
         public bool FinishedOnboarding
         {
             get { return getLauncherOption("abl_onboard", 0) == 1; }
@@ -328,7 +343,23 @@ namespace ablauncher {
             }
         }
 
-        
+        public void applySoundPack(int soundpack, bool newExplosions)
+        {
+            var selectedSoundpack = TNEmanifest.TNEmanifestRoot.soundPacks.packs[soundpack];
+            string path = Path.Combine(gameDirectory, SOUNDLIST_DIR);
+            string path2;
+            if (!newExplosions) path2 = Path.Combine(path, selectedSoundpack.dirName);
+            else path2 = Path.Combine(path, selectedSoundpack.dirName + TNEmanifest.TNEmanifestRoot.soundPacks.newExplosionSuffix);
+            if (File.Exists(Path.Combine(path2, SOUNDLIST_FILENAME)) && File.Exists(Path.Combine(gameDirectory, SOUNDLIST_FILE)))
+            {
+                File.Delete(Path.Combine(gameDirectory, SOUNDLIST_FILE));
+                File.Copy(Path.Combine(path2, SOUNDLIST_FILENAME), Path.Combine(gameDirectory, SOUNDLIST_FILE));
+            }
+            else
+            {
+                MessageBox.Show($"Failed to apply soundpack. {Path.Combine(path2, SOUNDLIST_FILENAME)} or {Path.Combine(gameDirectory, SOUNDLIST_FILE)} doesn't exist.");
+            }
+        }
 
         public void deleteIpxWrapperIni()
         {

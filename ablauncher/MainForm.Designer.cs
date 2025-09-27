@@ -54,6 +54,10 @@ namespace ablauncher {
             this.tpKeys1 = new System.Windows.Forms.GroupBox();
             this.tpKeys0 = new System.Windows.Forms.GroupBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.cbRandomPresets = new System.Windows.Forms.ComboBox();
+            this.chUseRandomPresets = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.clbRandomStages = new System.Windows.Forms.CheckedListBox();
             this.chUseAnimatedPower = new System.Windows.Forms.CheckBox();
             this.chUseNewBombs = new System.Windows.Forms.CheckBox();
             this.btRepairPath = new System.Windows.Forms.Button();
@@ -74,10 +78,9 @@ namespace ablauncher {
             this.btStart = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbServersList = new System.Windows.Forms.ComboBox();
-            this.clbRandomStages = new System.Windows.Forms.CheckedListBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.chUseRandomPresets = new System.Windows.Forms.CheckBox();
-            this.cbRandomPresets = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbSoundpack = new System.Windows.Forms.ComboBox();
+            this.chUseNewExplosions = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -328,6 +331,9 @@ namespace ablauncher {
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.chUseNewExplosions);
+            this.tabPage3.Controls.Add(this.cbSoundpack);
+            this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.cbRandomPresets);
             this.tabPage3.Controls.Add(this.chUseRandomPresets);
             this.tabPage3.Controls.Add(this.label9);
@@ -345,6 +351,34 @@ namespace ablauncher {
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // cbRandomPresets
+            // 
+            this.cbRandomPresets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbRandomPresets, "cbRandomPresets");
+            this.cbRandomPresets.FormattingEnabled = true;
+            this.cbRandomPresets.Name = "cbRandomPresets";
+            this.cbRandomPresets.SelectedIndexChanged += new System.EventHandler(this.cbRandomPresets_SelectedIndexChanged);
+            // 
+            // chUseRandomPresets
+            // 
+            resources.ApplyResources(this.chUseRandomPresets, "chUseRandomPresets");
+            this.chUseRandomPresets.Name = "chUseRandomPresets";
+            this.chUseRandomPresets.UseVisualStyleBackColor = true;
+            this.chUseRandomPresets.CheckedChanged += new System.EventHandler(this.chUseRandomPresets_CheckedChanged);
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
+            // clbRandomStages
+            // 
+            this.clbRandomStages.CheckOnClick = true;
+            resources.ApplyResources(this.clbRandomStages, "clbRandomStages");
+            this.clbRandomStages.FormattingEnabled = true;
+            this.clbRandomStages.Name = "clbRandomStages";
+            this.clbRandomStages.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbRandomStages_ItemCheck);
             // 
             // chUseAnimatedPower
             // 
@@ -485,33 +519,25 @@ namespace ablauncher {
             this.cbServersList.FormattingEnabled = true;
             this.cbServersList.Name = "cbServersList";
             // 
-            // clbRandomStages
+            // label10
             // 
-            this.clbRandomStages.CheckOnClick = true;
-            resources.ApplyResources(this.clbRandomStages, "clbRandomStages");
-            this.clbRandomStages.FormattingEnabled = true;
-            this.clbRandomStages.Name = "clbRandomStages";
-            this.clbRandomStages.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbRandomStages_ItemCheck);
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
             // 
-            // label9
+            // cbSoundpack
             // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
+            this.cbSoundpack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbSoundpack, "cbSoundpack");
+            this.cbSoundpack.FormattingEnabled = true;
+            this.cbSoundpack.Name = "cbSoundpack";
+            this.cbSoundpack.SelectedIndexChanged += new System.EventHandler(this.cbSoundpack_SelectedIndexChanged);
             // 
-            // chUseRandomPresets
+            // chUseNewExplosions
             // 
-            resources.ApplyResources(this.chUseRandomPresets, "chUseRandomPresets");
-            this.chUseRandomPresets.Name = "chUseRandomPresets";
-            this.chUseRandomPresets.UseVisualStyleBackColor = true;
-            this.chUseRandomPresets.CheckedChanged += new System.EventHandler(this.chUseRandomPresets_CheckedChanged);
-            // 
-            // cbRandomPresets
-            // 
-            this.cbRandomPresets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.cbRandomPresets, "cbRandomPresets");
-            this.cbRandomPresets.FormattingEnabled = true;
-            this.cbRandomPresets.Name = "cbRandomPresets";
-            this.cbRandomPresets.SelectedIndexChanged += new System.EventHandler(this.cbRandomPresets_SelectedIndexChanged);
+            resources.ApplyResources(this.chUseNewExplosions, "chUseNewExplosions");
+            this.chUseNewExplosions.Name = "chUseNewExplosions";
+            this.chUseNewExplosions.UseVisualStyleBackColor = true;
+            this.chUseNewExplosions.CheckedChanged += new System.EventHandler(this.chUseNewExplossions_CheckedChanged);
             // 
             // MainForm
             // 
@@ -602,6 +628,9 @@ namespace ablauncher {
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox chUseRandomPresets;
         private System.Windows.Forms.ComboBox cbRandomPresets;
+        private System.Windows.Forms.ComboBox cbSoundpack;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox chUseNewExplosions;
     }
 }
 

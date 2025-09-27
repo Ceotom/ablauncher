@@ -57,6 +57,11 @@ namespace ablauncher {
             chUseRandomPresets.Enabled = Program.isTne;
             cbRandomPresets.Enabled = Program.isTne;
             cbRandomPresets.Visible = Program.isTne;
+            label10.Visible = Program.isTne;
+            cbSoundpack.Visible = Program.isTne;
+            cbSoundpack.Enabled = Program.isTne;
+            chUseNewExplosions.Visible = Program.isTne;
+            chUseNewExplosions.Enabled = Program.isTne;
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
@@ -211,6 +216,7 @@ namespace ablauncher {
             {
                 clbRandomStages.Items.Clear();
                 cbRandomPresets.Items.Clear();
+                cbSoundpack.Items.Clear();
                 chUseRandomPresets.Checked = game.TNEUseRandomPresets;
                 chUseNewBombs.Checked = game.masterAliGet(TNEmanifest.TNEmanifestRoot.useNewBombsTrue, TNEmanifest.TNEmanifestRoot.useNewBombsFalse, "useNewBombs");
                 chUseAnimatedPower.Checked = game.masterAliGet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, "useAnimatedPower");
@@ -232,6 +238,15 @@ namespace ablauncher {
                 }
                 try { cbRandomPresets.SelectedIndex = game.TNESelectedRandomPreset; }
                 catch { cbRandomPresets.SelectedIndex = 0; }
+                foreach (var soundpack in TNEmanifest.TNEmanifestRoot.soundPacks.packs)
+                {
+                    CultureInfo culture = Thread.CurrentThread.CurrentUICulture;
+                    if (culture.TwoLetterISOLanguageName == "ru") cbSoundpack.Items.Add(soundpack.nameRU);
+                    else cbSoundpack.Items.Add(soundpack.name);
+                }
+                try { cbSoundpack.SelectedIndex = game.TNESelectedSoundPack; }
+                catch { cbSoundpack.SelectedIndex =  0; }
+                chUseNewExplosions.Checked = game.TNEUseNewExplosions;
             }
 
             // Find playtime
@@ -648,6 +663,18 @@ namespace ablauncher {
             int number = e.NewValue == CheckState.Checked ? 1 : 0;
 
             game.setValue(number, changedIndex + 1150);
+        }
+
+        private void cbSoundpack_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            game.TNESelectedSoundPack = cbSoundpack.SelectedIndex;
+            if (!settingsIsLoading) game.applySoundPack(cbSoundpack.SelectedIndex, chUseNewExplosions.Checked);
+        }
+
+        private void chUseNewExplossions_CheckedChanged(object sender, EventArgs e)
+        {
+            game.TNEUseNewExplosions = chUseNewExplosions.Checked;
+            if (!settingsIsLoading) cbSoundpack_SelectedIndexChanged(cbSoundpack, EventArgs.Empty);
         }
     }
 

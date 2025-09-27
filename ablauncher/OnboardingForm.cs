@@ -58,6 +58,14 @@ namespace ablauncher
                     game.SelectedIpxServer = 0;
                 }
             }
+            if (Program.isTne)
+            {
+                game.TNEUseRandomPresets = true;
+                game.TNESelectedRandomPreset = 0;
+                game.TNESelectedSoundPack = 0;
+                game.TNEUseNewExplosions = true;
+                game.applySoundPack(game.TNESelectedSoundPack, game.TNEUseNewExplosions);
+            }
             onOnboardingScreen = false;
             Close();
         }
