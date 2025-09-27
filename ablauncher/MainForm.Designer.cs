@@ -76,6 +76,8 @@ namespace ablauncher {
             this.cbServersList = new System.Windows.Forms.ComboBox();
             this.clbRandomStages = new System.Windows.Forms.CheckedListBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.chUseRandomPresets = new System.Windows.Forms.CheckBox();
+            this.cbRandomPresets = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -326,6 +328,8 @@ namespace ablauncher {
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.cbRandomPresets);
+            this.tabPage3.Controls.Add(this.chUseRandomPresets);
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.clbRandomStages);
             this.tabPage3.Controls.Add(this.chUseAnimatedPower);
@@ -487,12 +491,27 @@ namespace ablauncher {
             resources.ApplyResources(this.clbRandomStages, "clbRandomStages");
             this.clbRandomStages.FormattingEnabled = true;
             this.clbRandomStages.Name = "clbRandomStages";
-            this.clbRandomStages.SelectedIndexChanged += new System.EventHandler(this.clbRandomStages_SelectedIndexChanged);
+            this.clbRandomStages.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbRandomStages_ItemCheck);
             // 
             // label9
             // 
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
+            // 
+            // chUseRandomPresets
+            // 
+            resources.ApplyResources(this.chUseRandomPresets, "chUseRandomPresets");
+            this.chUseRandomPresets.Name = "chUseRandomPresets";
+            this.chUseRandomPresets.UseVisualStyleBackColor = true;
+            this.chUseRandomPresets.CheckedChanged += new System.EventHandler(this.chUseRandomPresets_CheckedChanged);
+            // 
+            // cbRandomPresets
+            // 
+            this.cbRandomPresets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbRandomPresets, "cbRandomPresets");
+            this.cbRandomPresets.FormattingEnabled = true;
+            this.cbRandomPresets.Name = "cbRandomPresets";
+            this.cbRandomPresets.SelectedIndexChanged += new System.EventHandler(this.cbRandomPresets_SelectedIndexChanged);
             // 
             // MainForm
             // 
@@ -581,6 +600,8 @@ namespace ablauncher {
         private System.Windows.Forms.CheckBox chUseAnimatedPower;
         private System.Windows.Forms.CheckedListBox clbRandomStages;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox chUseRandomPresets;
+        private System.Windows.Forms.ComboBox cbRandomPresets;
     }
 }
 

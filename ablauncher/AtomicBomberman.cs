@@ -188,10 +188,22 @@ namespace ablauncher {
             set { setLauncherOption("abl_language", value); }
         }
 
+        public int TNESelectedRandomPreset
+        {
+            get { return getLauncherOption("abl_tne_selected_random_preset", 0); }
+            set { setLauncherOption("abl_tne_selected_random_preset", value); }
+        }
+
         public bool FinishedOnboarding
         {
             get { return getLauncherOption("abl_onboard", 0) == 1; }
             set { setLauncherOption("abl_onboard", value ? 1 : 0); }
+        }
+
+        public bool TNEUseRandomPresets
+        {
+            get { return getLauncherOption("abl_tne_use_random_presets", 0) == 1; }
+            set { setLauncherOption("abl_tne_use_random_presets", value ? 1 : 0); }
         }
 
         public bool UsePublicIPXServer

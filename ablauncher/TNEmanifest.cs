@@ -27,6 +27,13 @@ namespace ablauncher
             else MessageBox.Show($"Not supported manifest version: {TNEmanifestRoot.manifestVersion}, supported {SUPPORTED_MANIFEST_VERSION}");
         }
 
+        public class RandomStagePresets
+        {
+            public string name { get; set; }
+            public string nameRU { get; set; }
+            public List<int> disabledStages { get; set; }
+        }
+
         public class Stages
         {
             public string name { get; set; }
@@ -44,6 +51,7 @@ namespace ablauncher
             public string useAnimatedPowerTrue { get; set; }
             public string useAnimatedPowerFalse { get; set; }
             public List<Stages> stages { get; set; }
+            public List<RandomStagePresets> randomStagePresets { get; set; }
         }
     }
 }

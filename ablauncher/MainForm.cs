@@ -1,5 +1,6 @@
 ﻿using ablauncher.Properties;
 using System;
+using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace ablauncher {
         private bool escapeNoClose = false;
 
         public static bool settingsIsLoading = true;
+        private bool isUserChangedRandomStages = true;
 
         private KeyBindControls keysP0;
         private KeyBindControls keysP1;
@@ -51,6 +53,10 @@ namespace ablauncher {
             clbRandomStages.Visible = Program.isTne;
             clbRandomStages.Enabled = Program.isTne;
             label9.Visible = Program.isTne;
+            chUseRandomPresets.Visible = Program.isTne;
+            chUseRandomPresets.Enabled = Program.isTne;
+            cbRandomPresets.Enabled = Program.isTne;
+            cbRandomPresets.Visible = Program.isTne;
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
@@ -204,6 +210,8 @@ namespace ablauncher {
             if (Program.isTne)
             {
                 clbRandomStages.Items.Clear();
+                cbRandomPresets.Items.Clear();
+                chUseRandomPresets.Checked = game.TNEUseRandomPresets;
                 chUseNewBombs.Checked = game.masterAliGet(TNEmanifest.TNEmanifestRoot.useNewBombsTrue, TNEmanifest.TNEmanifestRoot.useNewBombsFalse, "useNewBombs");
                 chUseAnimatedPower.Checked = game.masterAliGet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, "useAnimatedPower");
                 foreach (var stage in TNEmanifest.TNEmanifestRoot.stages)
@@ -214,6 +222,16 @@ namespace ablauncher {
                     int listItem = stage.value - 1150;
                     clbRandomStages.SetItemChecked(listItem, game.getValue(stage.value));
                 }
+                cbRandomPresets.Enabled = game.TNEUseRandomPresets;
+                cbRandomPresets.Visible = game.TNEUseRandomPresets;
+                foreach (var preset in TNEmanifest.TNEmanifestRoot.randomStagePresets)
+                {
+                    CultureInfo culture = Thread.CurrentThread.CurrentUICulture;
+                    if (culture.TwoLetterISOLanguageName == "ru") cbRandomPresets.Items.Add(preset.nameRU);
+                    else cbRandomPresets.Items.Add(preset.name);
+                }
+                try { cbRandomPresets.SelectedIndex = game.TNESelectedRandomPreset; }
+                catch { cbRandomPresets.SelectedIndex = 0; }
             }
 
             // Find playtime
@@ -591,19 +609,45 @@ namespace ablauncher {
             else game.masterAliSet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, "useAnimatedPower");
         }
 
-        private void clbRandomStages_SelectedIndexChanged(object sender, EventArgs e)
+        private void chUseRandomPresets_CheckedChanged(object sender, EventArgs e)
         {
-            CheckedListBox clb = (CheckedListBox)sender;
-            int changedIndex = clb.SelectedIndex;
-            int number = 0;
+            game.TNEUseRandomPresets = ((CheckBox)sender).Checked;
+            chUseRandomPresets.Checked = game.TNEUseRandomPresets;
+            if (game.TNEUseRandomPresets && !settingsIsLoading) cbRandomPresets_SelectedIndexChanged(cbRandomPresets, EventArgs.Empty);
+            cbRandomPresets.Visible = game.TNEUseRandomPresets;
+            cbRandomPresets.Enabled = game.TNEUseRandomPresets;
+        }
 
-            if (changedIndex != -1)
+        private void cbRandomPresets_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            game.TNESelectedRandomPreset = cbRandomPresets.SelectedIndex;
+            if (game.TNEUseRandomPresets)
             {
-                bool isChecked = clb.GetItemChecked(changedIndex);
-                if (isChecked) number = 1;
+                isUserChangedRandomStages = false;
+                var selectedPreset = TNEmanifest.TNEmanifestRoot.randomStagePresets[cbRandomPresets.SelectedIndex];
 
-                game.setValue(number, changedIndex + 1150);
+                clbRandomStages.BeginUpdate();
+
+                for (int i = 0; i < clbRandomStages.Items.Count; i++)
+                {
+                    clbRandomStages.SetItemChecked(i, true);
+                }
+                foreach (int disabledIndex in selectedPreset.disabledStages)
+                {
+                    clbRandomStages.SetItemChecked(disabledIndex - 1150, false);
+                }
+                clbRandomStages.EndUpdate();
+                isUserChangedRandomStages = true;
             }
+        }
+
+        private void clbRandomStages_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (isUserChangedRandomStages && !settingsIsLoading) chUseRandomPresets.Checked = false;
+            int changedIndex = e.Index;
+            int number = e.NewValue == CheckState.Checked ? 1 : 0;
+
+            game.setValue(number, changedIndex + 1150);
         }
     }
 
