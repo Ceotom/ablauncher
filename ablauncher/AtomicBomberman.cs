@@ -378,7 +378,19 @@ namespace ablauncher {
         }
 
         public void setValue(int number, int value) {
-            iniSet(Path.Combine(gameDirectory, VALUES_FILE), number.ToString(), value.ToString(), ",");
+            if (!MainForm.settingsIsLoading || OnboardingForm.onOnboardingScreen)
+            {
+                checkIfGameRunning(true);
+                string file = File.ReadAllText(Path.Combine(gameDirectory, VALUES_FILE)), newFile;
+                Regex regex = new Regex("^" + Regex.Escape(Convert.ToString(value)) + ",\\d+(.*)$", RegexOptions.Multiline);
+
+                if (regex.IsMatch(file))
+                {
+                    newFile = regex.Replace(file, $"{Regex.Escape(Convert.ToString(value))},{number}$1");
+                    File.WriteAllText(Path.Combine(gameDirectory, VALUES_FILE), newFile);
+                }
+                else MessageBox.Show($"Failed to set value {number} for {value} in valuelist. Manifest missconfigured?");
+            }
         }
 
         public bool getValue(int value)

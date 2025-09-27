@@ -590,6 +590,21 @@ namespace ablauncher {
             if (((CheckBox)sender).Checked) game.masterAliSet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, "useAnimatedPower");
             else game.masterAliSet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, "useAnimatedPower");
         }
+
+        private void clbRandomStages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CheckedListBox clb = (CheckedListBox)sender;
+            int changedIndex = clb.SelectedIndex;
+            int number = 0;
+
+            if (changedIndex != -1)
+            {
+                bool isChecked = clb.GetItemChecked(changedIndex);
+                if (isChecked) number = 1;
+
+                game.setValue(number, changedIndex + 1150);
+            }
+        }
     }
 
     class KeyBindControls {

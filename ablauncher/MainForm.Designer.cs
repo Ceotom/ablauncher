@@ -487,6 +487,7 @@ namespace ablauncher {
             resources.ApplyResources(this.clbRandomStages, "clbRandomStages");
             this.clbRandomStages.FormattingEnabled = true;
             this.clbRandomStages.Name = "clbRandomStages";
+            this.clbRandomStages.SelectedIndexChanged += new System.EventHandler(this.clbRandomStages_SelectedIndexChanged);
             // 
             // label9
             // 
