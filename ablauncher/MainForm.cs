@@ -218,7 +218,9 @@ namespace ablauncher {
                 cbRandomPresets.Items.Clear();
                 cbSoundpack.Items.Clear();
                 chUseRandomPresets.Checked = game.TNEUseRandomPresets;
-                chUseNewBombs.Checked = game.masterAliGet(TNEmanifest.TNEmanifestRoot.useNewBombsTrue, TNEmanifest.TNEmanifestRoot.useNewBombsFalse, "useNewBombs");
+                if (game.masterAliGet(TNEmanifest.TNEmanifestRoot.useNewBombsTrue, TNEmanifest.TNEmanifestRoot.useNewBombsFalse, "useNewBombs") && game.masterAliGet(TNEmanifest.TNEmanifestRoot.useNewBombs2True, TNEmanifest.TNEmanifestRoot.useNewBombs2False, "useNewBombs2")) chUseNewBombs.Checked = true;
+                else chUseNewBombs.Checked = false;
+                if (game.masterAliGet(TNEmanifest.TNEmanifestRoot.useNewBombsTrue, TNEmanifest.TNEmanifestRoot.useNewBombsFalse, "useNewBombs") != game.masterAliGet(TNEmanifest.TNEmanifestRoot.useNewBombs2True, TNEmanifest.TNEmanifestRoot.useNewBombs2False, "useNewBombs2")) MessageBox.Show("useNewBombs state is not equal to useNewBombs2 state!");
                 chUseAnimatedPower.Checked = game.masterAliGet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, "useAnimatedPower");
                 foreach (var stage in TNEmanifest.TNEmanifestRoot.stages)
                 {
@@ -614,14 +616,22 @@ namespace ablauncher {
 
         private void chUseNewBombs_CheckedChanged(object sender, EventArgs e)
         {
-           if (((CheckBox)sender).Checked) game.masterAliSet(TNEmanifest.TNEmanifestRoot.useNewBombsTrue, TNEmanifest.TNEmanifestRoot.useNewBombsFalse, "useNewBombs");
-           else game.masterAliSet(TNEmanifest.TNEmanifestRoot.useNewBombsFalse, TNEmanifest.TNEmanifestRoot.useNewBombsTrue, "useNewBombs");
+            if (!settingsIsLoading)
+            {
+                if (((CheckBox)sender).Checked) game.masterAliSet(TNEmanifest.TNEmanifestRoot.useNewBombsTrue, TNEmanifest.TNEmanifestRoot.useNewBombsFalse, "useNewBombs");
+                else game.masterAliSet(TNEmanifest.TNEmanifestRoot.useNewBombsFalse, TNEmanifest.TNEmanifestRoot.useNewBombsTrue, "useNewBombs");
+                if (((CheckBox)sender).Checked) game.masterAliSet(TNEmanifest.TNEmanifestRoot.useNewBombs2True, TNEmanifest.TNEmanifestRoot.useNewBombs2False, "useNewBombs2");
+                else game.masterAliSet(TNEmanifest.TNEmanifestRoot.useNewBombs2False, TNEmanifest.TNEmanifestRoot.useNewBombs2True, "useNewBombs2");
+            }
         }
 
         private void chUseAnimatedPower_CheckedChanged(object sender, EventArgs e)
         {
-            if (((CheckBox)sender).Checked) game.masterAliSet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, "useAnimatedPower");
-            else game.masterAliSet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, "useAnimatedPower");
+            if (!settingsIsLoading)
+            {
+                if (((CheckBox)sender).Checked) game.masterAliSet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, "useAnimatedPower");
+                else game.masterAliSet(TNEmanifest.TNEmanifestRoot.useAnimatedPowerFalse, TNEmanifest.TNEmanifestRoot.useAnimatedPowerTrue, "useAnimatedPower");
+            }
         }
 
         private void chUseRandomPresets_CheckedChanged(object sender, EventArgs e)

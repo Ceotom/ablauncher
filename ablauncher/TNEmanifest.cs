@@ -61,6 +61,8 @@ namespace ablauncher
             public int manifestVersion { get; set; }
             public string useNewBombsTrue { get; set; }
             public string useNewBombsFalse { get; set; }
+            public string useNewBombs2True { get; set; }
+            public string useNewBombs2False { get; set; }
             public string useAnimatedPowerTrue { get; set; }
             public string useAnimatedPowerFalse { get; set; }
             public List<Stages> stages { get; set; }
