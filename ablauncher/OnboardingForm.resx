@@ -254,6 +254,9 @@ set your preferences:</value>
   <data name="cbLanguage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
+  <data name="cbLanguage.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="cbLanguage.Items" xml:space="preserve">
     <value>System</value>
   </data>

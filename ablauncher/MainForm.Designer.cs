@@ -54,6 +54,9 @@ namespace ablauncher {
             this.tpKeys1 = new System.Windows.Forms.GroupBox();
             this.tpKeys0 = new System.Windows.Forms.GroupBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.chUseNewExplosions = new System.Windows.Forms.CheckBox();
+            this.cbSoundpack = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.cbRandomPresets = new System.Windows.Forms.ComboBox();
             this.chUseRandomPresets = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -78,9 +81,6 @@ namespace ablauncher {
             this.btStart = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbServersList = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbSoundpack = new System.Windows.Forms.ComboBox();
-            this.chUseNewExplosions = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -352,6 +352,26 @@ namespace ablauncher {
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // chUseNewExplosions
+            // 
+            resources.ApplyResources(this.chUseNewExplosions, "chUseNewExplosions");
+            this.chUseNewExplosions.Name = "chUseNewExplosions";
+            this.chUseNewExplosions.UseVisualStyleBackColor = true;
+            this.chUseNewExplosions.CheckedChanged += new System.EventHandler(this.chUseNewExplossions_CheckedChanged);
+            // 
+            // cbSoundpack
+            // 
+            this.cbSoundpack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbSoundpack, "cbSoundpack");
+            this.cbSoundpack.FormattingEnabled = true;
+            this.cbSoundpack.Name = "cbSoundpack";
+            this.cbSoundpack.SelectedIndexChanged += new System.EventHandler(this.cbSoundpack_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
             // cbRandomPresets
             // 
             this.cbRandomPresets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -444,11 +464,11 @@ namespace ablauncher {
             // cbLanguage
             // 
             this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.Items.AddRange(new object[] {
             resources.GetString("cbLanguage.Items"),
             resources.GetString("cbLanguage.Items1"),
             resources.GetString("cbLanguage.Items2")});
-            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.Name = "cbLanguage";
             this.cbLanguage.SelectedIndexChanged += new System.EventHandler(this.cbLanguage_SelectedIndexChanged);
             // 
@@ -518,26 +538,6 @@ namespace ablauncher {
             resources.ApplyResources(this.cbServersList, "cbServersList");
             this.cbServersList.FormattingEnabled = true;
             this.cbServersList.Name = "cbServersList";
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
-            // 
-            // cbSoundpack
-            // 
-            this.cbSoundpack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.cbSoundpack, "cbSoundpack");
-            this.cbSoundpack.FormattingEnabled = true;
-            this.cbSoundpack.Name = "cbSoundpack";
-            this.cbSoundpack.SelectedIndexChanged += new System.EventHandler(this.cbSoundpack_SelectedIndexChanged);
-            // 
-            // chUseNewExplosions
-            // 
-            resources.ApplyResources(this.chUseNewExplosions, "chUseNewExplosions");
-            this.chUseNewExplosions.Name = "chUseNewExplosions";
-            this.chUseNewExplosions.UseVisualStyleBackColor = true;
-            this.chUseNewExplosions.CheckedChanged += new System.EventHandler(this.chUseNewExplossions_CheckedChanged);
             // 
             // MainForm
             // 

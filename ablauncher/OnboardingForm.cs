@@ -103,6 +103,10 @@ namespace ablauncher
                         Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
                         break;
                 }
+
+                // Remove after proper localization
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+                
                 Controls.Clear();
                 InitializeComponent();
                 cbLanguage.SelectedIndexChanged -= cbLanguage_SelectedIndexChanged;

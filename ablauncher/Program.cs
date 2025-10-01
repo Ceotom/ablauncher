@@ -122,6 +122,9 @@ namespace ablauncher {
                     break;
             }
 
+            // Remove after proper localization
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+
             bool isNewLauncherInstance = false;
             mutex = new Mutex(true, "ablauncher", out isNewLauncherInstance);
             if (!isNewLauncherInstance)
