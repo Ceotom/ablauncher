@@ -373,6 +373,8 @@ namespace ablauncher {
             string path = Path.Combine(gameDirectory, EXECUTABLE_FILE);
             if (!File.Exists(path)) throw new Exception("No executable found");
 
+            if (Program.isTne && TNEmanifest.TNEmanifestRoot.manifestVersion == 1) repairPath();
+
             // Start in the proper directory
             Process process = new Process();
             process.StartInfo.FileName = path;
