@@ -301,7 +301,7 @@ namespace ablauncher {
         }
 
         private int textToSeconds(string text) {
-            if (text.ToLower() == "infinite" || text.ToLower() == "бесконечное") return AtomicBomberman.INFINITE_TIME;
+            if (text.ToLower() == "infinite" || text.ToLower() == "бесконечно") return AtomicBomberman.INFINITE_TIME;
 
             string[] parts = text.Split(':');
             int minutes = Int32.Parse(parts[0]);
