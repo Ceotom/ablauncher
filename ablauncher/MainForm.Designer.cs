@@ -464,11 +464,11 @@ namespace ablauncher {
             // cbLanguage
             // 
             this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.Items.AddRange(new object[] {
             resources.GetString("cbLanguage.Items"),
             resources.GetString("cbLanguage.Items1"),
             resources.GetString("cbLanguage.Items2")});
+            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.Name = "cbLanguage";
             this.cbLanguage.SelectedIndexChanged += new System.EventHandler(this.cbLanguage_SelectedIndexChanged);
             // 

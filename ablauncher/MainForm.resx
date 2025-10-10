@@ -1413,9 +1413,6 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="cbLanguage.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="cbLanguage.Items" xml:space="preserve">
     <value>System</value>
   </data>
