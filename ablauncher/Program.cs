@@ -108,7 +108,7 @@ namespace ablauncher {
 
             if (game.CheckForUpdates) Network.checkForUpdates(true);
 
-            Tray.InitTray();
+            Tray.InitTray(Thread.CurrentThread.CurrentUICulture);
 
             Application.Run(new MainForm(game));
 

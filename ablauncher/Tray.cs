@@ -1,6 +1,7 @@
 ﻿using ablauncher.Properties;
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -11,10 +12,11 @@ namespace ablauncher
         public static event Action<bool> TrayVisibilityChanged;
         public static int gameProcPid;
 
-        public static void InitTray()
+        public static void InitTray(CultureInfo culture)
         {
             Thread trayThread = new Thread(() =>
             {
+                Thread.CurrentThread.CurrentUICulture = culture;
                 NotifyIcon trayIcon = new NotifyIcon();
                 trayIcon.Icon = Resources.AppIcon;
                 trayIcon.Visible = false;
