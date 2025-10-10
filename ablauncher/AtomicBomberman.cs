@@ -371,7 +371,16 @@ namespace ablauncher {
         public void start(Form MainForm, Action loadSettings) {
             checkIfGameRunning(true);
             string path = Path.Combine(gameDirectory, EXECUTABLE_FILE);
-            if (!File.Exists(path)) throw new Exception("No executable found");
+            if (!File.Exists(path))
+            {
+                MessageBox.Show($"{Localization.getLocalizedString("FailedToStartGame_Message")} {Localization.getLocalizedString("NoExecutableFound_Message")}", Localization.getLocalizedString("GenericError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MainForm.Invoke((MethodInvoker)delegate
+                {
+                    MainForm.Visible = true;
+                    MainForm.Activate();
+                });
+                return;
+            }
 
             if (Program.isTne && TNEmanifest.TNEmanifestRoot.manifestVersion == 1) repairPath();
 
@@ -385,13 +394,25 @@ namespace ablauncher {
                 MainForm.Invoke((MethodInvoker)delegate 
                 { 
                     Tray.setTrayVisibility(false);
+                    Tray.gameProcPid = 0;
                     loadSettings();
                     MainForm.Visible = true;
                     MainForm.Activate();
                 });
 
             };
-            process.Start();
+
+            try { process.Start(); }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{Localization.getLocalizedString("FailedToStartGame_Message")} {ex.Message}", Localization.getLocalizedString("GenericError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MainForm.Invoke((MethodInvoker)delegate
+                {
+                    MainForm.Visible = true;
+                    MainForm.Activate();
+                });
+                return;
+            }
 
             Tray.gameProcPid = process.Id;
             Tray.setTrayVisibility(true);

@@ -126,6 +126,9 @@
   <data name="Controls_Special" xml:space="preserve">
     <value>Special</value>
   </data>
+  <data name="FailedToStartGame_Message" xml:space="preserve">
+    <value>Failed to start game:</value>
+  </data>
   <data name="FailedToTerminateProcess_Message" xml:space="preserve">
     <value>Failed to terminate process:</value>
   </data>
@@ -149,6 +152,9 @@
   </data>
   <data name="NetworkError_Title" xml:space="preserve">
     <value>Communication error occurred</value>
+  </data>
+  <data name="NoExecutableFound_Message" xml:space="preserve">
+    <value>No executable found</value>
   </data>
   <data name="NoUpdatesAvailable_Message" xml:space="preserve">
     <value>You are using latest version.</value>

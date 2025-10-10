@@ -88,6 +88,15 @@ namespace ablauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to start game:.
+        /// </summary>
+        internal static string FailedToStartGame_Message {
+            get {
+                return ResourceManager.GetString("FailedToStartGame_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to terminate process:.
         /// </summary>
         internal static string FailedToTerminateProcess_Message {
@@ -156,6 +165,15 @@ namespace ablauncher.Properties {
         internal static string NetworkError_Title {
             get {
                 return ResourceManager.GetString("NetworkError_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No executable found.
+        /// </summary>
+        internal static string NoExecutableFound_Message {
+            get {
+                return ResourceManager.GetString("NoExecutableFound_Message", resourceCulture);
             }
         }
         
