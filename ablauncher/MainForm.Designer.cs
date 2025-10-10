@@ -114,9 +114,9 @@ namespace ablauncher {
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -129,14 +129,13 @@ namespace ablauncher {
             // 
             // previewBox
             // 
-            resources.ApplyResources(this.previewBox, "previewBox");
             this.previewBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.previewBox, "previewBox");
             this.previewBox.Name = "previewBox";
             this.previewBox.TabStop = false;
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.chShowAllSchemes);
             this.groupBox1.Controls.Add(this.btOpenSchemesFolder);
             this.groupBox1.Controls.Add(this.chLostNetRevertAi);
@@ -155,6 +154,7 @@ namespace ablauncher {
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.rdTeamGame);
             this.groupBox1.Controls.Add(this.rdMeleeGame);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -216,13 +216,13 @@ namespace ablauncher {
             // 
             // cbConveyorSpeed
             // 
-            resources.ApplyResources(this.cbConveyorSpeed, "cbConveyorSpeed");
             this.cbConveyorSpeed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbConveyorSpeed.FormattingEnabled = true;
             this.cbConveyorSpeed.Items.AddRange(new object[] {
             resources.GetString("cbConveyorSpeed.Items"),
             resources.GetString("cbConveyorSpeed.Items1"),
             resources.GetString("cbConveyorSpeed.Items2")});
+            resources.ApplyResources(this.cbConveyorSpeed, "cbConveyorSpeed");
             this.cbConveyorSpeed.Name = "cbConveyorSpeed";
             this.cbConveyorSpeed.SelectedIndexChanged += new System.EventHandler(this.cbConveyorSpeed_SelectedIndexChanged);
             // 
@@ -233,7 +233,6 @@ namespace ablauncher {
             // 
             // cbPlaytime
             // 
-            resources.ApplyResources(this.cbPlaytime, "cbPlaytime");
             this.cbPlaytime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPlaytime.FormattingEnabled = true;
             this.cbPlaytime.Items.AddRange(new object[] {
@@ -246,6 +245,7 @@ namespace ablauncher {
             resources.GetString("cbPlaytime.Items6"),
             resources.GetString("cbPlaytime.Items7"),
             resources.GetString("cbPlaytime.Items8")});
+            resources.ApplyResources(this.cbPlaytime, "cbPlaytime");
             this.cbPlaytime.Name = "cbPlaytime";
             this.cbPlaytime.SelectedIndexChanged += new System.EventHandler(this.cbPlaytime_SelectedIndexChanged);
             // 
@@ -256,7 +256,6 @@ namespace ablauncher {
             // 
             // cbEnclosure
             // 
-            resources.ApplyResources(this.cbEnclosure, "cbEnclosure");
             this.cbEnclosure.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEnclosure.FormattingEnabled = true;
             this.cbEnclosure.Items.AddRange(new object[] {
@@ -264,6 +263,7 @@ namespace ablauncher {
             resources.GetString("cbEnclosure.Items1"),
             resources.GetString("cbEnclosure.Items2"),
             resources.GetString("cbEnclosure.Items3")});
+            resources.ApplyResources(this.cbEnclosure, "cbEnclosure");
             this.cbEnclosure.Name = "cbEnclosure";
             this.cbEnclosure.SelectedIndexChanged += new System.EventHandler(this.cbEnclosure_SelectedIndexChanged);
             // 
@@ -274,9 +274,9 @@ namespace ablauncher {
             // 
             // cbMap
             // 
-            resources.ApplyResources(this.cbMap, "cbMap");
             this.cbMap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMap.FormattingEnabled = true;
+            resources.ApplyResources(this.cbMap, "cbMap");
             this.cbMap.Name = "cbMap";
             this.cbMap.SelectedIndexChanged += new System.EventHandler(this.cbMap_SelectedIndexChanged);
             // 
@@ -303,10 +303,10 @@ namespace ablauncher {
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.chAutoKeys);
             this.tabPage2.Controls.Add(this.tpKeys1);
             this.tabPage2.Controls.Add(this.tpKeys0);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -331,7 +331,6 @@ namespace ablauncher {
             // 
             // tabPage3
             // 
-            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.chUseNewExplosions);
             this.tabPage3.Controls.Add(this.cbSoundpack);
             this.tabPage3.Controls.Add(this.label10);
@@ -349,6 +348,7 @@ namespace ablauncher {
             this.tabPage3.Controls.Add(this.chCheckForUpdates);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.cbLanguage);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -361,8 +361,8 @@ namespace ablauncher {
             // 
             // cbSoundpack
             // 
-            resources.ApplyResources(this.cbSoundpack, "cbSoundpack");
             this.cbSoundpack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbSoundpack, "cbSoundpack");
             this.cbSoundpack.FormattingEnabled = true;
             this.cbSoundpack.Name = "cbSoundpack";
             this.cbSoundpack.SelectedIndexChanged += new System.EventHandler(this.cbSoundpack_SelectedIndexChanged);
@@ -374,8 +374,8 @@ namespace ablauncher {
             // 
             // cbRandomPresets
             // 
-            resources.ApplyResources(this.cbRandomPresets, "cbRandomPresets");
             this.cbRandomPresets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbRandomPresets, "cbRandomPresets");
             this.cbRandomPresets.FormattingEnabled = true;
             this.cbRandomPresets.Name = "cbRandomPresets";
             this.cbRandomPresets.SelectedIndexChanged += new System.EventHandler(this.cbRandomPresets_SelectedIndexChanged);
@@ -394,8 +394,8 @@ namespace ablauncher {
             // 
             // clbRandomStages
             // 
-            resources.ApplyResources(this.clbRandomStages, "clbRandomStages");
             this.clbRandomStages.CheckOnClick = true;
+            resources.ApplyResources(this.clbRandomStages, "clbRandomStages");
             this.clbRandomStages.FormattingEnabled = true;
             this.clbRandomStages.Name = "clbRandomStages";
             this.clbRandomStages.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbRandomStages_ItemCheck);
@@ -463,24 +463,24 @@ namespace ablauncher {
             // 
             // cbLanguage
             // 
-            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLanguage.Items.AddRange(new object[] {
             resources.GetString("cbLanguage.Items"),
             resources.GetString("cbLanguage.Items1"),
             resources.GetString("cbLanguage.Items2")});
+            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.Name = "cbLanguage";
             this.cbLanguage.SelectedIndexChanged += new System.EventHandler(this.cbLanguage_SelectedIndexChanged);
             // 
             // tabPage4
             // 
-            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Controls.Add(this.btGitHub);
             this.tabPage4.Controls.Add(this.btLicense);
             this.tabPage4.Controls.Add(this.label8);
             this.tabPage4.Controls.Add(this.label7);
             this.tabPage4.Controls.Add(this.btCheckForUpdates);
             this.tabPage4.Controls.Add(this.lbVersion);
+            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
@@ -534,8 +534,8 @@ namespace ablauncher {
             // 
             // cbServersList
             // 
-            resources.ApplyResources(this.cbServersList, "cbServersList");
             this.cbServersList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbServersList, "cbServersList");
             this.cbServersList.FormattingEnabled = true;
             this.cbServersList.Name = "cbServersList";
             // 
