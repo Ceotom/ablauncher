@@ -109,6 +109,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="TNEmanifest.cs" />
+    <Compile Include="Tray.cs" />
     <EmbeddedResource Include="LicenseForm.resx">
       <DependentUpon>LicenseForm.cs</DependentUpon>
     </EmbeddedResource>
