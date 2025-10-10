@@ -318,8 +318,8 @@ namespace ablauncher {
             iniSet(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE), "dosbox server address", Network.serverList.servers[serverNumber].ip, " = ");
             iniSet(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE), "dosbox server port", Network.serverList.servers[serverNumber].port, " = ");
             iniSet(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE), "coalesce packets", "yes", " = ");
-            iniSet(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE), "send packet limit", "100", " = ");
-            iniSet(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE), "send byte limit", "10240", " = ");
+            iniSet(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE), "send packet limit", "9999999", " = ");
+            iniSet(Path.Combine(gameDirectory, IPXWRAPPER_OPTIONS_FILE), "send byte limit", "9999999", " = ");
         }
 
         public string getIpxWrapperIniHash(bool writeToOptions)
