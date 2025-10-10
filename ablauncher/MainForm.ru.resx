@@ -124,9 +124,6 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Никнейм</value>
   </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Игра</value>
-  </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>475, 14</value>
   </data>
@@ -135,12 +132,6 @@
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Предпросмотр схемы</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 208</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Игра</value>
   </data>
   <data name="chShowAllSchemes.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 17</value>
@@ -307,8 +298,14 @@
   <data name="rdMeleeGame.Text" xml:space="preserve">
     <value>Каждый сам за себя</value>
   </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Клавиатура</value>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 208</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Игра</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Игра</value>
   </data>
   <data name="chAutoKeys.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 17</value>
@@ -322,8 +319,8 @@
   <data name="tpKeys0.Text" xml:space="preserve">
     <value>Игрок 1</value>
   </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Другое</value>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Клавиатура</value>
   </data>
   <data name="chUseNewExplosions.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 17</value>
@@ -372,7 +369,7 @@
     <value>268, 23</value>
   </data>
   <data name="btRepairPath.Text" xml:space="preserve">
-    <value>Исправить путь к игре (Исправляет краши)</value>
+    <value>Исправить путь к игре (Исправляет вылеты)</value>
   </data>
   <data name="chUsePublicIPXServer.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 17</value>
@@ -398,8 +395,8 @@
   <data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>102, 9</value>
   </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>О программе</value>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Другое</value>
   </data>
   <data name="btGitHub.Location" type="System.Drawing.Point, System.Drawing">
     <value>222, 199</value>
@@ -426,9 +423,6 @@
     <value>Atomic Bomberman Launcher2 это форк Atomic Bomberman Launcher от rix0rrr. 
 Эта программа поможет вам быстро настроить игру с помощью удобного интерфейса.</value>
   </data>
-  <data name="label8.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>145, 5</value>
   </data>
@@ -443,6 +437,9 @@
   </data>
   <data name="lbVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>147, 30</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>О программе</value>
   </data>
   <data name="btStart.Text" xml:space="preserve">
     <value>Запустить игру!</value>
