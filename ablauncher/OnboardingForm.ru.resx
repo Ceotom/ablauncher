@@ -122,6 +122,51 @@
 Atomic Bomberman Launcher2!</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 212</value>
+  </data>
+  <data name="lbText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>387, 79</value>
+  </data>
+  <data name="lbText.Text" xml:space="preserve">
+    <value>Прежде чем продолжить, нужно определиться с следующими настройками:</value>
+  </data>
+  <data name="chCheckForUpdates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 332</value>
+  </data>
+  <data name="chCheckForUpdates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 17</value>
+  </data>
+  <data name="chCheckForUpdates.Text" xml:space="preserve">
+    <value>Проверять обновления лаунчера при запуске</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 307</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 13</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Язык лаунчера</value>
+  </data>
+  <data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 304</value>
+  </data>
+  <data name="cbLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 21</value>
+  </data>
+  <data name="bContinue.Text" xml:space="preserve">
+    <value>Продолжить</value>
+  </data>
+  <data name="chUsePublicIPXServer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 355</value>
+  </data>
+  <data name="chUsePublicIPXServer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 17</value>
+  </data>
+  <data name="chUsePublicIPXServer.Text" xml:space="preserve">
+    <value>Использовать публичный IPX сервер</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAGACoDAAAFgAAACgAAAAgAAAAQAAAAAEAGAAAAAAAAAAAADYxAADCHgAAAAAAAAAA
