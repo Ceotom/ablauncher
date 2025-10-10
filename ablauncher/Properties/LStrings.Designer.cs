@@ -88,6 +88,15 @@ namespace ablauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to terminate process:.
+        /// </summary>
+        internal static string FailedToTerminateProcess_Message {
+            get {
+                return ResourceManager.GetString("FailedToTerminateProcess_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Atomic Bomberman is already running. Please close the game. Atomic Bomberman Launcher2 will be terminated..
         /// </summary>
         internal static string GameIsRunningError_Message {

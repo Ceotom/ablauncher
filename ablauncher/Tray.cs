@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using System.Reflection;
-using System.Globalization;
-using System.Threading;
-using ablauncher.Properties;
-using System.Runtime.InteropServices;
-using System.IO;
+﻿using ablauncher.Properties;
+using System;
 using System.Diagnostics;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace ablauncher
 {
@@ -43,12 +38,17 @@ namespace ablauncher
 
         private static void terminateGame(int pid)
         {
-            var gameProc = Process.GetProcessById(pid);
+            if (pid <= 0) return;
+
             try
             {
-                gameProc.Kill();
+                var gameProc = Process.GetProcessById(pid);
+                if (!gameProc.HasExited) gameProc.Kill();
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{Localization.getLocalizedString("FailedToTerminateProcess_Message")} {ex.Message}", Localization.getLocalizedString("GenericError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
